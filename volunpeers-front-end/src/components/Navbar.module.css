@@ -14,7 +14,9 @@ header {
   justify-content: space-between;
   align-items: center;
   font-size: calc(10px + 2vmin);
-  background-color: #282c34;
+  background-color: #f0f2f5;
+  box-shadow: 0px 0px 20px 5px #e1e1e1;
+  -webkit-box-shadow: 0px 0px 20px 5px #e1e1e1;
 }
 
 ul {
@@ -35,10 +37,10 @@ a {
 }
 
 /* logo  */
-a.Logo {
+.logo {
   text-decoration: none;
   font-size: 25px;
-  color: red;
+  color: var(--mainColor) !important;
   margin-right: 20px;
 }
 
@@ -51,7 +53,6 @@ a.Logo {
   justify-content: center;
   gap: 40px;
   min-height: 70px;
-  background-color: aliceblue;
 }
 
 

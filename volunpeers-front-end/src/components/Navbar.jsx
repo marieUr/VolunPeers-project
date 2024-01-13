@@ -19,40 +19,37 @@ function Navbar() {
   return (
     <div className="App">
       <header className="App-header">
-        <a href="#home" className="Logo">
+        <a href="#home" className={`${styles.logo}`}>
           VolunPeers
         </a>
 
-        <nav className={'${styles.navbar}'}>
-          <ul className={"${styles.navMenu} ${isActive ? styles.active : ''}"}>
+        <nav className={`${styles.navbar}`}>
+          <ul className={`${styles.navMenu} ${isActive ? styles.active : ''}`}>
             <li onClick={removeActive}>
-              <a href="#home" className={'${styles.navLink}'}>
+              <a href="#home" className={`${styles.navLink}`}>
                 Home
               </a>
             </li>
             <li onClick={removeActive}>
-              <a href="#home" className={'${styles.navLink}'}>
+              <a href="#home" className={`${styles.navLink}`}>
                 About us
               </a>
             </li>
             <li onClick={removeActive}>
-              <a href="#home" className={'${styles.navLink}'}>
+              <a href="#home" className={`${styles.navLink}`}>
                 Donations
               </a>
             </li>
             <li onClick={removeActive}>
-              <a href="#home" className={'${styles.navLink}'}>
+              <a href="#home" className={`${styles.navLink}`}>
                 Volunteering Projects
               </a>
             </li>
           </ul>
-          <div
-            className={`${styles.hamburger} ${isActive ? styles.active : ''}`}
-            onClick={toggleActiveClass}
-          >
-            <span className={'${styles.bar}'}></span>
-            <span className={'${styles.bar}'}></span>
-            <span className={'${styles.bar}'}></span>
+          <div className={`${styles.hamburger} ${isActive ? styles.active : ''}`}  onClick={toggleActiveClass}>
+            <span className={`${styles.bar}`}></span>
+            <span className={`${styles.bar}`}></span>
+            <span className={`${styles.bar}`}></span>
           </div>
         </nav>
       </header>
