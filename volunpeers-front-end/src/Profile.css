@@ -1,37 +1,42 @@
 .grey-box {
-  background-color: var(--mainColorLight);
+  background-color: #E6E6E6;
   padding: 20px;
   padding: 20px;
   width: 90%;
-  margin: 0 auto; /* Box centered horizontally */
+  margin: 20px auto; /* Box centered horizontally */
   border-radius: 10px;
   display: flex;
   flex-direction: column; /* Stack items vertically */
   align-items: center; 
 }
 
+body{
+  background-color: var(--TextColorSecondary);
+}
+
 h3 {
-  color: var(--mainColor);
+  color: var(--TextColor);
   text-align: left;
 }
 
 .white-box{
-  background-color: #fff;
+  background-color: var(--TextColorSecondary);
   padding: 20px;
   margin-top: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   width: 100%;
   max-width: 800px; 
   flex: 1; 
   display: flex;
 }
 
+
+/* Personal info css */
+
 .profile-title {
   color: var(--TextColor);
 }
-
-/* Personal info css */
 
 .profile-photo {
   flex: 1; /* Take up 50% of the space */
@@ -41,25 +46,24 @@ h3 {
   justify-content: center; 
 }
 
-.personal-info {
+.profile-photo img {
+  max-width: 100%; 
+  border-radius: 50%;
+}
+
+.personal-info-content {
   flex: 1; /* Take up 50% of the space */
-  text-align: left; 
+  text-align: center; 
 }
 
 .info-field {
-  display: flex;
+  display: block;
   align-items: center;
   text-align: left; 
 }
 
 .info-field span {
-  margin-right: 10px;
-  font-weight: bold;
-}
-
-.profile-photo img {
-  max-width: 100%; 
-  border-radius: 50%;
+  margin-right: 20px;
 }
 
 .white-box h3 {
@@ -69,14 +73,14 @@ h3 {
 
 /* About you css */
 
-.about-you-content, .about{
+.about-you-content, .answer-text{
   text-align: left;
   align-items: center;
   display: block;
 }
 
-.about textarea,
-.about input {
+.answer-text textarea,
+.answer-text input {
   width: 100%; 
   box-sizing: border-box; /* Include padding and border in the width */
   margin-top: 5px;
@@ -103,7 +107,20 @@ h3 {
 }
 
 .availability-buttons button {
-  margin-right: 10px;
+    background-color: var(--highlightColor);
+    color: var(--TextColor);
+    margin-right: 5px;
+    border: 3px;
+    border-radius: 10px;
+    padding: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Button is clicked */
+.availability-buttons button.clicked-button {
+  background-color: var(--highlightColor);
+  color: white;
 }
 
 
@@ -115,6 +132,7 @@ h3 {
 }
 
 .interests-columns {
+  margin-top: 40px;
   display: flex;
   justify-content: space-between;
 }
