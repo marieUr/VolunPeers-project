@@ -2,6 +2,7 @@ import './App.css';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Profile from "./Profile";
+import Login from "./Login";
 /*  Add one following lines above, Make the appropriate name changes to match your page.
 import Home from "./pages";
 import About from "./pages/about";
@@ -21,6 +22,7 @@ function App() {
       <Navbar />
       <Routes>
           <Route path="/profile" element={<Profile />} />
+          <Route path="/Login" element={<Login />} />
       </Routes>
     </Router>
   );
