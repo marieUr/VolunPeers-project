@@ -15,8 +15,10 @@ header {
   align-items: center;
   font-size: calc(10px + 2vmin);
   background-color: #f0f2f5;
-  box-shadow: 0px 0px 20px 5px #e1e1e1;
   -webkit-box-shadow: 0px 0px 20px 5px #e1e1e1;
+  box-shadow: 0px 0px 20px 5px #e1e1e1;
+  position:relative;
+  z-index: 1000;
 }
 
 ul {
@@ -55,6 +57,19 @@ a {
   min-height: 70px;
 }
 
+/* Profile in the Menu when user is logged in */ 
+.profilePhoto img {
+  flex: 1; /* Take up 50% of the space */
+  margin-right: 20px; 
+  max-width: 90px;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  border-radius: 60%; 
+}
+.profileText {
+  display: none;
+}
 
 /* ul  */
 .navMenu {
@@ -63,6 +78,38 @@ a {
   align-items: center;
   gap: 60px;
 }
+
+/* Bar in the Navigation Menu to be always shown -> Function to merge with other bar later 
+
+.hamburgerShown {
+  cursor: pointer;
+  display: block;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.barShown {
+  background-color: #120f0b;
+  width: 20px;
+  height: 3px;
+  display: block;
+  margin: 5px;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+/* adding active class to the bars  
+.hamburgerShown.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburgerShown.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburgerShown.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+*/
 
 /* media queries */
 
@@ -112,7 +159,14 @@ a {
   .navMenu.active {
     left: 0;
   }
-
+/* Profile in the Menu when user is logged in */ 
+.profilePhoto img {
+  display:none!important;
+  width: 0px;
+}
+.profileText {
+  display: block;
+}
   .navMenu li {
     margin: 16px 0;
   }
