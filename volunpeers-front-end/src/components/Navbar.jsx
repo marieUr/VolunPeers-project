@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import React from 'react';
 import styles from './Navbar.module.css';
+import { Link } from 'react-router-dom';
+import lock from '../assets/lock.svg';
 
 function Navbar() {
   //adding the states
@@ -19,38 +21,65 @@ function Navbar() {
   return (
     <div className="App">
       <header className="App-header">
-        <a href="#home" className={`${styles.logo}`}>
+        <Link to="/" reloadDocument className={`${styles.logo}`}>
           VolunPeers
-        </a>
+        </Link>
 
         <nav className={`${styles.navbar}`}>
           <ul className={`${styles.navMenu} ${isActive ? styles.active : ''}`}>
             <li onClick={removeActive}>
-              <a href="#home" className={`${styles.navLink}`}>
+              <Link to="/" className={`${styles.navLink}`}>
                 Home
-              </a>
+              </Link>
             </li>
             <li onClick={removeActive}>
-              <a href="#home" className={`${styles.navLink}`}>
+              <Link to="/about" className={`${styles.navLink}`}>
                 About us
-              </a>
+              </Link>
             </li>
             <li onClick={removeActive}>
-              <a href="#home" className={`${styles.navLink}`}>
+              <Link to="/donations" className={`${styles.navLink}`}>
                 Donations
-              </a>
+              </Link>
             </li>
             <li onClick={removeActive}>
-              <a href="#home" className={`${styles.navLink}`}>
+              <Link to="/volunteering-projects" className={`${styles.navLink}`}>
                 Volunteering Projects
-              </a>
+              </Link>
+            </li>
+            <li className={`${styles.profilePhoto}`} onClick={removeActive}>
+              <Link to="/profile">
+                <img
+              src="https://randomuser.me/api/portraits/men/33.jpg"
+              alt="User"
+                />
+                 <span className={`${styles.profileText}`}>Profile</span>
+              </Link>  
             </li>
           </ul>
-          <div className={`${styles.hamburger} ${isActive ? styles.active : ''}`}  onClick={toggleActiveClass}>
+          <div className='hidden md:flex' onClick={removeActive}>
+          <button className={`${styles.profileText}`}>
+              <Link to="/Login" className={`${styles.navLink}`}>
+                <img src ={lock} />
+                Login
+              </Link>
+          </button>    
+          </div>
+          <div
+            className={`${styles.hamburger} ${isActive ? styles.active : ''}`}
+            onClick={toggleActiveClass}
+          >
             <span className={`${styles.bar}`}></span>
             <span className={`${styles.bar}`}></span>
             <span className={`${styles.bar}`}></span>
           </div>
+          {/*  Special Bar so its always visible / -> Develop that later once everything else is in Place!
+         <div className={`${styles.hamburgerShown} ${isActive ? styles.active : ''}`}  onClick={toggleActiveClass}>
+           // <span className={`${styles.barShown} `}></span>
+            <span className={`${styles.barShown}`}></span>
+            <span className={`${styles.barShown}`}></span>
+          </div>
+        */}
         </nav>
       </header>
     </div>
