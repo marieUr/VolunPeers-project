@@ -1,9 +1,9 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Profile from './Profile';
-import Login from './Login';
-import Landingpage from './Landingpage';
+import Navbar from './components/Navbar.jsx';
+import Profile from './Profile.jsx';
+import Login from './Login.jsx';
+import Landingpage from './Landingpage.jsx';
 
 /*  Add one following lines above, Make the appropriate name changes to match your page.
 import Home from "./pages";
