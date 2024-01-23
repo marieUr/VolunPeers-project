@@ -57,13 +57,16 @@ h3 {
 }
 
 .info-field {
-  display: block;
-  align-items: center;
-  text-align: left; 
+  display: flex;
+  justify-content: end;
+  /* align-items: center; */
+  text-align: left;
 }
 
-.info-field span {
-  margin-right: 20px;
+ .info-field span {
+  margin-right: 0px;
+  display: flex;
+  justify-content: start;
 }
 
 .white-box h3 {
@@ -112,7 +115,7 @@ h3 {
     margin-right: 5px;
     border: none;
     border-radius: 10px;
-    padding: 12px;
+    padding: 20px 32px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -124,35 +127,50 @@ h3 {
   border: thin solid var(--TextColor);
 }
 
-/* Interests css */
+
+/* Interests CSS */
 
 .interests-content {
-  align-items: center;
-  display: block;
-}
-
-.interests-columns {
-  margin-top: 40px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.interests-column {
   text-align: left;
-  flex: 1;
+  align-items: center;
+  display: block; 
+
 }
 
-.interests-column h4 {
-  margin-bottom: 10px;
-  text-align: center;
+.checkLists{
+  align-items: center;
+
 }
 
-.interests-column ul {
-  list-style: none;
-  padding: 0;
-}
-
-.interests-column li {
-  margin-bottom: 5px;
+.checkList {
+  margin: 20px;
   padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-width: 310px; 
+}
+
+.title {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.list-container > div {
+  margin-bottom: 5px;
+}
+
+.checked-item {
+  color: var(--mainColor);
+  font-weight: bold;
+}
+
+.not-checked-item {
+  color: var(--TextColor);
 }
