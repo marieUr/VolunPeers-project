@@ -108,7 +108,7 @@ const Profile = () => {
           </div>
         </div>
 
-        <div className="white-box">
+        <div className="white-box interests-content">
           <h3>Interests</h3>
           <div className="interests-columns">
             <div className="interests-column">

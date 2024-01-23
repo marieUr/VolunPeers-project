@@ -33,6 +33,7 @@ function App() {
           <Route path="/Login" element={<Login />} />
           <Route component={NotFound}/>
         </Routes>
+        
         <Footer />
       </Router>
     </>
