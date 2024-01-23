@@ -8,7 +8,7 @@ import {
 import Navbar from './components/Navbar.jsx';
 import Profile from './Profile.jsx';
 import Login from './Login.jsx';
-import { Body } from './Pages/body.jsx';
+import { Body } from './Pages/body.js';
 import { Footer } from './components/Footer.jsx';
 import { NotFound } from './Pages/NotFound.js';
 
