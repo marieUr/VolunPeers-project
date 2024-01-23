@@ -1,6 +1,7 @@
 @font-face {
   font-family: 'Roboto';
-  src: local('Roboto'), url(./fonts/Roboto/Roboto-Regular.ttf) format('truetype');
+  src: local('Roboto'),
+    url(./fonts/Roboto/Roboto-Regular.ttf) format('truetype');
 }
 
 body {
@@ -11,7 +12,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-background: transparent;
+  background: transparent;
+}
+.App {
+  display: flex;
+  flex-direction: column;
 }
 html {
   background: #f9f8f8;
@@ -20,7 +25,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
 
 /*@media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -37,11 +41,11 @@ code {
   }
 }*/
 
-:root{
---mainColor:#78BA3B ;
---mainColorLight:#E0EFD2;
---secondaryColor:#336699;
---highlightColor:#61C9A8;
---TextColor:#000100;
---TextColorSecondary:#FFFFFF;
+:root {
+  --mainColor: #78ba3b;
+  --mainColorLight: #e0efd2;
+  --secondaryColor: #336699;
+  --highlightColor: #61c9a8;
+  --TextColor: #000100;
+  --TextColorSecondary: #ffffff;
 }
