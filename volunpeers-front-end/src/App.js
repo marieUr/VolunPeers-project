@@ -1,9 +1,14 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  BrowserRouter,
+} from 'react-router-dom';
 import Navbar from './components/Navbar.jsx';
 import Profile from './Profile.jsx';
 import Login from './Login.jsx';
-import Landingpage, { Body } from './Pages/body.jsx';
+import { Body } from './Pages/body.js';
 import { Footer } from './components/Footer.jsx';
 import { NotFound } from './Pages/NotFound.js';
 
@@ -24,17 +29,18 @@ import Contact from "./pages/contact";*/
 function App() {
   return (
     <>
-    <BrowserRouter basename="/VolunPeers"></BrowserRouter>
+      <BrowserRouter basename="/VolunPeers"></BrowserRouter>
       <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Body />} exact />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/Login" element={<Login />} />
-          <Route component={NotFound}/>
-        </Routes>
-        
-        <Footer />
+        <div className="App">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Body />} exact />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/Login" element={<Login />} />
+            <Route component={NotFound} />
+          </Routes>
+          <Footer />
+        </div>
       </Router>
     </>
   );
