@@ -1,9 +1,16 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  BrowserRouter,
+} from 'react-router-dom';
 import Navbar from './components/Navbar.jsx';
 import Profile from './Profile.jsx';
 import Login from './Login.jsx';
-import Landingpage from './Landingpage.jsx';
+import { Body } from './Pages/body.js';
+import { Footer } from './components/Footer.jsx';
+import { NotFound } from './Pages/NotFound.js';
 
 /*  Add one following lines above, Make the appropriate name changes to match your page.
 import Home from "./pages";
@@ -22,13 +29,18 @@ import Contact from "./pages/contact";*/
 function App() {
   return (
     <>
+      <BrowserRouter basename="/VolunPeers"></BrowserRouter>
       <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Landingpage />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/Login" element={<Login />} />
-        </Routes>
+        <div className="App">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Body />} exact />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/Login" element={<Login />} />
+            <Route component={NotFound} />
+          </Routes>
+          <Footer />
+        </div>
       </Router>
     </>
   );

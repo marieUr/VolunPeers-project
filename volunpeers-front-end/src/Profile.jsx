@@ -4,6 +4,25 @@ import './Profile.css'; // Import the user profile styling
 
 const Profile = () => {
   const [selectedButtons, setSelectedButtons] = useState([]);
+  const [checkedLists, setCheckedLists] = useState([[], [], []]);
+  const [totalSelected, setTotalSelected] = useState(0);
+
+  // Define checkLists array and isChecked function
+  const checkLists = [
+    {
+      title: "Environment & Conservation",
+      items: ["Animals & Wildlife", "Environment & Conservation", "Farming & Agriculture", "Marine Conservation"],
+    },
+    {
+      title: "Humanitarian Aid",
+      items: ["Childcare & Daycare Support", "Healthcare", "Special Needs", "Education"],
+    },
+    {
+      title: "Community Services",
+      items: ["Building & Construction", "Community Development", "Culture & Arts", "Human & Women's Rights"],
+    },
+  ];
+
 
   const handleButtonClick = (buttonText) => {
     if (selectedButtons.includes(buttonText)) {
@@ -14,6 +33,37 @@ const Profile = () => {
       setSelectedButtons([...selectedButtons, buttonText]);
     }
   };
+
+  const isChecked = (item, checklistIndex) => {
+    const checkedList = checkedLists[checklistIndex];
+    return checkedList.includes(item) ? "checked-item" : "not-checked-item";
+  };
+
+  const handleCheck = (event, checklistIndex) => {
+    if (totalSelected >= 3 && !event.target.checked) {
+      // If the user is unchecking an item and has already selected 3, do nothing
+      return;
+    }
+
+    const updatedLists = [...checkedLists];
+    const checklist = updatedLists[checklistIndex];
+
+    if (event.target.checked) {
+      if (totalSelected < 3) {
+        // Allow selection only if totalSelected is less than 3
+        checklist.push(event.target.value);
+        setTotalSelected(totalSelected + 1);
+      }
+    } else {
+      const index = checklist.indexOf(event.target.value);
+      checklist.splice(index, 1);
+      setTotalSelected(totalSelected - 1);
+    }
+
+    updatedLists[checklistIndex] = checklist;
+    setCheckedLists(updatedLists);
+  };
+
 
   return (
     <div className="profile-container">
@@ -108,77 +158,37 @@ const Profile = () => {
           </div>
         </div>
 
-        <div className="white-box">
+        <div className="white-box interests-content">
           <h3>Interests</h3>
-          <div className="interests-columns">
-            <div className="interests-column">
-              <h4>Environment & Conservation</h4>
-              <ul>
-                <li>
-                  <input type="checkbox" id="animals-wildlife" />
-                  <label htmlFor="animals-wildlife">Animals & Wildlife</label>
-                </li>
-                <li>
-                  <input type="checkbox" id="env-conservation" />
-                  <label htmlFor="env-conservation">Environment & Conservation</label>
-                </li>
-                <li>
-                  <input type="checkbox" id="farming-agriculture" />
-                  <label htmlFor="farming-agriculture">Farming & Agriculture</label>
-                </li>
-                <li>
-                  <input type="checkbox" id="marine-conservation" />
-                  <label htmlFor="marine-conservation">Marine Conservation</label>
-                </li>
-              </ul>
+            <div className="checkLists">
+              {checkLists.map((checklist, index) => (
+                <div className="checkList" key={index}>
+                  <div className="title">{checklist.title}</div>
+                  <div className="list-container">
+                    {checklist.items.map((item, itemIndex) => (
+                      <div key={itemIndex}>
+                        <input
+                          value={item}
+                          type="checkbox"
+                          onChange={(event) => handleCheck(event, index)}
+                        />
+                        <span className={isChecked(item, index)}>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+              {checkedLists.map((checkedList, index) => (
+                <div key={index}>
+                  {`Items checked in ${checkLists[index].title} are: ${checkedList.join(", ")}`}
+                </div>
+              ))}
             </div>
-            <div className="interests-column">
-              <h4>Humanitarian Aid</h4>
-              <ul>
-                <li>
-                  <input type="checkbox" id="childcare-daycare" />
-                  <label htmlFor="childcare-daycare">Childcare & Daycare Support</label>
-                </li>
-                <li>
-                  <input type="checkbox" id="healthcare" />
-                  <label htmlFor="healthcare">Healthcare</label>
-                </li>
-                <li>
-                  <input type="checkbox" id="special-needs" />
-                  <label htmlFor="special-needs">Special Needs</label>
-                </li>
-                <li>
-                  <input type="checkbox" id="education" />
-                  <label htmlFor="education">Education</label>
-                </li>
-              </ul>
-            </div>
-            <div className="interests-column">
-              <h4>Community Services</h4>
-              <ul>
-                <li>
-                  <input type="checkbox" id="building-construction" />
-                  <label htmlFor="building-construction">Building & Construction</label>
-                </li>
-                <li>
-                  <input type="checkbox" id="community-development" />
-                  <label htmlFor="community-development">Community Development</label>
-                </li>
-                <li>
-                  <input type="checkbox" id="culture-arts" />
-                  <label htmlFor="culture-arts">Culture & Arts</label>
-                </li>
-                <li>
-                  <input type="checkbox" id="human-womens-rights" />
-                  <label htmlFor="human-womens-rights">Human & Women's Rights</label>
-                </li>
-              </ul>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
     </div>
   );
 };
+
 
 export default Profile;

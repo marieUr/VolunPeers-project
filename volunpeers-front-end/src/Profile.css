@@ -8,6 +8,7 @@
   display: flex;
   flex-direction: column; /* Stack items vertically */
   align-items: center; 
+  min-height: 100vh;
 }
 
 body{
@@ -57,13 +58,16 @@ h3 {
 }
 
 .info-field {
-  display: block;
-  align-items: center;
-  text-align: left; 
+  display: flex;
+  justify-content: end;
+  /* align-items: center; */
+  text-align: left;
 }
 
-.info-field span {
-  margin-right: 20px;
+ .info-field span {
+  margin-right: 0px;
+  display: flex;
+  justify-content: start;
 }
 
 .white-box h3 {
@@ -107,12 +111,12 @@ h3 {
 }
 
 .availability-buttons button {
-    background-color: var(--highlightColor);
+    background-color: var(--mainColorLight);
     color: var(--TextColor);
     margin-right: 5px;
-    border: 3px;
+    border: none;
     border-radius: 10px;
-    padding: 12px;
+    padding: 20px 32px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -120,40 +124,54 @@ h3 {
 /* Button is clicked */
 .availability-buttons button.clicked-button {
   background-color: var(--highlightColor);
-  color: white;
+  color: var(--TextColor);
+  border: thin solid var(--TextColor);
 }
 
 
-/* Interests css */
+/* Interests CSS */
 
 .interests-content {
+  text-align: left;
+  align-items: center;
+  display: block; 
+
+}
+
+.checkLists{
+  align-items: center;
+
+}
+
+.checkList {
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-width: 310px; 
+}
+
+.title {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.list-container {
   display: flex;
   flex-direction: column;
 }
 
-.interests-columns {
-  margin-top: 40px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.interests-column {
-  flex: 1;
-}
-
-.interests-column h4 {
-  margin-bottom: 10px;
-}
-
-.interests-column ul {
-  list-style: none;
-  padding: 0;
-}
-
-.interests-column li {
+.list-container > div {
   margin-bottom: 5px;
 }
 
-.interests-column input {
-  margin-right: 5px;
+.checked-item {
+  color: var(--mainColor);
+  font-weight: bold;
+}
+
+.not-checked-item {
+  color: var(--TextColor);
 }
