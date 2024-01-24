@@ -56,6 +56,15 @@ function Navbar() {
                  <span className={`${styles.profileText}`}>Profile</span>
               </Link>  
             </li>
+
+            
+            {/* <li onClick={removeActive}>
+              <Link to="/login" className={`${styles.navLink}`}>
+                LogIn
+              </Link>
+            </li> */}
+
+
           </ul>
           <div className='hidden md:flex' onClick={removeActive}>
           <button className={`${styles.profileText}`}>
