@@ -1,23 +1,12 @@
-import express, { json, urlencoded,} from 'express';
-import path, { join, dirname } from 'path';
-import cookieParser from 'cookie-parser';
-import logger from 'morgan';
-import { fileURLToPath } from 'url';
+import express from 'express'
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
+const app = express()
+const port = 3000
 
-import indexRouter from './routes/index.js';
-import usersRouter from './routes/users.js';
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
 
-const app = express();
-
-app.use(logger('dev'));
-app.use(json());
-app.use(urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-
-export default app;
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
