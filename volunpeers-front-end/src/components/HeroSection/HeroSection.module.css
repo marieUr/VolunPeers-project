@@ -2,12 +2,50 @@
     max-height: 600px;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    overflow: hidden
+    overflow: hidden;
+}
+.Banner h1 {
+    top: 350px;
+    padding: 10px;
+    color: aliceblue;
 }
 
 .Banner img {
     object-fit:cover;
+    display: flex;
+}
+.TextSection {
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    margin: auto;
+    font-family: 'Roboto';
 
 }
+.Banner button {
+    height: 65px;
+    width: 160px;
+    top: 515px;
+    padding: 8px;
+    margin-left: 16px;
+    margin-right: 16px;
+    font-weight: 600;
+    border-radius: 20px;
+    font-size: 30px;
+    background-color: var(--ButtonColour);
+    box-shadow: 0 0 0 100vmax inset rgb(0 0 0/var(--o,0%));
+    color: aliceblue;
+    cursor: pointer;
+    transition: .4s;
+    border: 0;
+}
+
+.Banner button:hover {
+    --o: 10%;
+    transform: scale(1.01); /* Adjust the scale factor as needed */
+    z-index: 1;
+  }
+
