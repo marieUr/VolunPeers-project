@@ -20,7 +20,7 @@ function Opportunities() {
             Date: {new Date().getDate()} / {new Date().getMonth() + 1} /{' '}
             {new Date().getUTCFullYear()}
           </span>
-          <img></img>
+
           <h4>Company</h4>
           <p>Ever wanted to clean the Area? Join us now ... </p>
         </div>
