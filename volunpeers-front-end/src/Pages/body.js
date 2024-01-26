@@ -2,6 +2,7 @@ import React from 'react';
 import './body.css'; // Import the main styling, shared CSS file
 import HeroSection from '../components/HeroSection/HeroSection.jsx';
 import SubPagePlaceholder from '../components/SubPagePlaceholder.jsx';
+import Opportunities from '../components/Opportunities.jsx';
 
 export const Body = () => {
   return (
@@ -23,6 +24,7 @@ export const Body = () => {
             </main>
           </div>
           <SubPagePlaceholder />
+          <Opportunities />
         </body>
       </html>
     </>
