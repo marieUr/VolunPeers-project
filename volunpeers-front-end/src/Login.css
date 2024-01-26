@@ -2,26 +2,59 @@
     display: flex;
     flex-direction: column;
     margin: auto;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 60px;
+    margin-bottom: 60px;
 }
 
 .header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 50px;
+    width: 100%;
 }
 
 .header p {
-    color: #61C9A8;
-    font-size: 18px;
+    color: #78BA3B ;
+    font-size: 30px;
+    font-weight: 700;
+
 }
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 400px;
+    height: 60px;
+    background-color: #336699;
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+.input img {
+    margin: 0px, 35px;
+}
+
+.input input {
+    height: 50px;
+    width: 400px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 20px;
+}
+
 
 .box {
     border: 1px solid black;
     border-radius: 15px 0px;
     padding: 20px;
 }
-
 
