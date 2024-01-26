@@ -10,21 +10,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 50px;
+    gap: 40px;
     width: 100%;
 }
 
 .header p {
     color: #78BA3B ;
-    font-size: 30px;
-    font-weight: 700;
+    font-size: 25px;
+    font-weight: 600;
 
 }
 
 .inputs {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 25px;
+    margin-top: 10px;
 }
 
 .input {
@@ -35,11 +36,11 @@
     height: 60px;
     background-color: #336699;
     border: 1px solid;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 .input img {
-    margin: 0px, 35px;
+    margin: 0px 35px;
 }
 
 .input input {
@@ -49,12 +50,41 @@
     border: none;
     outline: none;
     font-size: 20px;
+    margin-bottom: 0px;
 }
+
+div.button {
+    margin-top: 20px;
+}
+
+.button button {
+    height: 40px;
+    width: 300px;
+    border-radius: 15px;
+    background-color: #E0EFD2;
+    outline: none;
+    border: 0.5px solid #78BA3B;
+    cursor: pointer;
+}
+
+.button button span {
+    font-size: 15px;
+}
+
+.passwort_vergessen {
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.passwort_vergessen span {
+    color: #78BA3B;
+    cursor: pointer;
+} 
 
 
 .box {
-    border: 1px solid black;
+    border: 2px solid;
     border-radius: 15px 0px;
     padding: 20px;
+    border-color: #78BA3B;
 }
-
