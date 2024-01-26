@@ -1,0 +1,29 @@
+.SubPage-Placeholder {
+  width: 80%;
+  margin: auto;
+  padding: 18px;
+  display: flex;
+  flex-direction: row;
+}
+
+.PlaceholderBoxOne {
+  width: 430px;
+  height: 430px;
+  padding: 16px;
+  margin: auto;
+  background-color: rgb(155, 155, 155);
+}
+.PlaceholderBoxTwo {
+  width: 430px;
+  height: 430px;
+  padding: 16px;
+  margin: auto;
+  background-color: rgb(155, 155, 155);
+}
+.PlaceholderBoxThree {
+  width: 430px;
+  height: 430px;
+  padding: 16px;
+  margin: auto;
+  background-color: rgb(155, 155, 155);
+}

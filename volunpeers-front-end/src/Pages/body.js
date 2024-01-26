@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import './body.css'; // Import the main styling, shared CSS file
 import HeroSection from '../components/HeroSection/HeroSection.jsx';
+import SubPagePlaceholder from '../components/SubPagePlaceholder.jsx';
 
 export const Body = () => {
   return (
     <>
-        <HeroSection />
       <html>
+        <HeroSection />
         <body class="main-page">
-          <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-            <main role="main" class="inner cover">
+          <div class="cover-container">
+            <main role="main" class="inner-cover">
               <h1 class="cover-heading">
                 Join VolunPeers: Unite for a Better World!
               </h1>
@@ -21,6 +22,7 @@ export const Body = () => {
               </p>
             </main>
           </div>
+          <SubPagePlaceholder />
         </body>
       </html>
     </>

@@ -7,8 +7,26 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   background: transparent;
+  overflow-x: hidden;
 }
 
 .main-page {
-  padding: 4rem;
+  padding: 3rem;
+}
+
+.cover-container {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.inner-cover {
+  padding: 10px;
+}
+
+h1 {
+  padding: 5px;
 }
