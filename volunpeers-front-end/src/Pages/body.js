@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './body.css'; // Import the main styling, shared CSS file
 import HeroSection from '../components/HeroSection/HeroSection.jsx';
 import SubPagePlaceholder from '../components/SubPagePlaceholder.jsx';

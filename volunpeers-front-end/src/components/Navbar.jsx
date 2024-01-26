@@ -50,20 +50,20 @@ function Navbar() {
             <li className={`${styles.profilePhoto}`} onClick={removeActive}>
               <Link to="/profile">
                 <img
-              src="https://randomuser.me/api/portraits/men/33.jpg"
-              alt="User"
+                  src="https://randomuser.me/api/portraits/men/33.jpg"
+                  alt="User"
                 />
-                 <span className={`${styles.profileText}`}>Profile</span>
-              </Link>  
+                <span className={`${styles.profileText}`}>Profile</span>
+              </Link>
             </li>
           </ul>
-          <div className='hidden md:flex' onClick={removeActive}>
-          <button className={`${styles.profileText}`}>
+          <div className="hidden" onClick={removeActive}>
+            <button className={`${styles.profileText}`}>
               <Link to="/Login" className={`${styles.navLink}`}>
-                <img src ={lock} alt ="Login Lock"/>
+                <img src={lock} alt="Login Lock" />
                 Login
               </Link>
-          </button>    
+            </button>
           </div>
           <div
             className={`${styles.hamburger} ${isActive ? styles.active : ''}`}
