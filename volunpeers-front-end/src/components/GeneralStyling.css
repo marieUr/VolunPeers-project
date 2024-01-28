@@ -10,17 +10,25 @@
   margin-left: 10%;
   margin-right: 10%;
 }
-h1 {
+.mainSectionOpportunities,
+.Placeholder-Section,
+.DescriptionSection h1 {
   font-size: 3em;
 }
-h2 {
+.mainSectionOpportunities,
+.Placeholder-Section,
+.DescriptionSection h2 {
   font-size: 2em;
 }
 
-h3 {
+.mainSectionOpportunities,
+.Placeholder-Section,
+.DescriptionSection h3 {
   font-size: 28px;
 }
-h4 {
+.mainSectionOpportunities,
+.Placeholder-Section,
+.DescriptionSection h4 {
   font-size: 24px;
 }
 
@@ -126,7 +134,9 @@ h4 {
   display: block;
 }
 
-span {
+.mainSectionOpportunities,
+.Placeholder-Section,
+.DescriptionSection span {
   padding: 5px;
   font-weight: 600;
   font-size: 24px;
