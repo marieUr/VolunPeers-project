@@ -161,10 +161,40 @@
   position: relative;
 }
 
-.OpportunityTitle h1,
-h2,
-h3,
-h4 {
+.OpportunityTitle h1 {
+  padding: 10px;
+  margin-left: 8px;
+  font-family: 'Montserrat-Bold', 'Roboto', Helvetica;
+  font-weight: 700;
+  line-height: 35px;
+  letter-spacing: 0.22px;
+  color: white;
+  text-align: left;
+}
+
+.OpportunityTitle h2 {
+  padding: 10px;
+  margin-left: 8px;
+  font-family: 'Montserrat-Bold', 'Roboto', Helvetica;
+  font-weight: 700;
+  line-height: 35px;
+  letter-spacing: 0.22px;
+  color: white;
+  text-align: left;
+}
+
+.OpportunityTitle h3 {
+  padding: 10px;
+  margin-left: 8px;
+  font-family: 'Montserrat-Bold', 'Roboto', Helvetica;
+  font-weight: 700;
+  line-height: 35px;
+  letter-spacing: 0.22px;
+  color: white;
+  text-align: left;
+}
+
+.OpportunityTitle h4 {
   padding: 10px;
   margin-left: 8px;
   font-family: 'Montserrat-Bold', 'Roboto', Helvetica;
