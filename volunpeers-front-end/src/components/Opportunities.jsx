@@ -4,7 +4,7 @@ import CityImage from './../Images/citywithpark.webp';
 
 function Opportunities() {
   return (
-    <div>
+    <div className="mainSectionOpportunities">
       <div className="opportunitySection">
         <h2>
           Volunteering Opportunities at{' '}
@@ -36,6 +36,9 @@ function Opportunities() {
         </div>
         <button aria-label="Read more">Read more</button>
       </div>
+      <button aria-label="View all Opportunities">
+        View all Opportunities
+      </button>
     </div>
   );
 }

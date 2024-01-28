@@ -3,6 +3,7 @@ import './body.css'; // Import the main styling, shared CSS file
 import HeroSection from '../components/HeroSection/HeroSection.jsx';
 import SubPagePlaceholder from '../components/SubPagePlaceholder.jsx';
 import Opportunities from '../components/Opportunities.jsx';
+import Description from '../components/Description.jsx';
 
 export const Body = () => {
   return (
@@ -17,14 +18,15 @@ export const Body = () => {
               </h1>
               <p class="lead">
                 Are you ready to turn your passion for the planet into impactful
-                action? Introducing VolunPeers, the ultimate platform connecting
-                eager volunteers, like yourself, with organizations striving to
-                make a positive change.
+                action? <br></br>Introducing VolunPeers, the ultimate platform
+                connecting eager volunteers, <br></br>like yourself, with
+                organizations striving to make a positive change.
               </p>
             </main>
           </div>
           <SubPagePlaceholder />
           <Opportunities />
+          <Description />
         </body>
       </html>
     </>

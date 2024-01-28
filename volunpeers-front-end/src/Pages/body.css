@@ -11,16 +11,18 @@ body {
 }
 
 .main-page {
-  padding: 3rem;
+  padding: auto;
 }
 
 .cover-container {
-  margin-left: 10px;
-  margin-right: 10px;
   margin-bottom: 10px;
   padding: 5px;
   display: flex;
   flex-direction: column;
+  background-color: var(--mainColor);
+  width: 100%;
+  color: white;
+  line-height: 35px;
 }
 
 .inner-cover {
@@ -28,5 +30,5 @@ body {
 }
 
 h1 {
-  padding: 5px;
+  padding: 15px;
 }
