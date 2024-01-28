@@ -1,6 +1,6 @@
 import React from 'react';
-import './GeneralStyling.css';
-import CityImage from './../Images/citywithpark.webp';
+import './Description.css';
+import CityImage from '../../Images/citywithpark.webp';
 
 function Description() {
   return (

@@ -1,0 +1,190 @@
+/* Volunteering Opportunities Element */
+
+.mainSectionOpportunities h1 {
+  font-size: 3em;
+}
+.mainSectionOpportunities h2 {
+  font-size: 2em;
+}
+
+.mainSectionOpportunities h3 {
+  font-size: 28px;
+}
+.mainSectionOpportunities h4 {
+  font-size: 24px;
+}
+
+.mainSectionOpportunities {
+  margin: auto;
+  padding: 15px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.opportunitySection h2 {
+  color: black;
+}
+
+.Opportunities {
+  width: 500px;
+  border-radius: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.TextSection {
+  padding: 5px 10px 10px 10px;
+  margin: auto;
+  color: white;
+}
+
+.TextSection p {
+  padding: 5px 10px 10px 10px;
+  margin: auto;
+  text-align: left;
+  color: aliceblue;
+  display: flex;
+  font-weight: 200;
+  font-size: 18px;
+  font-family: 'Roboto';
+}
+
+.TextSection h4 {
+  display: flex;
+  margin: 0;
+  padding: 0px 0px 5px 5px;
+}
+
+/* maybe great for future usage? Styling for VolunPeers name*/
+
+.CompanyName {
+  font-weight: 700;
+  font-size: 36px !important;
+  color: var(--mainColor) !important;
+}
+
+.Opportunities button {
+  width: 120px;
+  border-radius: 0px 0px 10px 10px;
+  padding: 5px;
+  border: none;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 20px;
+  background-color: var(--mainColor);
+  margin: 0;
+  margin-left: auto;
+  color: aliceblue;
+  box-shadow: 0 0 0 100vmax inset rgb(0 0 0 / var(--o, 0%));
+  transition: 0.4s;
+}
+
+.Opportunities button:hover {
+  --o: 10%;
+  font-family: 'Roboto-Bold';
+  z-index: 1;
+  cursor: pointer;
+}
+
+.Opportunities img {
+  width: 100%;
+  object-fit: cover;
+  padding: 10px 0px 0px 0px;
+  position: relative;
+  display: block;
+}
+.mainSectionOpportunities span {
+  padding: 5px;
+  font-weight: 600;
+  font-size: 24px;
+  font-family: 'Roboto';
+  color: white;
+}
+
+.Date {
+  padding: 5px;
+  padding-bottom: 0;
+  display: flex;
+  font-weight: 400;
+  font-size: 20px !important;
+  justify-content: flex-end;
+  margin: 1%;
+  margin-bottom: 0;
+}
+
+.OpportunityTitle {
+  background-color: var(--SecondaryColorAlt);
+  border-radius: 15px 15px 0px 0px;
+  position: relative;
+}
+
+.OpportunityTitle h1 {
+  padding: 10px;
+  margin-left: 8px;
+  font-family: 'Montserrat-Bold', 'Roboto', Helvetica;
+  font-weight: 700;
+  line-height: 35px;
+  letter-spacing: 0.22px;
+  color: white;
+  text-align: left;
+}
+
+.OpportunityTitle h2 {
+  padding: 10px;
+  margin-left: 8px;
+  font-family: 'Montserrat-Bold', 'Roboto', Helvetica;
+  font-weight: 700;
+  line-height: 35px;
+  letter-spacing: 0.22px;
+  color: white;
+  text-align: left;
+}
+
+.OpportunityTitle h3 {
+  padding: 10px;
+  margin-left: 8px;
+  font-family: 'Montserrat-Bold', 'Roboto', Helvetica;
+  font-weight: 700;
+  line-height: 35px;
+  letter-spacing: 0.22px;
+  color: white;
+  text-align: left;
+}
+
+.OpportunityTitle h4 {
+  padding: 10px;
+  margin-left: 8px;
+  font-family: 'Montserrat-Bold', 'Roboto', Helvetica;
+  font-weight: 700;
+  line-height: 35px;
+  letter-spacing: 0.22px;
+  color: white;
+  text-align: left;
+}
+
+.Location {
+  padding: 5px;
+  position: absolute;
+  left: 20px;
+  z-index: 1;
+  top: 24%;
+  text-shadow: 0px 4px 4px #00000040;
+}
+
+.Theme {
+  display: inline;
+  z-index: 2;
+  margin-right: 75%;
+}
+.volunteeringOpportunity {
+  background-color: var(--mainColor);
+  border-radius: 15px 15px 0px 15px;
+}
+.opportunitySection {
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

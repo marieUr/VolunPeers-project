@@ -1,6 +1,6 @@
 import React from 'react';
-import './GeneralStyling.css';
-import CityImage from './../Images/citywithpark.webp';
+import './OpportunityStyling.css';
+import CityImage from '../../Images/citywithpark.webp';
 
 function Opportunities() {
   return (
@@ -36,7 +36,10 @@ function Opportunities() {
         </div>
         <button aria-label="Read more">Read more</button>
       </div>
-      <button aria-label="View all Opportunities">
+      <button
+        className="OpportunityButtonMain"
+        aria-label="View all Opportunities"
+      >
         View all Opportunities
       </button>
     </div>
