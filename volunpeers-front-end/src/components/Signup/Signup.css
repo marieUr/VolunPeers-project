@@ -15,10 +15,9 @@
 }
 
 .header p {
-    color: #78BA3B ;
+    color: #78BA3B;
     font-size: 25px;
     font-weight: 600;
-
 }
 
 .inputs {
@@ -34,7 +33,7 @@
     margin: auto;
     width: 400px;
     height: 60px;
-    background-color: #336699;
+    background-color:#336699 ;
     border: 1px solid;
     border-radius: 20px;
 }
@@ -50,19 +49,13 @@
     border: none;
     outline: none;
     font-size: 20px;
-    margin-bottom: 0px;
-}
-
-div.button {
-    margin-top: 20px;
 }
 
 .button button {
     height: 40px;
     width: 300px;
     border-radius: 15px;
-    background-color: #E0EFD2;
-    outline: none;
+    background-color:#E0EFD2;
     border: 0.5px solid #78BA3B;
     cursor: pointer;
 }
@@ -71,20 +64,8 @@ div.button {
     font-size: 15px;
 }
 
-.passwort_vergessen {
-    font-size: 12px;
-    margin-top: 3px;
-}
-
-.passwort_vergessen span {
-    color: #78BA3B;
-    cursor: pointer;
-} 
-
-
 .box {
-    border: 2px solid;
+    border: 2px solid #78BA3B;
     border-radius: 15px 0px;
     padding: 20px;
-    border-color: #78BA3B;
 }

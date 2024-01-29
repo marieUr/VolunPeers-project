@@ -7,8 +7,8 @@ import {
 } from 'react-router-dom';
 import Navbar from './components/Header/Navbar.jsx';
 import Profile from './components/Profile/Profile.jsx';
-import Login from './Login.jsx';
-import Signup from './Signup.jsx';
+import Login from './components/Login/Login.jsx';
+import Signup from './components/Signup/Signup.jsx';
 import { Body } from './Pages/Landingpage/body.js';
 import { Footer } from './components/Footer/Footer.jsx';
 import { NotFound } from './Pages/NotFound.js';
