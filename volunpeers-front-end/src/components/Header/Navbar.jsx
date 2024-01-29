@@ -2,7 +2,7 @@ import { useState } from 'react';
 import React from 'react';
 import styles from './Navbar.module.css';
 import { Link } from 'react-router-dom';
-import lock from '../assets/lock.svg';
+import lock from '../../assets/lock.svg';
 
 function Navbar() {
   //adding the states

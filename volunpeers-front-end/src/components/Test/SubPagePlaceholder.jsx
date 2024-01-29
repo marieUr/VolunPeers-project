@@ -1,5 +1,5 @@
 import React from 'react';
-import './GeneralStyling.css';
+import '../GeneralStyling.css';
 
 function SubPagePlaceholder() {
   return (

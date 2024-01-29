@@ -44,10 +44,12 @@
   margin: auto;
   text-align: left;
   color: aliceblue;
-  display: flex;
   font-weight: 200;
   font-size: 18px;
   font-family: 'Roboto';
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .TextSection h4 {
@@ -64,7 +66,7 @@
   color: var(--mainColor) !important;
 }
 
-.Opportunities button {
+.ReadMoreButton {
   width: 120px;
   border-radius: 0px 0px 10px 10px;
   padding: 5px;
@@ -73,6 +75,11 @@
   font-weight: 400;
   font-size: 20px;
   background-color: var(--mainColor);
+  background: linear-gradient(
+    180deg,
+    var(--mainColor) 0%,
+    rgb(86.33, 141.84, 159.38) 100%
+  );
   margin: 0;
   margin-left: auto;
   color: aliceblue;
@@ -80,11 +87,38 @@
   transition: 0.4s;
 }
 
-.Opportunities button:hover {
+.ReadMoreButton:hover {
   --o: 10%;
   font-family: 'Roboto-Bold';
   z-index: 1;
   cursor: pointer;
+}
+
+.OpportunityButtonMain {
+  border: none;
+  cursor: pointer;
+  width: 240px;
+  border-radius: 10px;
+  padding: 12px;
+  border: none;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 20px;
+  background: linear-gradient(
+    180deg,
+    var(--mainColor) 0%,
+    rgb(86.33, 141.84, 159.38) 100%
+  );
+  color: aliceblue;
+  margin: 15px;
+  box-shadow: 0 0 0 100vmax inset rgb(0 0 0 / var(--o, 0%));
+  transition: 0.4s;
+}
+
+.OpportunityButtonMain:hover {
+  --o: 10%;
+  font-family: 'Roboto-Bold';
+  z-index: 1;
 }
 
 .Opportunities img {

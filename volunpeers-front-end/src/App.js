@@ -5,14 +5,13 @@ import {
   Route,
   BrowserRouter,
 } from 'react-router-dom';
-import Navbar from './components/Navbar.jsx';
+import Navbar from './components/Header/Navbar.jsx';
 import Profile from './components/Profile/Profile.jsx';
 import Login from './Login.jsx';
 import Signup from './Signup.jsx';
-import { Body } from './Pages/body.js';
-import { Footer } from './components/Footer.jsx';
+import { Body } from './Pages/Landingpage/body.js';
+import { Footer } from './components/Footer/Footer.jsx';
 import { NotFound } from './Pages/NotFound.js';
-
 
 function App() {
   return (

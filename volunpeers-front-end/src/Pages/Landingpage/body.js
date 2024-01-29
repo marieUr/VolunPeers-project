@@ -1,9 +1,9 @@
 import React from 'react';
 import './body.css'; // Import the main styling, shared CSS file
-import HeroSection from '../components/HeroSection/HeroSection.jsx';
-import SubPagePlaceholder from '../components/SubPagePlaceholder.jsx';
-import Opportunities from '../components/Opportunities/Opportunities.jsx';
-import Description from '../components/Description/Description.jsx';
+import HeroSection from '../../components/HeroSection/HeroSection.jsx';
+import SubPagePlaceholder from '../../components/Test/SubPagePlaceholder.jsx';
+import Opportunities from '../../components/Opportunities/Opportunities.jsx';
+import Description from '../../components/Description/Description.jsx';
 
 export const Body = () => {
   return (

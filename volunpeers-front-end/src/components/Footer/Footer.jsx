@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import './Footer.css';
-import fb from '../assets/facebooklogo.svg';
-import twitter from '../assets/twitterlogo.svg';
-import linkedin from '../assets/linkedinlogo.svg';
-import instagram from '../assets/instagramlogo.svg';
+import fb from '../../assets/facebooklogo.svg';
+import twitter from '../../assets/twitterlogo.svg';
+import linkedin from '../../assets/linkedinlogo.svg';
+import instagram from '../../assets/instagramlogo.svg';
 
 export const Footer = () => {
   return (
@@ -80,11 +80,12 @@ export const Footer = () => {
         <div className="sb__footer-below">
           <div className="sb__footer-copyright">
             <p className="trademark">
-              @{new Date().getFullYear()} VolunPeers. All rights reserved. We love our planet!
+              @{new Date().getFullYear()} VolunPeers. All rights reserved. We
+              love our planet!
             </p>
           </div>
           <div className="sb__footer-below-links">
-          <Link to="/">
+            <Link to="/">
               <p>Terms & Conditions</p>
             </Link>
             <Link to="/">

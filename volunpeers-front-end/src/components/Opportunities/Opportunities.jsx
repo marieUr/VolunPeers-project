@@ -26,15 +26,17 @@ function Opportunities() {
           <div className="TextSection">
             <h4>Company</h4>
             <p>
-              Ever wanted to clean the Area? Join us now! Embark on a
-              transformative journey to revitalize our city! Join hands in a
-              community effort, and together, let's sweep away the chaos, one
-              clean street at a time. Your actions today shape a cleaner,
+              Ever wanted to clean the Area? Join us now! <br></br>Embark on a
+              transformative journey to revitalize our city!<br></br> Join hands
+              in a community effort, and together, let's sweep away the chaos,
+              one clean street at a time. Your actions today shape a cleaner,
               brighter future for all. #CleanCityRevolution
             </p>
           </div>
         </div>
-        <button aria-label="Read more">Read more</button>
+        <button className="ReadMoreButton" aria-label="Read more">
+          Read more
+        </button>
       </div>
       <button
         className="OpportunityButtonMain"
