@@ -3,12 +3,23 @@
   src: local('Roboto'),
     url(./fonts/Roboto/Roboto-Regular.ttf) format('truetype');
 }
+@font-face {
+  font-family: 'Roboto-Medium';
+  src: local('Roboto-Medium'),
+    url(./fonts/Roboto/Roboto-Medium.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto-Bold';
+  src: local('Roboto-Bold'),
+    url(./fonts/Roboto/Roboto-Bold.ttf) format('truetype');
+}
 
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Roboto',
-    sans-serif;
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    'Roboto-Medium', 'Roboto-Bold', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -48,4 +59,12 @@ code {
   --highlightColor: #61c9a8;
   --TextColor: #000100;
   --TextColorSecondary: #ffffff;
+  --ButtonColour: rgba(40, 205, 155, 1);
+  --SecondaryColorAlt: rgba(86, 142, 159, 1);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(104, 104, 104);
+  border-radius: 10px;
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css'; // Import the main styling, shared CSS file
+import '../../App.css'; // Import the main styling, shared CSS file
 import './Profile.css'; // Import the user profile styling
 
 const Profile = () => {
@@ -76,61 +76,61 @@ const Profile = () => {
           </div>
 
           <div className="white box personal-info-content">
-            <h3>Personal Information</h3>
+            <h3 class="title-h3">Personal Information</h3>
             <div className="info-field">
-              <span>First Name:</span>
+              <span class="span-info">First Name:</span>
               <input type="text" defaultValue="John" readOnly />
             </div>
             <div className="info-field">
-              <span>Last Name:</span>
+              <span class="span-info">Last Name:</span>
               <input type="text" defaultValue="Doe" readOnly />
             </div>
             <div className="info-field">
-              <span>City:</span>
+              <span class="span-info">City:</span>
               <input type="text" defaultValue="Paris" readOnly />
             </div>
             <div className="info-field">
-              <span>Country:</span>
+              <span class="span-info">Country:</span>
               <input type="text" defaultValue="France" readOnly />
             </div>
             <div className="info-field">
-              <span>Postal code:</span>
+              <span class="span-info">Postal code:</span>
               <input type="text" defaultValue="92130" readOnly />
             </div>
             <div className="info-field">
-              <span>Email:</span>
+              <span class="span-info">Email:</span>
               <input type="email" defaultValue="john.doe@example.com" readOnly />
             </div>
             <div className="info-field">
-              <span>Phone number:</span>
+              <span class="span-info">Phone number:</span>
               <input type="tel" defaultValue="+3034567890" readOnly />
             </div>
             <div className="info-field">
-              <span>LinkedIn profile:</span>
+              <span class="span-info">LinkedIn profile:</span>
               <input type="url" defaultValue="https://linkedin.com/in/johndoe" readOnly />
             </div>
           </div>
         </div>
 
         <div className="white-box about-you-content">
-          <h3>About You</h3>
+          <h3 class="title-h3">About You</h3>
           <div className="info-field answer-text">
-            <span>Describe yourself to an organization in 3-4 sentences:</span>
+            <span class="span-about">Describe yourself to an organization in 3-4 sentences:</span>
             <textarea
               defaultValue="Hello! I'm 32 years old, fueled by a passion for giving back. You'll often find me exploring the great outdoors, or experimenting in the kitchen. With a background in environmental science and a knack for data analysis, I envision using my research and problem-solving skills to contribute meaningfully as a volunteer. Let's embark on this journey together and make a difference!"
               readOnly
             />
           </div>
           <div className="info-field answer-text">
-            <span>What languages do you speak? (Separate the languages you are fluent in with commas)</span>
+            <span class="span-about">What languages do you speak? (Separate the languages you are fluent in with commas)</span>
             <input type="text" defaultValue="French, English" readOnly />
           </div>
         </div>
 
         <div className="white-box availability-content">
-          <h3>Your Availability</h3>
+          <h3 class="title-h3">Your Availability</h3>
           <div className="availability-field">
-            <span>When?</span>
+            <span class="span-about">When?</span>
             <div className="availability-buttons">
               <button
                 className={selectedButtons.includes("Weekdays: Daytimes Monday-Friday") ? "clicked-button" : ""}
@@ -153,13 +153,13 @@ const Profile = () => {
             </div>
           </div>
           <div className="availability-field answer-text">
-            <span>Where? (Separate your desired locations with commas) </span>
+            <span class="span-availability">Where? (Separate your desired locations with commas) </span>
             <input type="text" defaultValue="Paris, Rouen, Amiens" readOnly />
           </div>
         </div>
 
         <div className="white-box interests-content">
-          <h3>Interests</h3>
+          <h3 class="title-h3">Interests</h3>
             <div className="checkLists">
               {checkLists.map((checklist, index) => (
                 <div className="checkList" key={index}>

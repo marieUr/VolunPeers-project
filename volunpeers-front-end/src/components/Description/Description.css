@@ -1,0 +1,85 @@
+/* Description Styling*/
+
+.DescriptionSection h1 {
+  font-size: 3em;
+}
+.DescriptionSection h2 {
+  font-size: 2em;
+}
+.DescriptionSection h3 {
+  padding: 15px;
+  margin: auto;
+  font-size: 28px;
+}
+.DescriptionSection h4 {
+  font-size: 24px;
+}
+
+.DescriptionSection span {
+  padding: 15px;
+  font-weight: 600;
+  font-size: 22px;
+  font-family: 'Roboto';
+}
+.Description-Text {
+  width: 50%;
+  padding: 5px;
+  margin: 0;
+  text-align: left;
+  font-size: 18px;
+  font-family: 'Roboto';
+}
+
+.Description-Text p {
+  padding: 15px;
+  display: block;
+}
+
+.DescriptionSection {
+  margin: auto;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.Description-Rectangle {
+  width: 80%;
+  height: 600px;
+  background-color: var(--secondaryColor);
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Description-Rectangle ul,
+.Description-Rectangle li {
+  display: block;
+  padding: 5px;
+}
+
+.Description-Rectangle img {
+  overflow: hidden;
+  display: block;
+  position: relative;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0 15px 0 0;
+  object-fit: fill;
+}
+
+@media screen and (max-width: 600px) {
+  .Description-Rectangle {
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+
+  .DescriptionSection {
+    max-width: 100%;
+    order: 1;
+  }
+
+  .Description-Rectangle img {
+    order: 2;
+  }
+}

@@ -1,13 +1,134 @@
 .Banner {
-    max-height: 600px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden
+  max-height: 600px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+.Banner h1 {
+  top: 340px;
+  padding: 10px;
+  color: aliceblue;
 }
 
 .Banner img {
-    object-fit:cover;
+  object-fit: cover;
+  display: flex;
+  width: 100%;
+}
+.TextSection {
+  position: absolute;
+  justify-content: space-between;
+  align-items: center;
+  top: 480px;
+  left: 40px;
+  padding: 0 2rem;
+  margin: auto;
+  font-family: 'Roboto';
+}
+.Banner button {
+  height: 65px;
+  width: 160px;
+  top: 500px;
+  padding: 8px;
+  margin-left: 16px;
+  margin-right: 16px;
+  font-weight: 600;
+  border-radius: 20px;
+  font-size: 30px;
+  background-color: var(--ButtonColour);
+  box-shadow: 0 0 0 100vmax inset rgb(0 0 0 / var(--o, 0%));
+  color: aliceblue;
+  cursor: pointer;
+  transition: 0.4s;
+  border: 0;
+}
 
+.Banner button:hover {
+  --o: 10%;
+  transform: scale(1.01); /* Adjust the scale factor as needed */
+  z-index: 1;
+}
+
+@media screen and (max-width: 950px) {
+  .TextSection {
+    position: absolute;
+    justify-content: space-between;
+    align-items: center;
+    top: 350px;
+    left: 30px;
+    padding: 0 2rem;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .TextSection {
+    position: absolute;
+    justify-content: space-between;
+    align-items: center;
+    top: 200px;
+    left: 30px;
+    padding: 0 2rem;
+    margin: auto;
+  }
+  .Banner h1 {
+    top: 100px;
+    padding: 8px;
+    color: aliceblue;
+    font-size: 28px;
+  }
+  .Banner button {
+    height: 55px;
+    width: 140px;
+    top: 300px;
+    padding: 8px;
+    margin: 12px;
+    font-weight: 600;
+    border-radius: 20px;
+    font-size: 24px;
+    background-color: var(--ButtonColour);
+    box-shadow: 0 0 0 100vmax inset rgb(0 0 0 / var(--o, 0%));
+    color: aliceblue;
+    cursor: pointer;
+    transition: 0.4s;
+    border: 0;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .TextSection {
+    position: absolute;
+    justify-content: space-between;
+    align-items: center;
+    top: 80px;
+    left: 20px;
+    padding: 10px;
+    margin-left: 0rem;
+    margin-top: 1rem;
+    transition: 0.2s;
+  }
+  .Banner h1 {
+    top: 200px;
+    padding: 8px;
+    color: aliceblue;
+    font-size: 24px;
+  }
+  .Banner button {
+    height: 45px;
+    width: 130px;
+    top: 300px;
+    padding: 8px;
+    margin: 12px;
+    font-weight: 600;
+    border-radius: 20px;
+    font-size: 16px;
+    background-color: var(--ButtonColour);
+    box-shadow: 0 0 0 100vmax inset rgb(0 0 0 / var(--o, 0%));
+    color: aliceblue;
+    cursor: pointer;
+    transition: 0.4s;
+    border: 0;
+  }
 }

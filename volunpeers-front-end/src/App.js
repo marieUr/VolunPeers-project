@@ -5,26 +5,13 @@ import {
   Route,
   BrowserRouter,
 } from 'react-router-dom';
-import Navbar from './components/Navbar.jsx';
-import Profile from './Profile.jsx';
-import Login from './Login.jsx';
-import { Body } from './Pages/body.js';
-import { Footer } from './components/Footer.jsx';
+import Navbar from './components/Header/Navbar.jsx';
+import Profile from './components/Profile/Profile.jsx';
+import Login from './components/Login/Login.jsx';
+import Signup from './components/Signup/Signup.jsx';
+import { Body } from './Pages/Landingpage/body.js';
+import { Footer } from './components/Footer/Footer.jsx';
 import { NotFound } from './Pages/NotFound.js';
-
-/*  Add one following lines above, Make the appropriate name changes to match your page.
-import Home from "./pages";
-import About from "./pages/about";
-import SignUp from "./pages/signup";
-import Contact from "./pages/contact";*/
-
-/* Then add one following lines inside <Routes> , with the names changed according to your files.
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/sign-up" element={<SignUp />} /> 
-          <Route path="/donations" element={<Donating />} />  
-          <Route path="/volunteering-projects" element={<VolProjects />} />
-*/
 
 function App() {
   return (
@@ -37,6 +24,7 @@ function App() {
             <Route path="/" element={<Body />} exact />
             <Route path="/profile" element={<Profile />} />
             <Route path="/Login" element={<Login />} />
+            <Route path="/Signup" element={<Signup />} />
             <Route component={NotFound} />
           </Routes>
           <Footer />
