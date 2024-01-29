@@ -72,14 +72,10 @@ exApp.delete("/about/:id", (req, res) => {
         res.status(200).json(result)
     })
     .catch((err) => {
-        res.status(500).json({ error: "could not delete the document"})
+        res.status(500).json({ error: "could not delete the document" })
     })
     } else {
-        res.status(500).json({error: "not a valid document id." })
+        res.status(500).json({ error: "not a valid document id." })
     }
-    
-})
-
-exApp.patch("", () => {
     
 })
