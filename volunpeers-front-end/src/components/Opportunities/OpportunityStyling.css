@@ -1,7 +1,7 @@
 /* Volunteering Opportunities Element */
 
 .mainSectionOpportunities h1 {
-  font-size: 3em;
+  font-size: 2.8em;
 }
 .mainSectionOpportunities h2 {
   font-size: 2em;
@@ -58,6 +58,13 @@
   padding: 0px 0px 5px 5px;
 }
 
+.mainSectionOpportunities hr {
+  color: black;
+  height: 1px;
+  margin: 20px 0;
+  opacity: 0.3;
+}
+
 /* maybe great for future usage? Styling for VolunPeers name*/
 
 .CompanyName {
@@ -100,16 +107,16 @@
   width: 240px;
   border-radius: 10px;
   padding: 12px;
-  border: none;
   font-family: 'Roboto';
-  font-weight: 400;
+  font-weight: 500;
   font-size: 20px;
+  letter-spacing: 0.8px;
   background: linear-gradient(
     180deg,
-    var(--mainColor) 0%,
-    rgb(86.33, 141.84, 159.38) 100%
+    var(--ButtonColour) 80%,
+    rgb(86.33, 141.84, 159.38) 130%
   );
-  color: aliceblue;
+  color: white;
   margin: 15px;
   box-shadow: 0 0 0 100vmax inset rgb(0 0 0 / var(--o, 0%));
   transition: 0.4s;

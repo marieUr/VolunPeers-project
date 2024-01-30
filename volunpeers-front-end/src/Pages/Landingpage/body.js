@@ -20,7 +20,9 @@ export const Body = () => {
                 Are you ready to turn your passion for the planet into impactful
                 action? <br></br>Introducing VolunPeers, the ultimate platform
                 connecting eager volunteers, <br></br>like yourself, with
-                organizations striving to make a positive change.
+                organizations striving to make a positive change.<br></br>Be
+                part of something bigger. #VolunteerForChange and embark on a
+                rewarding #SustainabilityJourney! 💚🌏
               </p>
             </main>
           </div>

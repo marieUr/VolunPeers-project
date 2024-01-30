@@ -38,12 +38,14 @@ function Opportunities() {
           Read more
         </button>
       </div>
+      <hr></hr>
       <button
         className="OpportunityButtonMain"
         aria-label="View all Opportunities"
       >
         View all Opportunities
       </button>
+      <hr></hr>
     </div>
   );
 }
