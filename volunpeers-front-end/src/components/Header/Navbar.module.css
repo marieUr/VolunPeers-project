@@ -31,6 +31,9 @@ li {
   display: inline;
   position: relative;
 }
+li.profilePhoto ::before {
+  content: none;
+}
 
 li ::before {
   content: '\2022'; /* Unicode character for a bullet point (•) */
