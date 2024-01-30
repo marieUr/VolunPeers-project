@@ -39,9 +39,33 @@ export const Login = () => {
         }
       };
   
-    const handleLogin = () => {
+     const handleLogin = async () => {
+      // Tries to reach the api/login route on the express server 
+      // when we submit the info.
+      try {
+        // The post request for the endpoint
+         const response = await fetch('/api/login', {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json'
+          },
+          // makes the json values strings
+          body: JSON.stringify(values)
+         })
+         if (!response.ok) {
+          throw new Error('login failed')
+         } else {
+          // can add some random success logic here
+         }
+      }
+      // catching to see if the login is failing, will not be a console log but an error
+      catch(error) {
+        console.error('error logging in:', error)
+      }
+
       if (values.email === "" || values.password === "") {
         alert("Bitte fülle alle Felder aus.");
+        console.log(`${values.email && values.name}`)
       } else {
         console.log("Anmeldeversuch mit folgenden Daten:", values);
       }
@@ -61,7 +85,7 @@ export const Login = () => {
                     <div className="error-message">{errors.email}</div>
                     <div className="input">
                         <img src= {password_icon} alt="Password Icon" />
-                        <input type="password" placeholder='Password' name='password'
+                        <input type="password" placeholder='Password' name='password' minLength={8} required
                         value={values.password} onChange={handleChange} />
                     </div>
                     <div className="error-message">{errors.password}</div>
