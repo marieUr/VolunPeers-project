@@ -15,14 +15,16 @@ body {
 }
 
 .cover-container {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   padding: 5px;
   display: flex;
   flex-direction: column;
   background-color: var(--mainColor);
   width: 100%;
   color: white;
-  line-height: 35px;
+  line-height: 1.6;
+  box-shadow: inset 0 0.0625rem 0.25rem rgba(0, 0, 0, 0.3),
+    0 0 0.125rem rgba(0, 0, 0, 0.1);
 }
 
 .inner-cover {
@@ -30,5 +32,8 @@ body {
 }
 
 h1 {
-  padding: 15px;
+  padding: 5px 10px 10px 10px;
+}
+.cover-container h1 {
+  font-size: 2.8rem;
 }

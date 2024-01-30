@@ -1,7 +1,7 @@
 /* Description Styling*/
 
 .DescriptionSection h1 {
-  font-size: 3em;
+  font-size: 2.8em;
 }
 .DescriptionSection h2 {
   font-size: 2em;
@@ -13,11 +13,12 @@
 }
 .DescriptionSection h4 {
   font-size: 24px;
+  padding: 10px;
+  padding-right: 5px;
 }
 
 .DescriptionSection span {
-  padding: 15px;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 22px;
   font-family: 'Roboto';
 }
@@ -28,6 +29,7 @@
   text-align: left;
   font-size: 18px;
   font-family: 'Roboto';
+  line-height: 1.52;
 }
 
 .Description-Text p {
@@ -50,6 +52,8 @@
   border-radius: 15px;
   display: flex;
   justify-content: space-between;
+  border-color: var(--secondaryColor);
+  border: 2px solid;
 }
 
 .Description-Rectangle ul,
@@ -59,17 +63,69 @@
 }
 
 .Description-Rectangle img {
-  overflow: hidden;
-  display: block;
-  position: relative;
   max-width: 100%;
   height: auto;
   border-radius: 0 15px 0 0;
-  object-fit: fill;
+}
+
+.Image-Box {
+  max-width: 60%;
+  height: auto;
+  border-radius: 0 15px 15px 0;
+  overflow: hidden;
+}
+
+/* Adjusting sizing based on screensizes*/
+@media screen and (max-width: 1912px) {
+  .Description-Rectangle {
+    width: 90%;
+    margin: 5px;
+    justify-content: flex-start;
+    overflow: hidden;
+    height: auto;
+  }
+
+  .Image-Box img {
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    border-radius: 0;
+    float: right;
+  }
+
+  .Image-Box {
+    border-radius: 0;
+    transition: 0.3s;
+  }
+
+  .Description-Text {
+    padding: 5px;
+    width: 100%;
+    white-space: normal;
+  }
+}
+
+@media screen and (max-width: 1630px) {
+  .Description-Rectangle {
+    width: 90%;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+
+  .Description-Text {
+    max-width: 100%;
+  }
+
+  .Image-Box img {
+    float: right;
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 @media screen and (max-width: 600px) {
   .Description-Rectangle {
+    width: 100%;
     justify-content: flex-start;
     flex-direction: column;
   }
@@ -81,5 +137,8 @@
 
   .Description-Rectangle img {
     order: 2;
+  }
+  .Image-Box {
+    max-width: 100%;
   }
 }
