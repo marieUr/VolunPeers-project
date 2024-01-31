@@ -75,7 +75,7 @@ const Profile = () => {
             <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="User" />
           </div>
 
-          <div className="white box personal-info-content">
+          <div className="box personal-info-content">
             <h3 class="title-h3">Personal Information</h3>
             <div className="info-field">
               <span class="span-info">First Name:</span>
@@ -162,7 +162,7 @@ const Profile = () => {
           <h3 class="title-h3">Interests</h3>
             <div className="checkLists">
               {checkLists.map((checklist, index) => (
-                <div className="checkList" key={index}>
+                <div className="box checkList" key={index}>
                   <div className="title">{checklist.title}</div>
                   <div className="list-container">
                     {checklist.items.map((item, itemIndex) => (
