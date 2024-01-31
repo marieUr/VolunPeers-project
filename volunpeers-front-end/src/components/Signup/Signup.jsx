@@ -40,8 +40,30 @@ export const Signup = () => {
         }
       };
     
-      const handleSignup = () => {
-       
+      const handleSignup = async () => {
+        try {
+          const response = await fetch('/api/signup', {
+           method: 'POST',
+           headers: {
+             'content-type': 'application/json'
+           },
+           body: JSON.stringify(values)
+          })
+          if (!response.ok) {
+           throw new Error('sign-up failed')
+          } else {
+ 
+          }
+       }catch(error) {
+         console.error('error signing up:', error)
+       }
+       if (values.email === "" || values.password === "") {
+        alert("Please fill in all the fields");
+        console.log(`${values.email && values.name}`)
+      } else {
+        console.log("login attempt with the following values:", values);
+      }
+
       };
     
     return (
