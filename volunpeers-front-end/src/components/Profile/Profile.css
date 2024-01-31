@@ -1,5 +1,6 @@
 .grey-box {
-  background-color: #E6E6E6;
+  background-color:  rgba(86, 142, 159, 0.916);
+  font-family: 'Roboto', Helvetica;
   padding: 20px;
   padding: 20px;
   width: 90%;
@@ -16,11 +17,13 @@
 } */
 
 .title-h3{
+  font-family: 'Roboto', Helvetica;
   color: var(--TextColor);
   text-align: left;
 }
 
 .white-box{
+  font-family: 'Roboto', Helvetica;
   background-color: var(--TextColorSecondary);
   padding: 20px;
   margin-top: 20px;
