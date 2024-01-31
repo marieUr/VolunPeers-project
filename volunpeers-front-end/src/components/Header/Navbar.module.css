@@ -37,7 +37,7 @@ li.profilePhoto ::before {
 
 li ::before {
   content: '\2022'; /* Unicode character for a bullet point (•) */
-  color: var(--mainColor); /* Adjust the color as needed */
+  color: var(--ButtonColour); /* Adjust the color as needed */
   position: absolute;
   width: 0.26rem;
   height: 0.26rem;
@@ -57,9 +57,14 @@ a {
   text-decoration: none;
   color: black;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 24px;
   padding: 8px;
   transition: 0.4s;
+}
+
+.profileText p {
+  display: inline-block;
+  padding-right: 5px;
 }
 
 a:hover {
@@ -94,7 +99,9 @@ a:hover {
   align-items: center;
   justify-content: center;
   border-radius: 60%;
+  transition: 0.3s;
 }
+
 .profileText {
   display: none;
   border: none;
@@ -105,12 +112,18 @@ a:hover {
   margin-right: 5px;
   vertical-align: -5px;
 }
+
+.profilePhoto img:hover {
+  opacity: 0.9;
+  transition: 0.3s;
+}
+
 /* ul  */
 .navMenu {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 30px;
+  gap: 40px;
 }
 
 /* Bar in the Navigation Menu to be always shown -> Function to merge with other bar later 
@@ -163,6 +176,7 @@ a:hover {
     -webkit-transition: 0.3s ease-in-out;
     transition: 0.3s ease-in-out;
   }
+
   .navbar {
     top: 0;
     left: 0;
@@ -176,6 +190,7 @@ a:hover {
   .navbar Button {
     display: inline-block;
   }
+
   /* adding active class to the bars  */
   .hamburger.active .bar:nth-child(2) {
     opacity: 0;

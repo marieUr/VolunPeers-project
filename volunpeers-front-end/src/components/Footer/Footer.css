@@ -5,10 +5,10 @@
   box-sizing: border-box;
 }
 .section__padding {
-  padding: 4rem 2rem;
+  padding: 3rem 2rem;
 }
 .footer {
-  background-color: #2d2d32;
+  background-color: var(--mainColor);
   width: 100%;
   display: flex;
 }
@@ -28,18 +28,38 @@
   margin-bottom: 2rem;
 }
 .sb__footer-links_div {
-  width: 170px;
-  margin: 1rem;
+  width: 205px;
+  margin: 0.8rem;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  color: white;
+  color: #f8f8f8;
 }
+
+.MailContainer {
+  margin: 0;
+  padding-top: 7px;
+  padding-bottom: 8px;
+}
+
+.MailContainer p {
+  display: inline-block;
+  padding-right: 5px;
+}
+
 .footer a {
   text-decoration: none;
-  color: rgb(187, 250, 255);
+  color: white;
   font-size: 20px;
   padding: 8px;
+  transition: color 0.3s ease;
+  transition: font-weight 0.3s ease;
+}
+
+.footer a:hover {
+  color: #e1f5b1;
+  transition: 0.3s;
+  font-weight: bold;
 }
 
 .socialMedia img {
@@ -47,12 +67,13 @@
   position: relative;
   left: -40px;
 }
+
 /* Adjusting the icon placement into rows */
 .sb__footer-links_div .socialMedia {
   width: 50px;
   margin-right: 2rem;
-  margin-left: 0.3rem;
   display: flex;
+  justify-content: space-between;
 }
 
 .sb__footer-links_div h4 {
@@ -88,9 +109,12 @@
   color: white;
   font-weight: 600;
 }
-
+.sb__footer-below-links p:hover {
+  color: #5a9e2e;
+  transition: 0.3s;
+}
 hr {
-  color: white !important;
+  color: white;
   width: 100%;
 }
 

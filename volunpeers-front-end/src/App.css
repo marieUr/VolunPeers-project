@@ -23,7 +23,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  background: transparent;
+  background: var(--cream);
 }
 .App {
   display: flex;
@@ -61,6 +61,7 @@ code {
   --TextColorSecondary: #ffffff;
   --ButtonColour: rgba(40, 205, 155, 1);
   --SecondaryColorAlt: rgba(86, 142, 159, 1);
+  --cream: #f5f2e7;
 }
 
 /* Handle */

@@ -2,7 +2,8 @@ import { useState } from 'react';
 import React from 'react';
 import styles from './Navbar.module.css';
 import { Link } from 'react-router-dom';
-import lock from '../../assets/lock.svg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLock } from '@fortawesome/free-solid-svg-icons';
 
 function Navbar() {
   //adding the states
@@ -60,7 +61,9 @@ function Navbar() {
           <div className="hidden" onClick={removeActive}>
             <button className={`${styles.profileText}`}>
               <Link to="/Login" className={`${styles.navLink}`}>
-                <img src={lock} alt="Login Lock" />
+                <p>
+                  <FontAwesomeIcon icon={faLock} size="1x" />
+                </p>
                 Login
               </Link>
             </button>

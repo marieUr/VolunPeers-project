@@ -1,10 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Footer.css';
-import fb from '../../assets/facebooklogo.svg';
-import twitter from '../../assets/twitterlogo.svg';
-import linkedin from '../../assets/linkedinlogo.svg';
-import instagram from '../../assets/instagramlogo.svg';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { far } from '@fortawesome/free-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+library.add(fas, far);
 
 export const Footer = () => {
   return (
@@ -45,32 +51,36 @@ export const Footer = () => {
             </Link>
           </div>
           <div className="sb__footer-links_div">
-            <h4>Contact</h4>
-            <Link to="/profile">
-              <p>Mail</p>
-            </Link>
+            <h4>Stay in touch with us!</h4>
+            <div className="MailContainer">
+              <Link to="/profile">
+                <p>
+                  <FontAwesomeIcon icon={faEnvelope} size="1x" />
+                </p>
+                <p>Mail</p>
+              </Link>
+            </div>
           </div>
           <div className="sb__footer-links_div">
-            <h4>Social Media</h4>
             <div className="socialMedia">
               <a href="www.facebook.com">
                 <p>
-                  <img src={fb} alt="Facebook Logo" />
+                  <FontAwesomeIcon icon={faFacebook} size="2x" />
                 </p>
               </a>
               <a href="www.twitter.com">
                 <p>
-                  <img src={twitter} alt="Twitter / X Logo" />
+                  <FontAwesomeIcon icon={faTwitter} size="2x" />
                 </p>
               </a>
               <a href="www.linkedin.com">
                 <p>
-                  <img src={linkedin} alt="LinkedIn Logo" />
+                  <FontAwesomeIcon icon={faLinkedin} size="2x" />
                 </p>
               </a>
               <a href="www.instagram.com">
                 <p>
-                  <img src={instagram} alt="Instagram Logo" />
+                  <FontAwesomeIcon icon={faInstagram} size="2x" />
                 </p>
               </a>
             </div>

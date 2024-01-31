@@ -4,6 +4,7 @@ import HeroSection from '../../components/HeroSection/HeroSection.jsx';
 import SubPagePlaceholder from '../../components/Test/SubPagePlaceholder.jsx';
 import Opportunities from '../../components/Opportunities/Opportunities.jsx';
 import Description from '../../components/Description/Description.jsx';
+import CompanySection from '../../components/Companies/CompanySection.jsx';
 
 export const Body = () => {
   return (
@@ -29,6 +30,7 @@ export const Body = () => {
           <SubPagePlaceholder />
           <Opportunities />
           <Description />
+          <CompanySection />
         </body>
       </html>
     </>
