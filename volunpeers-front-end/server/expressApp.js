@@ -181,5 +181,24 @@ exApp.get("/api/profile/:id", async (req, res) => {
 })
 
 exApp.patch("/api/profile/:id", async (req, res) => {
+    const userId = req.params.id;
+    const updatedProfile = req.body;
+    try {
+        const objectId = new ObjectId(userId);
 
+        // Update the user profile in the MongoDB database
+        const result = await db.collection('users').updateOne({ _id: objectId }, { $set: updatedProfile });
+    
+        // Check if the profile was successfully updated
+        if (result.modifiedCount === 1) {
+          // Profile updated successfully
+          res.status(200).json({ message: 'Profile updated successfully' });
+        } else {
+          // Profile not found or not updated
+          res.status(404).json({ message: 'Profile not found or not updated' });
+        }
+      } catch (error) {
+        console.error('Error updating user profile:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
 })
