@@ -13,12 +13,13 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(12px + 1vmin);
   background-color: #f0f2f5;
   -webkit-box-shadow: 0px 0px 20px 5px #e1e1e1;
   box-shadow: 0px 0px 20px 5px #e1e1e1;
   position: relative;
   z-index: 1000;
+  transition-duration: 0.1s;
 }
 
 ul {
@@ -57,7 +58,6 @@ a {
   text-decoration: none;
   color: black;
   font-weight: 600;
-  font-size: 24px;
   padding: 8px;
   transition: 0.4s;
 }
@@ -74,7 +74,7 @@ a:hover {
 /* logo  */
 .logo {
   text-decoration: none;
-  font-size: 25px;
+  font-size: 28px;
   color: var(--mainColor) !important;
   margin-right: 15px;
 }
@@ -106,6 +106,7 @@ a:hover {
   display: none;
   border: none;
   color: black;
+  font-size: large;
 }
 
 .profileText img {
@@ -126,39 +127,24 @@ a:hover {
   gap: 40px;
 }
 
-/* Bar in the Navigation Menu to be always shown -> Function to merge with other bar later 
-
-.hamburgerShown {
-  cursor: pointer;
-  display: block;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 10px;
-}
-
-.barShown {
-  background-color: #120f0b;
-  width: 20px;
-  height: 3px;
-  display: block;
-  margin: 5px;
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
-}
-
-/* adding active class to the bars  
-.hamburgerShown.active .bar:nth-child(2) {
-  opacity: 0;
-}
-.hamburgerShown.active .bar:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
-}
-.hamburgerShown.active .bar:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
-}
-*/
-
 /* media queries */
+@media screen and (max-width: 1220px) {
+  header {
+    font-size: calc(8px + 1vmin);
+  }
+  .navbar {
+    gap: 30px;
+  }
+  .navMenu {
+    gap: 30px;
+  }
+}
+
+@media screen and (max-width: 1112px) {
+  header {
+    font-size: calc(7px + 1vmin);
+  }
+}
 
 @media screen and (max-width: 780px) {
   /* hamburger */
@@ -183,7 +169,7 @@ a:hover {
     display: flex;
     padding: 23px 20px;
     justify-content: center;
-    gap: 40px;
+    gap: 30px;
     min-height: 65px;
   }
 
@@ -215,6 +201,7 @@ a:hover {
     transition: 0.7s ease-in-out;
     background-color: aliceblue;
     padding: 10px;
+    font-size: large;
   }
 
   .navMenu.active {
@@ -225,8 +212,39 @@ a:hover {
     display: none !important;
     width: 0px;
   }
+
+  .profilePhoto a {
+    overflow: hidden;
+    padding: 0;
+  }
+
+  .profilePhoto a ::before {
+    content: '\2022'; /* Unicode character for a bullet point (•) */
+    color: var(--ButtonColour); /* Adjust the color as needed */
+    position: absolute;
+    width: 0.26rem;
+    height: 0.26rem;
+    left: 50%;
+    bottom: 0;
+    margin-top: 0.5rem;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .profilePhoto a :hover::before {
+    opacity: 1;
+  }
+
   .profileText {
     display: block;
+  }
+
+  .profilePhoto {
+    transition: opacity 0.3s;
+  }
+  .profilePhoto :hover {
+    color: var(--ButtonColour);
   }
   .navMenu li {
     margin: 16px 0;

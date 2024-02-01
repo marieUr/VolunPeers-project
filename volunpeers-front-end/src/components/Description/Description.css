@@ -4,7 +4,7 @@
   font-size: 2.8em;
 }
 .DescriptionSection h2 {
-  font-size: 2em;
+  font-size: 2.4em;
 }
 .DescriptionSection h3 {
   padding: 15px;
@@ -43,6 +43,7 @@
   display: flex;
   justify-content: center;
   color: white;
+  max-width: 158.8rem;
 }
 
 .Description-Rectangle {

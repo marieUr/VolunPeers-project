@@ -27,7 +27,6 @@ export const Body = () => {
               </p>
             </main>
           </div>
-          <SubPagePlaceholder />
           <Opportunities />
           <Description />
           <CompanySection />

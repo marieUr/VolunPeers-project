@@ -12,6 +12,7 @@ body {
 
 .main-page {
   padding: auto;
+  font-family: 'Roboto';
 }
 
 .cover-container {
@@ -25,6 +26,10 @@ body {
   line-height: 1.6;
   box-shadow: inset 0 0.0625rem 0.25rem rgba(0, 0, 0, 0.3),
     0 0 0.125rem rgba(0, 0, 0, 0.1);
+}
+
+.cover-container p {
+  padding-bottom: 10px;
 }
 
 .inner-cover {

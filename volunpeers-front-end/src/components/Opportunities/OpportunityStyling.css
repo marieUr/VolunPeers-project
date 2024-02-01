@@ -4,7 +4,9 @@
   font-size: 2.8em;
 }
 .mainSectionOpportunities h2 {
-  font-size: 2em;
+  font-size: 2.3em;
+  padding-bottom: 5px;
+  color: var(--textColor);
 }
 
 .mainSectionOpportunities h3 {
@@ -27,10 +29,12 @@
 
 .Opportunities {
   width: 500px;
+  padding: 5px;
   border-radius: 15%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-bottom: 36px;
 }
 
 .TextSection {
@@ -69,7 +73,7 @@
 
 .CompanyName {
   font-weight: 700;
-  font-size: 36px !important;
+  font-size: 38px !important;
   color: var(--mainColor) !important;
 }
 

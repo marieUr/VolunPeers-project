@@ -13,7 +13,7 @@ function Description() {
             volunteering to clean and preserve our planet. Every action counts,
             and together, we can create a healthier, cleaner world for all.
           </p>
-          <h4>Why it matters:</h4>
+          <h4>The change we bring</h4>
           <ul>
             <li>
               &#8226; Environmental Impact: Reduce pollution and protect
@@ -28,14 +28,7 @@ function Description() {
               of fulfillment.
             </li>
           </ul>
-          <p>
-            <span>Join us </span> on a journey to create a cleaner, greener
-            world. Choose from a myriad of projects that align with your passion
-            and skills.
-            <br></br>
-            Let your impact shine, and together, let's celebrate a planet
-            thriving in sustainability.
-          </p>
+          <p></p>
         </div>
         <div className="Image-Box">
           <img src={RiverImage} alt=""></img>
