@@ -65,6 +65,8 @@
   justify-content: end;
   /* align-items: center; */
   text-align: left;
+  font-family: 'Roboto', Helvetica;
+
 }
 
  .info-field .span-info {
@@ -94,6 +96,7 @@
   padding: 10px; 
   border: 1px solid #ccc;
   border-radius: 4px;
+  font-family: 'Roboto', Helvetica;
 }
 
 /* Availability css */
@@ -122,6 +125,7 @@
     padding: 20px 32px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
+    font-family: 'Roboto', Helvetica;
 }
 
 /* Button is clicked */
