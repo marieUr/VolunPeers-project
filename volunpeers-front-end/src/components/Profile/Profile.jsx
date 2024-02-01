@@ -34,14 +34,19 @@ const Profile = () => {
     }
   };
 
-  const isChecked = (item, checklistIndex) => {
-    const checkedList = checkedLists[checklistIndex];
-    return checkedList.includes(item) ? "checked-item" : "not-checked-item";
-  };
+  const isChecked = (item) => {
+    for (let i = 0; i < checkedLists.length; i++) {
+        const checkedList = checkedLists[i];
+        if (checkedList.includes(item)) {
+            return "checked-item";
+        }
+    }
+    return "not-checked-item";
+};
 
   const handleCheck = (event, checklistIndex) => {
-    if (totalSelected >= 3 && !event.target.checked) {
-      // If the user is unchecking an item and has already selected 3, do nothing
+    if (totalSelected >= 5 && !event.target.checked) {
+      // If the user is unchecking an item and has already selected 5, do nothing
       return;
     }
 
@@ -49,10 +54,13 @@ const Profile = () => {
     const checklist = updatedLists[checklistIndex];
 
     if (event.target.checked) {
-      if (totalSelected < 3) {
+      if (totalSelected < 5) {
         // Allow selection only if totalSelected is less than 3
         checklist.push(event.target.value);
         setTotalSelected(totalSelected + 1);
+      }else {
+        // Display message if user attempts to select more than 5 items
+        alert("You can select up to 5!");
       }
     } else {
       const index = checklist.indexOf(event.target.value);
@@ -79,35 +87,35 @@ const Profile = () => {
             <h3 class="title-h3">Personal Information</h3>
             <div className="info-field">
               <span class="span-info">First Name:</span>
-              <input type="text" defaultValue="John" readOnly />
+              <input type="text" defaultValue="John" contenteditable />
             </div>
             <div className="info-field">
               <span class="span-info">Last Name:</span>
-              <input type="text" defaultValue="Doe" readOnly />
+              <input type="text" defaultValue="Doe" contenteditable />
             </div>
             <div className="info-field">
               <span class="span-info">City:</span>
-              <input type="text" defaultValue="Paris" readOnly />
+              <input type="text" defaultValue="Paris" contenteditable />
             </div>
             <div className="info-field">
               <span class="span-info">Country:</span>
-              <input type="text" defaultValue="France" readOnly />
+              <input type="text" defaultValue="France" rcontenteditable />
             </div>
             <div className="info-field">
               <span class="span-info">Postal code:</span>
-              <input type="text" defaultValue="92130" readOnly />
+              <input type="text" defaultValue="92130" contenteditable />
             </div>
             <div className="info-field">
               <span class="span-info">Email:</span>
-              <input type="email" defaultValue="john.doe@example.com" readOnly />
+              <input type="email" defaultValue="john.doe@example.com" contenteditable />
             </div>
             <div className="info-field">
               <span class="span-info">Phone number:</span>
-              <input type="tel" defaultValue="+3034567890" readOnly />
+              <input type="tel" defaultValue="+3034567890" contenteditable />
             </div>
             <div className="info-field">
               <span class="span-info">LinkedIn profile:</span>
-              <input type="url" defaultValue="https://linkedin.com/in/johndoe" readOnly />
+              <input type="url" defaultValue="https://linkedin.com/in/johndoe" contenteditable />
             </div>
           </div>
         </div>
@@ -118,12 +126,11 @@ const Profile = () => {
             <span class="span-about">Describe yourself to an organization in 3-4 sentences:</span>
             <textarea
               defaultValue="Hello! I'm 32 years old, fueled by a passion for giving back. You'll often find me exploring the great outdoors, or experimenting in the kitchen. With a background in environmental science and a knack for data analysis, I envision using my research and problem-solving skills to contribute meaningfully as a volunteer. Let's embark on this journey together and make a difference!"
-              readOnly
-            />
+              contenteditable/>
           </div>
           <div className="info-field answer-text">
             <span class="span-about">What languages do you speak? (Separate the languages you are fluent in with commas)</span>
-            <input type="text" defaultValue="French, English" readOnly />
+            <input type="text" defaultValue="French, English" contenteditable />
           </div>
         </div>
 
@@ -154,36 +161,33 @@ const Profile = () => {
           </div>
           <div className="availability-field answer-text">
             <span class="span-availability">Where? (Separate your desired locations with commas) </span>
-            <input type="text" defaultValue="Paris, Rouen, Amiens" readOnly />
+            <input type="text" defaultValue="Paris, Rouen, Amiens" contenteditable />
           </div>
         </div>
 
         <div className="last-box interests-content">
           <h3 class="title-h3">Interests</h3>
             <div className="checkLists">
-              {checkLists.map((checklist, index) => (
-                <div className="checkList" key={index}>
-                  <div className="title">{checklist.title}</div>
-                  <div className="list-container">
+            {checkLists.map((checklist, index) => (
+            <div className="checkList" key={index}>
+                <div className="title">{checklist.title}</div>
+                <div className="list-container">
                     {checklist.items.map((item, itemIndex) => (
-                      <div key={itemIndex}>
-                        <input
-                          value={item}
-                          type="checkbox"
-                          onChange={(event) => handleCheck(event, index)}
-                        />
-                        <span className={isChecked(item, index)}>{item}</span>
-                      </div>
-                    ))}
+                        <div key={itemIndex}>
+                            <input
+                                value={item}
+                                type="checkbox"
+                                onChange={(event) => handleCheck(event, index)}
+                                checked={checkedLists[index].includes(item)}
+                            />
+                            <span className={isChecked(item)}>{item}</span>
+                          </div>
+                      ))}
                   </div>
-                </div>
-              ))}
-              {checkedLists.map((checkedList, index) => (
-                <div key={index}>
-                  {`Items checked in ${checkLists[index].title} are: ${checkedList.join(", ")}`}
-                </div>
-              ))}
-            </div>
+              </div>
+          ))}
+
+        </div>
         </div>
     </div>
     </div>
