@@ -106,43 +106,32 @@ exApp.post("/api/login", async (req, res) => {
 
     // if user email is not found
     try {
-    if (!user) {
-        return res.status(401).json({ success: false, message: 'invalid credentials'})
+        if (!user) {
+            return res.status(401).json({ success: false, message: 'invalid credentials'})
+        }
+
+        // compare the password with the hashed password in DB
+        const passwordMatch = await bcrypt.compare(password, user.password)
+
+        // if password matches, auth successful
+        if (passwordMatch) {
+            // generate JWT or session token 
+            // return success response with token or any other data
+            return res.status(200).json({ sucess: true, message: 'login successful' })
+        } else {
+            // if passwords don't match authentication failed
+            return res.status(401).json({ success: false, message: 'invalid credentials'})
+        }
+    } catch(error) {
+        console.error('Error during login', error);
+        return res.status(500).json({ success: false, message: 'internal server error' })
     }
 
-    // compare the password with the hashed password in DB
-    const passwordMatch = await bcrypt.compare(password, user.password)
-
-    // if password matches, auth successful
-    if (passwordMatch) {
-        // generate JWT or session token 
-        // return success response with token or any other data
-        return res.status(200).json({ sucess: true, message: 'login successful' })
-    } else {
-        // if passwords don't match authentication failed
-        return res.status(401).json({ success: false, message: 'invalid credentials'})
-    }
-} catch(error) {
-    console.error('Error during login', error);
-    return res.status(500).json({ success: false, message: 'internal server error' })
-}
-
-
-    // if (email === "example@example.com" && password === "password") {
-    //     // if auth is successful
-    //     // redirect or send msg
-    //     res.status(200).json({success: true, message: "Login successful"}) 
-    //     console.log("success", req.body)
-    // } else {
-    //     // if auth failed
-    //     // send response saying it has failed
-    //     res.status(401).json({sucess: false, message: "invalid credentials" })
-    //     console.log("failed" ,req.body)
-    // }
 
 })
 
 exApp.post("/api/signup", async (req, res) => {
+    
     // form or post fields
     const { email, password } = req.body;
 
@@ -160,6 +149,37 @@ exApp.post("/api/signup", async (req, res) => {
         console.error('Error during signup:', error);
         return res.status(500).json({ success: false, message: "internal server error"})
     }
-    
+
+})
+
+exApp.get("/api/profile/:id", async (req, res) => {
+    // path to id endpoint
+    const userId = req.params.id;
+
+    try {
+
+        // convert the userID to objectID for MongoDB
+        console.log('Fetching user profile for userId:', userId);
+        const objectId = new ObjectId(userId)
+
+        // Query the MongoDB database for the user profile using the user ID
+        const user = await db.collection('users').findOne({ _id: objectId });
+
+        // If user is not found, return 404 Not Found
+        if (!user) {
+            console.log('User not found for userId:', userId);
+            return res.status(404).json({ message: 'User not found' });
+    }
+
+        // If user is found, return the user profile data
+        console.log('User profile found for userId:', userId);
+        return res.status(200).json(user);
+    } catch (error) {
+        console.error('Error fetching user profile:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+})
+
+exApp.patch("/api/profile/:id", async (req, res) => {
 
 })
