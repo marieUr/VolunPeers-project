@@ -58,7 +58,12 @@
 .personal-info-content {
   flex: 1; /* Take up 50% of the space */
   text-align: center; 
+  border: 2px solid #78BA3B;
+  border-radius: 15px 0px;
+  padding: 20px;
 }
+
+
 
 .info-field {
   display: flex;
@@ -138,23 +143,36 @@
 
 /* Interests CSS */
 
+.last-box{
+  font-family: 'Roboto', Helvetica;
+  background-color: var(--TextColorSecondary);
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 800px;  
+}
+
+
 .interests-content {
   text-align: left;
   align-items: center;
-  display: block; 
 
 }
 
 .checkLists{
   align-items: center;
+  display: flex;
+  flex-direction: column;
 
 }
 
 .checkList {
   margin: 20px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: 2px solid #78BA3B;
+  border-radius: 15px 0px;
+  padding: 20px;
   max-width: 310px; 
 }
 
