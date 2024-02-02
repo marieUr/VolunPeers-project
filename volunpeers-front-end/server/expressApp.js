@@ -5,7 +5,8 @@ import cors from "cors"
 import bodyParser from "body-parser"
 import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken"
-import crypto from "crypto"
+import crypto, { verify } from "crypto"
+import verifyToken from "./verifytoken.js";
 
 /*
 
@@ -43,7 +44,6 @@ connectToDB((err) => {
 
 // routes
 
-
 exApp.post("/api/login", async (req, res) => {
     
     // form or post fields
@@ -71,6 +71,7 @@ exApp.post("/api/login", async (req, res) => {
                 process.env.JWT_SECRET_KEY = secretKey;
             }
             const token = jwt.sign({
+                _id: "",
                 userId: user._id, 
                 email: user.email
             }, secretKey, {expiresIn: '1h'});
@@ -110,31 +111,32 @@ exApp.post("/api/signup", async (req, res) => {
 
 })
 
-exApp.get("/api/profile/:id", async (req, res) => {
-    // path to id endpoint
-    const userId = req.params.id;
+exApp.get("/api/profile/:id", verifyToken, async (req, res) => {
+    // access the token
+    const decodedToken = req.decoded;
+
+    // get the user id from the decoded token
+    const userId = decodedToken.userId;
 
     try {
+        // convert userid to object id for mongodb
+        console.log(`fetching user profile for userid: ${userId}`)
+        const objectId = new ObjectId(userId);
 
-        // convert the userID to objectID for MongoDB
-        console.log('Fetching user profile for userId:', userId);
-        const objectId = new ObjectId(userId)
-
-        // Query the MongoDB database for the user profile using the user ID
+        // query the database
         const user = await db.collection('users').findOne({ _id: objectId });
 
-        // If user is not found, return 404 Not Found
         if (!user) {
-            console.log('User not found for userId:', userId);
-            return res.status(404).json({ message: 'User not found' });
-    }
-
-        // If user is found, return the user profile data
-        console.log('User profile found for userId:', userId);
-        return res.status(200).json(user);
-    } catch (error) {
-        console.error('Error fetching user profile:', error);
-        res.status(500).json({ error: 'Internal server error' });
+            console.log(`User not found for userId ${userId}`)
+            return res.status(404).json({ message: "user not found"})
+        }
+        
+        // if user is found return the user profile data
+        console.log(`User profile found for userId: ${userId}`);
+        return res.status(200).json({ decodedToken, user });
+    } catch(error) {
+        console.error(`Error fetching user profile: ${userId}`)
+        res.status(500).json({ error: "internal server error" })
     }
 })
 
