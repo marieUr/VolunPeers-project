@@ -4,6 +4,8 @@ import { ObjectId } from "mongodb";
 import cors from "cors"
 import bodyParser from "body-parser"
 import bcrypt from "bcrypt"
+import jwt from "jsonwebtoken"
+import crypto from "crypto"
 
 /*
 
@@ -41,59 +43,6 @@ connectToDB((err) => {
 
 // routes
 
-exApp.use('/api/index', (req,res) => {
-    res.send("hello traveler")
-    console.log("this is the basic log")
-})
-exApp.get("/api/about", (req, res) => {
-    let companies = []
-
-    db.collection('companies')
-        .find()
-        .sort( { name: 1 })
-        .forEach( company => companies.push(company))
-        .then(() => {
-            res.status(200).json(companies)
-        })
-        .catch((err) => {
-            res.status(500).json({ error: "could not find documents"})
-            
-        })
-        
-
-})
-
-exApp.post("/api/about", (req, res) => {
-    
-    const aboutMe = req.body
-
-    db.collection('companies')
-        .insertOne(aboutMe)
-        .then(result => {
-            res.status(201).json(result)
-        })
-        .catch( err => {
-            res.status(500).json({err: "could not create a new document"})
-        })
-})
-
-exApp.delete("/api/about/:id", (req, res) => {
-
-    if (ObjectId.isValid(req.params.id)) {
-    db.collection('companies')
-    .deleteOne({_id: new ObjectId(req.params.id)})
-    .then((result) => {
-        res.status(200).json(result)
-    })
-    .catch((err) => {
-        res.status(500).json({ error: "could not delete the document" })
-    })
-    } else {
-        res.status(500).json({ error: "not a valid document id." })
-    }
-    
-})
-
 
 exApp.post("/api/login", async (req, res) => {
     
@@ -116,8 +65,19 @@ exApp.post("/api/login", async (req, res) => {
         // if password matches, auth successful
         if (passwordMatch) {
             // generate JWT or session token 
+
+            const secretKey = crypto.randomBytes(32).toString("hex")
+            if (!process.env.JWT_SECRET_KEY) {
+                process.env.JWT_SECRET_KEY = secretKey;
+            }
+            const token = jwt.sign({
+                userId: user._id, 
+                email: user.email
+            }, secretKey, {expiresIn: '1h'});
+
             // return success response with token or any other data
-            return res.status(200).json({ sucess: true, message: 'login successful' })
+            console.log(`here is the secretkey: ${secretKey} & ${token}`)
+            return res.status(200).json({ sucess: true, message: 'login successful', token})
         } else {
             // if passwords don't match authentication failed
             return res.status(401).json({ success: false, message: 'invalid credentials'})
@@ -126,8 +86,6 @@ exApp.post("/api/login", async (req, res) => {
         console.error('Error during login', error);
         return res.status(500).json({ success: false, message: 'internal server error' })
     }
-
-
 })
 
 exApp.post("/api/signup", async (req, res) => {
