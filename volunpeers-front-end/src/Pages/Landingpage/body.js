@@ -8,31 +8,29 @@ import CompanySection from '../../components/Companies/CompanySection.jsx';
 
 export const Body = () => {
   return (
-    <>
-      <html>
-        <HeroSection />
-        <body class="main-page">
-          <div class="cover-container">
-            <main role="main" class="inner-cover">
-              <h1 class="cover-heading">
-                Join VolunPeers: Unite for a Better World!
-              </h1>
-              <p class="lead">
-                Are you ready to turn your passion for the planet into impactful
-                action? <br></br>Introducing VolunPeers, the ultimate platform
-                connecting eager volunteers, <br></br>like yourself, with
-                organizations striving to make a positive change.<br></br>Be
-                part of something bigger. #VolunteerForChange and embark on a
-                rewarding #SustainabilityJourney! 💚🌏
-              </p>
-            </main>
-          </div>
-          <Opportunities />
-          <Description />
-          <CompanySection />
-        </body>
-      </html>
-    </>
+    <html>
+      <HeroSection />
+      <body class="main-page">
+        <div class="cover-container">
+          <main role="main" class="inner-cover">
+            <h1 class="cover-heading">
+              Join VolunPeers: Unite for a Better World!
+            </h1>
+            <p class="lead">
+              Are you ready to turn your passion for the planet into impactful
+              action? <br></br>Introducing VolunPeers, the ultimate platform
+              connecting eager volunteers, <br></br>like yourself, with
+              organizations striving to make a positive change.<br></br>Be part
+              of something bigger. #VolunteerForChange and embark on a rewarding
+              #SustainabilityJourney! 💚🌏
+            </p>
+          </main>
+        </div>
+        <Opportunities />
+        <Description />
+        <CompanySection />
+      </body>
+    </html>
   );
 };
 

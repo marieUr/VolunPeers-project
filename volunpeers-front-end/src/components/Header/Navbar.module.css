@@ -103,10 +103,15 @@ a:hover {
 }
 
 .profileText {
-  display: none;
+  display: flex;
   border: none;
   color: black;
   font-size: large;
+  background-color: transparent;
+}
+
+.username {
+  color: black;
 }
 
 .profileText img {
@@ -130,7 +135,7 @@ a:hover {
 /* media queries */
 @media screen and (max-width: 1220px) {
   header {
-    font-size: calc(8px + 1vmin);
+    font-size: calc(9px + 1vmin);
   }
   .navbar {
     gap: 30px;

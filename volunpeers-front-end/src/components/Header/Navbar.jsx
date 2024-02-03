@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useAuth } from './../Login/Login_Validation.js';
 import React from 'react';
 import styles from './Navbar.module.css';
 import { Link } from 'react-router-dom';
@@ -8,6 +9,7 @@ import { faLock } from '@fortawesome/free-solid-svg-icons';
 function Navbar() {
   //adding the states
   const [isActive, setIsActive] = useState(false);
+  const { isLoggedIn, user, handleLogout } = useAuth();
 
   //add active class
   const toggleActiveClass = () => {
@@ -19,6 +21,11 @@ function Navbar() {
     setIsActive(false);
   };
 
+  const getAccessToken = () => {
+    return localStorage.getItem('accessToken');
+  };
+  console.log('Access Token:', getAccessToken());
+  console.log('User:', user);
   return (
     <div className="App">
       <header className="App-header">
@@ -48,26 +55,38 @@ function Navbar() {
                 Volunteering Projects
               </Link>
             </li>
-            <li className={`${styles.profilePhoto}`} onClick={removeActive}>
-              <Link to="/profile">
-                <img
-                  src="https://randomuser.me/api/portraits/men/33.jpg"
-                  alt="User"
-                />
-                <span className={`${styles.profileText}`}>Profile</span>
-              </Link>
-            </li>
+
+            {getAccessToken() ? (
+              <li className={`${styles.profilePhoto}`} onClick={removeActive}>
+                <Link to="/profile">
+                  <img src={user ? user.profilePicture : ''} alt="User" />
+                  <span className={`${styles.username}`}>
+                    {user && user.name}
+                  </span>
+                  <span className={`${styles.profileText}`}>Profile</span>
+                </Link>
+                <div
+                  className="dropdown-menu"
+                  aria-labelledby="dropDownMenuButton"
+                >
+                  <Link className="dropdown-item" to="/" onClick={handleLogout}>
+                    Logout
+                  </Link>
+                </div>
+              </li>
+            ) : (
+              <li className={`${styles.profilePhoto}`} onClick={removeActive}>
+                <Link to="/Login" className={`${styles.navLink}`}>
+                  <button className={`${styles.profileText}`}>
+                    <p>
+                      <FontAwesomeIcon icon={faLock} size="1x" />
+                    </p>
+                    Login
+                  </button>
+                </Link>
+              </li>
+            )}
           </ul>
-          <div className="hidden" onClick={removeActive}>
-            <button className={`${styles.profileText}`}>
-              <Link to="/Login" className={`${styles.navLink}`}>
-                <p>
-                  <FontAwesomeIcon icon={faLock} size="1x" />
-                </p>
-                Login
-              </Link>
-            </button>
-          </div>
           <div
             className={`${styles.hamburger} ${isActive ? styles.active : ''}`}
             onClick={toggleActiveClass}
