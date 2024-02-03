@@ -54,9 +54,14 @@ export const Login = () => {
          })
          if (!response.ok) {
           throw new Error('login failed')
-         } else {
-          // can add some random success logic here
          }
+
+         // extract token from the response from the server
+         const {token} = await response.json()
+
+         // stores the token in local storage
+
+         localStorage.setItem('token', token);
       }
       // catching to see if the login is failing, will not be a console log but an error
       catch(error) {
