@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
 import '../../App.css'; // Import the main styling, shared CSS file
 import '../Signup/Signup.css'; // Import the user profile styling
-import email_icon from "../Assets/email.png";
-import password_icon from "../Assets/password.png";
+import { MdEmail } from "react-icons/md";
+import { RiLockPasswordFill } from "react-icons/ri";
+import { FaUser } from "react-icons/fa";
+import { IoLocation } from "react-icons/io5";
+import { MdHomeWork } from "react-icons/md";
+
+
+
 
 
 export const Signup = () => {
@@ -16,6 +22,8 @@ export const Signup = () => {
         email: "",
         password: ""
       });  
+
+      const [isCompany, setIsCompany] = useState(null);
     
       const handleChange = (event) => {
         const { name, value } = event.target;
@@ -39,6 +47,10 @@ export const Signup = () => {
           });
         }
       };
+
+      const handleRadioChange = (event) => {
+        setIsCompany(event.target.id === 'Option1');
+    };
     
       const handleSignup = async () => {
         
@@ -75,29 +87,70 @@ export const Signup = () => {
       };
     
     return (
-        <div className="container">
+        <div className="signupContainer">
             <div className="header">
                 <div className="box">
                     <div className="inputs">
                         <div className="input">
-                            <img src={email_icon} alt="Email.Icon"/>
-                            <input type="Email-Adress" placeholder='Email'
+                        <FaUser className='iconWhite' />
+                            <input type="text" placeholder='First name' required
+                             name='vorname'
+                             value={values.vorname}
+                             onChange={handleChange}/>
+                        </div>
+                        <div className="input">
+                        <FaUser className='iconWhite' />
+                            <input type="text" placeholder='Surname' required
+                             name='nachname'
+                             value={values.nachname}
+                             onChange={handleChange}/>
+                        </div>
+                        <div className="input">
+                        <MdEmail className="iconWhite" />
+                            <input type="email" placeholder='Email' required
                              name='email'
                              value={values.email}
                              onChange={handleChange}/>
                         </div>
-                        <div className="error-message">{errors.email}</div>
+                        {/* <div className="error-message">{errors.email}</div> */}
                         <div className="input">
-                            <img src={password_icon} alt="Passwort"/>
-                            <input type="Passwort" placeholder='Password'
+                        <RiLockPasswordFill className="iconWhite" />
+                            <input type="Password" placeholder='Password' required
                               name='password'
                               value={values.password}
                               onChange={handleChange} />
                         </div>
-                            <div className="error-message">{errors.password}</div>
+                            {/* <div className="error-message">{errors.password}</div> */}
                         
                     </div>
-                    <div className="Signup_Container">
+                    <div className="companyField"><p>Are you a company?</p></div>
+                    <div className="companyContainer">
+                      <div className="radio">
+                        <input type="radio" name='radio' id='Option1' onChange={handleRadioChange}/>
+                        <label htmlFor="Option1" className='label1'><span>Yes</span>
+                        </label>
+                      </div>
+                      <div className="radio">
+                        <input type="radio" name='radio' id='Option2' onChange={handleRadioChange} />
+                        <label htmlFor="Option2" className='label2'><span>No</span>
+                        </label>
+                      </div>
+                    </div>
+                    {isCompany && (
+                      <div className="additionalFields">
+                        <div className="inputs">
+                          <div className="input">
+                          <MdHomeWork className='iconWhite'/>
+                            <input type="text" placeholder='Name of company' required/>
+                          </div>
+                          <div className="input">
+                          <IoLocation className='iconWhite'/>
+                            <input type="text" placeholder='Location' required />
+                          </div>
+                        </div>
+                        </div>
+                      )}
+                    <div className="SignupBox">
                     <div className="button"><button onClick={handleSignup}><span>Signup</span></button></div>
                 </div>
                 </div>

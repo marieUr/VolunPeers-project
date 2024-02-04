@@ -3,8 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from './Login_Validation.js';
 import '../../App.css'; // Import the main styling, shared CSS file
 import '../Login/Login.css'; // Import the user profile styling
-import email_icon from '../Assets/email.png';
-import password_icon from '../Assets/password.png';
+// import email_icon from '../Assets/email.png';
+// import password_icon from '../Assets/password.png';
+import { MdEmail } from "react-icons/md";
+import { RiLockPasswordFill } from "react-icons/ri";
+
+
+
 
 export const Login = () => {
   const [values, setValues] = useState({
@@ -94,7 +99,7 @@ export const Login = () => {
         <div className="box">
           <div className="inputs">
             <div className="input">
-              <img src={email_icon} alt="Email Icon" />
+            <MdEmail className="iconWhite" />
               <input
                 type="text"
                 placeholder="Email"
@@ -105,10 +110,10 @@ export const Login = () => {
             </div>
             <div className="error-message">{errors.email}</div>
             <div className="input">
-              <img src={password_icon} alt="Password Icon" />
+            <RiLockPasswordFill className="iconWhite" />
               <input
                 type="password"
-                placeholder="Password"
+                placeholder="Password" 
                 name="password"
                 minLength={8}
                 required
@@ -118,13 +123,13 @@ export const Login = () => {
             </div>
             <div className="error-message">{errors.password}</div>
           </div>
-          <div className="Login_Container">
+          <div className="LoginContainer">
             <div className="button">
               <button onClick={handleLoginClick}>
                 <span>Login</span>
               </button>
             </div>
-            <div className="passwort_vergessen">
+            <div className="passwortVergessen">
               Forgot Password? <span>Click here to reset!</span>
             </div>
           </div>

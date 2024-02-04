@@ -44,19 +44,19 @@
     -webkit-text-fill-color: white !important; /* Textfarbe, wenn ausgefüllt */
   }
 
-.input img {
-    margin: 0px 35px;
-}
-
 .input input {
     height: 50px;
     width: 300px;
     background: transparent;
     border: none;
     outline: none;
-    font-size: 20px;
+    font-size: 18px;
     color: white;
+    margin-left: 20px;
 }
+
+.input input::placeholder {
+    color: white; }
 
 .button {
     margin-top: 20px;
@@ -76,12 +76,12 @@
     font-size: 15px;
 }
 
-.passwort_vergessen {
+.passwortVergessen {
     font-size: 12px;
     margin-top: 3px;
 }
 
-.passwort_vergessen span {
+.passwortVergessen span {
     color: #78BA3B;
     cursor: pointer;
 } 
@@ -93,3 +93,10 @@
     padding: 20px;
 }
 
+
+.iconWhite {
+    color: white;
+    margin-left: 25px;
+    font-size: 25px;
+  }
+  

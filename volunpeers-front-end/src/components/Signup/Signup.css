@@ -1,9 +1,9 @@
-.container {
+.signupContainer {
     display: flex;
     flex-direction: column;
     margin: auto;
-    margin-top: 60px;
-    margin-bottom: 60px;
+    margin-top: 20px;
+    margin-bottom: 70px;
 }
 
 .header {
@@ -31,19 +31,16 @@
     display: flex;
     align-items: center;
     margin: auto;
-    width: 400px;
+    width: 380px;
     height: 60px;
     background-color:#336699 ;
     border: 1px solid;
     border-radius: 20px;
 }
 
-.input img {
-    margin: 0px 35px;
-}
 
 .input input {
-    height: 50px;
+    height: 45px;
     width: 300px;
     background: transparent;
     border: none;
@@ -53,8 +50,8 @@
 }
 
 .input input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 30px #336699 inset !important; /* Hintergrundfarbe, wenn ausgefüllt */
-    -webkit-text-fill-color: white !important; /* Textfarbe, wenn ausgefüllt */
+    -webkit-box-shadow: 0 0 0 30px #336699 inset !important;
+    -webkit-text-fill-color: white !important;
   }
 
 .button button {
@@ -70,9 +67,33 @@
     font-size: 15px;
 }
 
-.box {
+/* .box {
     border: 2px solid #78BA3B;
     border-radius: 15px 0px;
     padding: 20px;
+} */
+
+.iconWhite {
+    color: white;
+    margin-left: 25px;
+    font-size: 25px;
+  }
+
+  .companyField p {
+    color: black;
+    font-size: 15px;
+    margin-top: 25px;
+  }
+
+  .additionalFields {
+    margin-top: 25px;
+  }
+
+  
+.companyContainer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 5px;
 }
 
