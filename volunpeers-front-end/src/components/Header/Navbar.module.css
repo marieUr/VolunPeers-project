@@ -13,7 +13,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: calc(12px + 1vmin);
+  font-size: calc(13px + 1vmin);
   background-color: #f0f2f5;
   -webkit-box-shadow: 0px 0px 20px 5px #e1e1e1;
   box-shadow: 0px 0px 20px 5px #e1e1e1;
@@ -22,16 +22,40 @@ header {
   transition-duration: 0.1s;
 }
 
+header button {
+  font-family: 'Roboto';
+  border: none;
+  background-color: transparent;
+  color: black;
+  font-weight: 600;
+  font-size: large;
+  cursor: pointer;
+  padding: 8px;
+  transition: 0.4s;
+}
+
+header button:hover {
+  color: var(--ButtonColour);
+  cursor: pointer;
+}
+
+.profileLinkContainer {
+  display: flex;
+  align-items: center;
+}
+
 ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  font-family: 'Roboto';
 }
 
 li {
-  display: inline;
+  display: inline-block;
   position: relative;
 }
+
 li.profilePhoto ::before {
   content: none;
 }
@@ -60,11 +84,7 @@ a {
   font-weight: 600;
   padding: 8px;
   transition: 0.4s;
-}
-
-.profileText p {
-  display: inline-block;
-  padding-right: 5px;
+  cursor: pointer;
 }
 
 a:hover {
@@ -85,43 +105,50 @@ a:hover {
   left: 0;
   display: flex;
   padding: 10px 20px;
-  justify-content: center;
+  justify-content: space-between;
   gap: 40px;
   min-height: 70px;
 }
 
+.navbar p {
+  padding: 10px 10px;
+}
+
 /* Profile in the Menu when user is logged in */
-.profilePhoto img {
-  flex: 1; /* Take up 50% of the space */
-  margin-right: 20px;
-  max-width: 90px;
+.navbar .profilePhoto {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navLink {
   display: flex;
   align-items: center;
-  justify-content: center;
-  border-radius: 60%;
-  transition: 0.3s;
 }
 
-.profileText {
+.navbar .profileText {
   display: flex;
-  border: none;
-  color: black;
-  font-size: large;
-  background-color: transparent;
+  align-items: center;
 }
 
-.username {
-  color: black;
-}
-
-.profileText img {
-  margin-right: 5px;
+.userIcon {
+  border: 2px solid #3d4242;
+  border-radius: 49%;
+  padding: 8px;
+  background-color: #edf0ef;
+  flex: 1; /* Take up 50% of the space */
   vertical-align: -5px;
+  max-width: 90px;
+  margin-right: 5px;
 }
 
-.profilePhoto img:hover {
-  opacity: 0.9;
-  transition: 0.3s;
+.navbar .profileText:hover {
+  color: var(--ButtonColour);
+  cursor: pointer;
+}
+
+.userIcon:hover {
+  border-color: var(--mainColor);
+  background-color: #28615e;
 }
 
 /* ul  */
@@ -130,6 +157,10 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   gap: 40px;
+}
+
+ul li a.active {
+  color: #00a8ff;
 }
 
 /* media queries */
@@ -147,7 +178,10 @@ a:hover {
 
 @media screen and (max-width: 1112px) {
   header {
-    font-size: calc(7px + 1vmin);
+    font-size: calc(10px + 1vmin);
+  }
+  .profileText {
+    font-size: calc(11px + 1vmin);
   }
 }
 
@@ -156,6 +190,11 @@ a:hover {
   .hamburger {
     display: block;
     cursor: pointer;
+  }
+
+  header .navbar .profileText {
+    display: inline;
+    font-size: calc(13px + 1vmin);
   }
 
   .bar {
@@ -213,10 +252,6 @@ a:hover {
     left: 0;
   }
   /* Profile in the Menu when user is logged in */
-  .profilePhoto img {
-    display: none !important;
-    width: 0px;
-  }
 
   .profilePhoto a {
     overflow: hidden;

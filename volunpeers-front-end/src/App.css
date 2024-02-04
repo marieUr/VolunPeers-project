@@ -26,13 +26,16 @@ body {
   background: var(--cream);
 }
 
-.App {
+App {
   display: flex;
   flex-direction: column;
+  font-family: 'Roboto';
 }
+
 html {
   background: #f9f8f8;
 }
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
