@@ -67,11 +67,12 @@
     font-size: 15px;
 }
 
-/* .box {
+.box {
     border: 2px solid #78BA3B;
-    border-radius: 15px 0px;
+    border-radius: 20px 45px 45px 45px;
     padding: 20px;
-} */
+}
+
 
 .iconWhite {
     color: white;
