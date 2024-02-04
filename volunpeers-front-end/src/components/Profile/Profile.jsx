@@ -31,6 +31,7 @@ const Profile = () => {
     } else {
       // Select the button
       setSelectedButtons([...selectedButtons, buttonText]);
+      console.log(selectedButtons)
     }
   };
 
@@ -70,72 +71,72 @@ const Profile = () => {
 
     updatedLists[checklistIndex] = checklist;
     setCheckedLists(updatedLists);
+    console.log(checkedLists)
   };
 
 
   return (
     <div className="profile-container">
-      <div className="grey-box">
-        <h2 className="profile-title">Your Profile</h2>
+      <div className="blue-box">
+        <h2 className="profile-title">My Profile</h2>
 
         <div className="white-box">
           <div className="profile-photo">
-            <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="User" />
+            <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="User's default photo" />{/* functionality to be added: when clicked, user selects a new picture */}
           </div>
 
           <div className="personal-info-content">
             <h3 class="title-h3">Personal Information</h3>
             <div className="info-field">
               <span class="span-info">First Name:</span>
-              <input type="text" defaultValue="John" contenteditable />
+              <input type="text"  />
             </div>
             <div className="info-field">
               <span class="span-info">Last Name:</span>
-              <input type="text" defaultValue="Doe" contenteditable />
+              <input type="text"  />
             </div>
             <div className="info-field">
               <span class="span-info">City:</span>
-              <input type="text" defaultValue="Paris" contenteditable />
+              <input type="text"  />
             </div>
             <div className="info-field">
               <span class="span-info">Country:</span>
-              <input type="text" defaultValue="France" rcontenteditable />
+              <input type="text"  />
             </div>
             <div className="info-field">
               <span class="span-info">Postal code:</span>
-              <input type="text" defaultValue="92130" contenteditable />
+              <input type="text"  />
             </div>
             <div className="info-field">
               <span class="span-info">Email:</span>
-              <input type="email" defaultValue="john.doe@example.com" contenteditable />
+              <input type="email"  />
             </div>
             <div className="info-field">
               <span class="span-info">Phone number:</span>
-              <input type="tel" defaultValue="+3034567890" contenteditable />
+              <input type="tel"  />
             </div>
             <div className="info-field">
               <span class="span-info">LinkedIn profile:</span>
-              <input type="url" defaultValue="https://linkedin.com/in/johndoe" contenteditable />
+              <input type="url"  />
             </div>
           </div>
         </div>
 
         <div className="white-box about-you-content">
-          <h3 class="title-h3">About You</h3>
+          <h3 class="title-h3">About Me</h3>
           <div className="info-field answer-text">
             <span class="span-about">Describe yourself to an organization in 3-4 sentences:</span>
             <textarea
-              defaultValue="Hello! I'm 32 years old, fueled by a passion for giving back. You'll often find me exploring the great outdoors, or experimenting in the kitchen. With a background in environmental science and a knack for data analysis, I envision using my research and problem-solving skills to contribute meaningfully as a volunteer. Let's embark on this journey together and make a difference!"
-              contenteditable/>
+              />
           </div>
           <div className="info-field answer-text">
             <span class="span-about">What languages do you speak? (Separate the languages you are fluent in with commas)</span>
-            <input type="text" defaultValue="French, English" contenteditable />
+            <input type="text"  />
           </div>
         </div>
 
         <div className="white-box availability-content">
-          <h3 class="title-h3">Your Availability</h3>
+          <h3 class="title-h3">Availability</h3>
           <div className="availability-field">
             <span class="span-about">When?</span>
             <div className="availability-buttons">
@@ -161,7 +162,7 @@ const Profile = () => {
           </div>
           <div className="availability-field answer-text">
             <span class="span-availability">Where? (Separate your desired locations with commas) </span>
-            <input type="text" defaultValue="Paris, Rouen, Amiens" contenteditable />
+            <input type="text"  />
           </div>
         </div>
 
@@ -189,7 +190,11 @@ const Profile = () => {
 
         </div>
         </div>
-    </div>
+        <button className="save-button">
+        Save
+        </button>
+        </div>
+ 
     </div>
   );
 };

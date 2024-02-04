@@ -1,4 +1,4 @@
-.grey-box {
+.blue-box {
   background-color:  rgba(86, 142, 159, 0.916);
   font-family: 'Roboto', Helvetica;
   padding: 20px;
@@ -12,12 +12,10 @@
   min-height: 100vh;
 }
 
-/* body{
-  background-color: var(--TextColorSecondary);
-} */
 
 .title-h3{
   font-family: 'Roboto', Helvetica;
+  font-size: 21px;
   color: var(--TextColor);
   text-align: left;
 }
@@ -39,7 +37,9 @@
 /* Personal info css */
 
 .profile-title {
-  color: var(--TextColor);
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
 }
 
 .profile-photo {
@@ -53,12 +53,17 @@
 .profile-photo img {
   max-width: 100%; 
   border-radius: 50%;
+  cursor: pointer;
+}
+
+.profile-photo img:hover{
+  border: 4px solid var(--mainColor);
 }
 
 .personal-info-content {
   flex: 1; /* Take up 50% of the space */
   text-align: center; 
-  border: 2px solid #78BA3B;
+  border: 3px solid var(--highlightColor);
   border-radius: 15px 0px;
   padding: 20px;
 }
@@ -68,7 +73,6 @@
 .info-field {
   display: flex;
   justify-content: end;
-  /* align-items: center; */
   text-align: left;
   font-family: 'Roboto', Helvetica;
 
@@ -82,7 +86,7 @@
 
 .white-box .title-h3 {
   margin-bottom: 15px; 
-  font-size: 18px; 
+  font-size: 21px; 
 }
 
 /* About you css */
@@ -116,14 +120,16 @@
   margin-bottom: 15px;
 }
 
+/* Availability Buttons */
+
 .availability-buttons {
   display: flex;
   justify-content: center;
 }
 
 .availability-buttons button {
-    background-color: var(--mainColorLight);
-    color: var(--TextColor);
+    background-color: var(--highlightColor);
+    color: white;
     margin-right: 5px;
     border: none;
     border-radius: 10px;
@@ -131,12 +137,19 @@
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
     font-family: 'Roboto', Helvetica;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.availability-buttons button:hover {
+  background-color: var(--mainColorLight);
+  color: var(--TextColor);
 }
 
 /* Button is clicked */
 .availability-buttons button.clicked-button {
-  background-color: var(--highlightColor);
-  color: var(--TextColor);
+  background-color: var(--mainColor);
+  color: white;
   border: thin solid var(--TextColor);
 }
 
@@ -170,7 +183,7 @@
 
 .checkList {
   margin: 20px;
-  border: 2px solid #78BA3B;
+  border: 3px solid var(--highlightColor);
   border-radius: 15px 0px;
   padding: 30px;
   min-width: 350px;
@@ -199,5 +212,26 @@
 }
 
 .not-checked-item {
+  color: var(--TextColor);
+}
+
+/* Save Button */
+
+.save-button {
+  background-color: var(--highlightColor);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 20px 32px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-family: 'Roboto', Helvetica;
+  font-size: 25px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.save-button:hover {
+  background-color: var(--mainColorLight);
   color: var(--TextColor);
 }
