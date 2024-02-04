@@ -40,8 +40,8 @@
 }
 
 .input input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 30px #336699 inset !important; /* Hintergrundfarbe, wenn ausgefüllt */
-    -webkit-text-fill-color: white !important; /* Textfarbe, wenn ausgefüllt */
+    -webkit-box-shadow: 0 0 0 30px #336699 inset !important; 
+    -webkit-text-fill-color: white !important;
   }
 
 .input input {
