@@ -9,7 +9,7 @@ function CompanySection() {
       <div className="CompaniesSection">
         <h2>
           <span className="GreenText">Companies</span> that are <br></br>part of
-          - <italic>our</italic> - mission
+          - our - mission
         </h2>
       </div>
       <div className="CompanySectionIcons">

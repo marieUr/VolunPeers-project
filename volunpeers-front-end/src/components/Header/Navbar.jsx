@@ -2,11 +2,12 @@ import { useState } from 'react';
 import { useAuth } from './../Login/Login_Validation.js';
 import React from 'react';
 import styles from './Navbar.module.css';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-regular-svg-icons';
 
-function Navbar() {
+export function Navbar() {
   //adding the states
   const [isActive, setIsActive] = useState(false);
   const { isLoggedIn, user, handleLogout } = useAuth();
@@ -36,44 +37,59 @@ function Navbar() {
         <nav className={`${styles.navbar}`}>
           <ul className={`${styles.navMenu} ${isActive ? styles.active : ''}`}>
             <li onClick={removeActive}>
-              <Link to="/" className={`${styles.navLink}`}>
+              <NavLink to="/" className={`${styles.navLink}`}>
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li onClick={removeActive}>
-              <Link to="/about" className={`${styles.navLink}`}>
+              <NavLink to="/about" className={`${styles.navLink}`}>
                 About us
-              </Link>
+              </NavLink>
             </li>
             <li onClick={removeActive}>
-              <Link to="/donations" className={`${styles.navLink}`}>
+              <NavLink to="/donations" className={`${styles.navLink}`}>
                 Donations
-              </Link>
+              </NavLink>
             </li>
             <li onClick={removeActive}>
-              <Link to="/volunteering-projects" className={`${styles.navLink}`}>
+              <NavLink
+                to="/volunteering-projects"
+                className={`${styles.navLink}`}
+              >
                 Volunteering Projects
-              </Link>
+              </NavLink>
             </li>
-
             {getAccessToken() ? (
-              <li className={`${styles.profilePhoto}`} onClick={removeActive}>
-                <Link to="/profile">
-                  <img src={user ? user.profilePicture : ''} alt="User" />
-                  <span className={`${styles.username}`}>
-                    {user && user.name}
-                  </span>
-                  <span className={`${styles.profileText}`}>Profile</span>
-                </Link>
-                <div
-                  className="dropdown-menu"
-                  aria-labelledby="dropDownMenuButton"
-                >
-                  <Link className="dropdown-item" to="/" onClick={handleLogout}>
-                    Logout
+              <>
+                <li className={`${styles.profilePhoto}`} onClick={removeActive}>
+                  <Link
+                    to="/profile"
+                    className={`${styles.profileLinkContainer}`}
+                  >
+                    <FontAwesomeIcon
+                      className={`${styles.userIcon}`}
+                      icon={faUser}
+                      size="1x"
+                    />
+                    <span className={`${styles.username}`}>
+                      {user && user.name}
+                    </span>
+                    <span className={`${styles.profileText}`}>Profile</span>
                   </Link>
-                </div>
-              </li>
+                </li>
+                <li className={`${styles.profilePhoto}`} onClick={removeActive}>
+                  <Link to="/" className={`${styles.navLink}`}>
+                    <button
+                      className={`${styles.logoutButton}`}
+                      to="/"
+                      type="button"
+                      onClick={handleLogout}
+                    >
+                      Logout
+                    </button>
+                  </Link>
+                </li>
+              </>
             ) : (
               <li className={`${styles.profilePhoto}`} onClick={removeActive}>
                 <Link to="/Login" className={`${styles.navLink}`}>
@@ -81,7 +97,7 @@ function Navbar() {
                     <p>
                       <FontAwesomeIcon icon={faLock} size="1x" />
                     </p>
-                    Login
+                    <span className={`${styles.loginButton}`}>Login</span>
                   </button>
                 </Link>
               </li>

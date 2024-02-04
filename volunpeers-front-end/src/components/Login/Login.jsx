@@ -74,7 +74,7 @@ export const Login = () => {
       localStorage.setItem('token', token);
 
       // Redirect the user to another page (e.g., dashboard) after successful login
-      navigate('/home');
+      navigate('/');
     } catch (error) {
       // Catching to see if the login is failing, will not be a console log but an error
       console.error('error logging in:', error);

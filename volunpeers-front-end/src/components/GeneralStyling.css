@@ -1,17 +1,21 @@
-.Placeholder-Section h1 {
+h1 {
   font-size: 2.8em;
 }
 
-.Placeholder-Section h2 {
+h2 {
   font-size: 2em;
 }
 
-.Placeholder-Section h3 {
+h3 {
   font-size: 28px;
 }
 
-.Placeholder-Section h4 {
+h4 {
   font-size: 24px;
+}
+
+a {
+  cursor: pointer;
 }
 
 /* Placeholder Elements */

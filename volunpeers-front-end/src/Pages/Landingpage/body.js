@@ -8,9 +8,9 @@ import CompanySection from '../../components/Companies/CompanySection.jsx';
 
 export const Body = () => {
   return (
-    <html>
-      <HeroSection />
-      <body class="main-page">
+    <>
+      <div class="main-page">
+        <HeroSection />
         <div class="cover-container">
           <main role="main" class="inner-cover">
             <h1 class="cover-heading">
@@ -29,8 +29,8 @@ export const Body = () => {
         <Opportunities />
         <Description />
         <CompanySection />
-      </body>
-    </html>
+      </div>
+    </>
   );
 };
 
