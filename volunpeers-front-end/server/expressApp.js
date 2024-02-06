@@ -25,6 +25,7 @@ const exApp = express()
 const port = process.env.port || 3001
 
 // middleware
+
 exApp.use(express.json())
 exApp.use(bodyParser.json())
 
@@ -71,7 +72,6 @@ exApp.post("/api/login", async (req, res) => {
                 process.env.JWT_SECRET_KEY = secretKey;
             }
             const token = jwt.sign({
-                _id: "",
                 userId: user._id, 
                 email: user.email
             }, secretKey, {expiresIn: '1h'});
@@ -111,7 +111,7 @@ exApp.post("/api/signup", async (req, res) => {
 
 })
 
-exApp.get("/api/profile/:id", verifyToken, async (req, res) => {
+exApp.get("/api/profile/:userId", async (req, res) => {
     // access the token
     const decodedToken = req.decoded;
 
@@ -160,5 +160,24 @@ exApp.patch("/api/profile/:id", async (req, res) => {
       } catch (error) {
         console.error('Error updating user profile:', error);
         res.status(500).json({ error: 'Internal server error' });
+    }
+})
+
+exApp.get("/api/usercreds", verifyToken, async (req, res) => {
+    try {
+        const {userId} = req.decoded;
+        const objectId = new ObjectId(userId);
+        const user = await db.collection('users').findOne({ _id: objectId})
+
+        console.log(req.decoded)
+        if (!user) {
+            return res.status(404).json({ message: 'User not found'})
+        }
+
+        // return user data in response
+        res.status(200).json(user);
+    } catch (error) {
+        console.error(`Error fetching user data: ${error}`)
+        res.status(500).json({ error: 'Internal server error '})
     }
 })

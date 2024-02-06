@@ -1,5 +1,5 @@
 // AuthContext.js
-import React from 'react';
+import React, { useEffect } from 'react';
 import { createContext, useContext, useState } from 'react';
 
 const AuthContext = createContext();
@@ -8,19 +8,46 @@ export const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setLoggedUser] = useState(null);
 
-  const handleLogin = (token, username) => {
+  const handleLogin = (token) => {
     localStorage.setItem('accessToken', token);
     setIsLoggedIn(true);
-    setLoggedUser({
-      name: username,
-      profilePicture: 'https://randomuser.me/api/portraits/men/33.jpg',
-    });
-  };
+  }
+
+  useEffect(() => {
+    // fetch userdata when token gets accessed
+    const fetchUserData = async() => {
+      const token = localStorage.getItem('accessToken')
+      if (token) {
+        try {
+          const response = await fetch('/api/usercreds', 
+          {
+            method: 'GET',
+            headers: {
+              authorization: `Bearer ${token}`,
+            }
+          }
+        )
+        if (response.ok) {
+          const userData = await response.json();
+          setLoggedUser(userData);
+        } else {
+          // Handle error
+          console.error('Failed to fetch user data:', response.statusText);
+        }
+        } catch(err) {
+        // handle fetch error
+        console.error(`Error fetching user data: ${err}`)
+        }
+      } 
+    }
+    fetchUserData();
+}, [isLoggedIn]);
 
   const handleLogout = () => {
     localStorage.removeItem('accessToken');
-    setIsLoggedIn(false);
     setLoggedUser(null);
+    setIsLoggedIn(false);
+
   };
 
   return (

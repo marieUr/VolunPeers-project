@@ -76,7 +76,7 @@ export const Login = () => {
       handleLogin(token);
 
       // Store the token in local storage
-      localStorage.setItem('token', token);
+      localStorage.setItem('accessToken', token);
 
       // Redirect the user to another page (e.g., dashboard) after successful login
       navigate('/');
