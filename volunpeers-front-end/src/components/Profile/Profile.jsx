@@ -22,9 +22,13 @@ const Profile = () => {
   const [description, setDescription] = useState('');
   const [languages, setLanguages] = useState('');
   const [locations, setLocations] = useState('');
+
   const [userId, setUserId] = useState('');
 
-  //const userId = '65ba70e4db270847a09b70a6'; //testing
+  //const userId = '65ba70e4db270847a09b70a6'; // testing
+
+  const [selectedPhoto, setSelectedPhoto] = useState(null); // Store selected photo for the user profile. 
+  //Functionality to be added: new picture is saved in db.
 
   // Define checkLists array and isChecked function
   const checkLists = [
@@ -185,16 +189,28 @@ const Profile = () => {
     console.log(checkedLists);
   };
 
+
+  const handlePhotoChange = (event) => {
+    // Get the selected file
+    const file = event.target.files[0];
+    // Do something with the selected file, like uploading it to the server or displaying it preview
+    setSelectedPhoto(file);
+  };
+
+
   return (
     <div className="profile-container">
       <div className="blue-box">
         <h2 className="profile-title">My Profile</h2>
 
         <div className="white-box">
-          <div className="profile-photo">
-            <FontAwesomeIcon class="profile-icon" icon={faUser} size="1x" />
-            {/* functionality to be added: when clicked, user selects a new picture */}
+          <div className="profile-photo" onClick={() => document.getElementById('photoInput').click()}>
+          {selectedPhoto  && typeof selectedPhoto === 'object' ? (
+              <img src={URL.createObjectURL(selectedPhoto)} alt="Selected Photo" />
+            ) : (
+          <FontAwesomeIcon className="profile-icon" icon={faUser} size="1x"/>)}
           </div>
+          <input id="photoInput" type="file" accept="image/*" style={{ display: 'none' }} onChange={handlePhotoChange} />
 
           <div className="personal-info-content">
             <h3 class="title-h3">Personal Information</h3>
@@ -364,13 +380,15 @@ const Profile = () => {
                   ))}
                 </div>
               </div>
-            ))}
-          </div>
+          ))}
+
+        </div>
         </div>
         <button className="save-button" onClick={handleSaveProfile}>
           Save
         </button>
-      </div>
+        </div>
+ 
     </div>
   );
 };
