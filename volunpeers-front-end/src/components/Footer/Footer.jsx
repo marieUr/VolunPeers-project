@@ -19,26 +19,26 @@ export const Footer = () => {
         <div className="sb__footer-links">
           <div className="sb__footer-links_div">
             <h4>For Companies</h4>
-            <Link to="/profile">
-              <p>One</p>
+            <Link to="/">
+              <p>Participating</p>
             </Link>
-            <Link to="/profile">
-              <p>Two</p>
+            <Link to="/">
+              <p>Legal Information</p>
             </Link>
-            <Link to="/profile">
-              <p>Three</p>
+            <Link to="/">
+              <p>Press</p>
             </Link>
           </div>
           <div className="sb__footer-links_div">
             <h4>For Volunteers</h4>
-            <Link to="/profile">
-              <p>One</p>
+            <Link to="/">
+              <p>Joining VolunPeers</p>
             </Link>
-            <Link to="/profile">
-              <p>Two</p>
+            <Link to="/">
+              <p>Disclosure</p>
             </Link>
-            <Link to="/profile">
-              <p>Three</p>
+            <Link to="/">
+              <p>Advice and Tips</p>
             </Link>
           </div>
           <div className="sb__footer-links_div">

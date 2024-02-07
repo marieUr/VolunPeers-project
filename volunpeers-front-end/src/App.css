@@ -34,6 +34,7 @@ App {
 
 html {
   background: #f9f8f8;
+  scrollbar-width: thin;
 }
 
 code {

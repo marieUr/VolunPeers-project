@@ -29,16 +29,31 @@ const Profile = () => {
   // Define checkLists array and isChecked function
   const checkLists = [
     {
-      title: "Environment & Conservation",
-      items: ["Animals & Wildlife", "Environment & Conservation", "Farming & Agriculture", "Marine Conservation"],
+      title: 'Environment & Conservation',
+      items: [
+        'Animals & Wildlife',
+        'Environment & Conservation',
+        'Farming & Agriculture',
+        'Marine Conservation',
+      ],
     },
     {
-      title: "Humanitarian Aid",
-      items: ["Childcare & Daycare Support", "Healthcare", "Special Needs", "Education"],
+      title: 'Humanitarian Aid',
+      items: [
+        'Childcare & Daycare Support',
+        'Healthcare',
+        'Special Needs',
+        'Education',
+      ],
     },
     {
-      title: "Community Services",
-      items: ["Building & Construction", "Community Development", "Culture & Arts", "Human & Women's Rights"],
+      title: 'Community Services',
+      items: [
+        'Building & Construction',
+        'Community Development',
+        'Culture & Arts',
+        "Human & Women's Rights",
+      ],
     },
   ];
 
@@ -82,7 +97,6 @@ const Profile = () => {
       console.error('Error fetching user information:', error);
     }
   };
-  
 
   const handleSaveProfile = async () => {
     try {
@@ -91,7 +105,7 @@ const Profile = () => {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({
           firstname,
@@ -106,7 +120,7 @@ const Profile = () => {
           languages,
           locations,
           selectedButtons,
-          checkLists
+          checkLists,
         }),
       });
       if (response.ok) {
@@ -121,8 +135,6 @@ const Profile = () => {
     }
   };
 
-
-
   const handleButtonClick = (buttonText) => {
     if (selectedButtons.includes(buttonText)) {
       // Deselect the button
@@ -130,19 +142,19 @@ const Profile = () => {
     } else {
       // Select the button
       setSelectedButtons([...selectedButtons, buttonText]);
-      console.log(selectedButtons)
+      console.log(selectedButtons);
     }
   };
 
   const isChecked = (item) => {
     for (let i = 0; i < checkedLists.length; i++) {
-        const checkedList = checkedLists[i];
-        if (checkedList.includes(item)) {
-            return "checked-item";
-        }
+      const checkedList = checkedLists[i];
+      if (checkedList.includes(item)) {
+        return 'checked-item';
+      }
     }
-    return "not-checked-item";
-};
+    return 'not-checked-item';
+  };
 
   const handleCheck = (event, checklistIndex) => {
     if (totalSelected >= 5 && !event.target.checked) {
@@ -158,9 +170,9 @@ const Profile = () => {
         // Allow selection only if totalSelected is less than 3
         checklist.push(event.target.value);
         setTotalSelected(totalSelected + 1);
-      }else {
+      } else {
         // Display message if user attempts to select more than 5 items
-        alert("You can select up to 5!");
+        alert('You can select up to 5!');
       }
     } else {
       const index = checklist.indexOf(event.target.value);
@@ -170,9 +182,8 @@ const Profile = () => {
 
     updatedLists[checklistIndex] = checklist;
     setCheckedLists(updatedLists);
-    console.log(checkedLists)
+    console.log(checkedLists);
   };
-
 
   return (
     <div className="profile-container">
@@ -181,42 +192,75 @@ const Profile = () => {
 
         <div className="white-box">
           <div className="profile-photo">
-          <FontAwesomeIcon class="profile-icon" icon={faUser} size="1x"/>{/* functionality to be added: when clicked, user selects a new picture */}
+            <FontAwesomeIcon class="profile-icon" icon={faUser} size="1x" />
+            {/* functionality to be added: when clicked, user selects a new picture */}
           </div>
 
           <div className="personal-info-content">
             <h3 class="title-h3">Personal Information</h3>
             <div className="info-field">
               <span class="span-info">First Name:</span>
-              <input type="text" value={firstname} onChange={(e) => setFirstName(e.target.value)}/>
+              <input
+                type="text"
+                value={firstname}
+                onChange={(e) => setFirstName(e.target.value)}
+              />
             </div>
             <div className="info-field">
               <span class="span-info">Last Name:</span>
-              <input type="text" value={lastname} onChange={(e) => setLastName(e.target.value)}/>
+              <input
+                type="text"
+                value={lastname}
+                onChange={(e) => setLastName(e.target.value)}
+              />
             </div>
             <div className="info-field">
               <span class="span-info">City:</span>
-              <input type="text" value={city} onChange={(e) => setCity(e.target.value)}/>
+              <input
+                type="text"
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
+              />
             </div>
             <div className="info-field">
               <span class="span-info">Country:</span>
-              <input type="text" value={country} onChange={(e) => setCountry(e.target.value)}/>
+              <input
+                type="text"
+                value={country}
+                onChange={(e) => setCountry(e.target.value)}
+              />
             </div>
             <div className="info-field">
               <span class="span-info">Postal code:</span>
-              <input type="text" value={postalCode} onChange={(e) => setPostalCode(e.target.value)}/>
+              <input
+                type="text"
+                value={postalCode}
+                onChange={(e) => setPostalCode(e.target.value)}
+              />
             </div>
             <div className="info-field">
               <span class="span-info">Email:</span>
-              <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </div>
             <div className="info-field">
               <span class="span-info">Phone number:</span>
-              <input type="tel" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)}/>
+              <input
+                type="tel"
+                value={phoneNumber}
+                onChange={(e) => setPhoneNumber(e.target.value)}
+              />
             </div>
             <div className="info-field">
               <span class="span-info">LinkedIn profile:</span>
-              <input type="url" value={linkedIn} onChange={(e) => setLinkedIn(e.target.value)}/>
+              <input
+                type="url"
+                value={linkedIn}
+                onChange={(e) => setLinkedIn(e.target.value)}
+              />
             </div>
           </div>
         </div>
@@ -224,12 +268,24 @@ const Profile = () => {
         <div className="white-box about-you-content">
           <h3 class="title-h3">About Me</h3>
           <div className="info-field answer-text">
-            <span class="span-about">Describe yourself to an organization in 3-4 sentences:</span>
-            <textarea value={description} onChange={(e) => setDescription(e.target.value)}/>
+            <span class="span-about">
+              Describe yourself to an organization in 3-4 sentences:
+            </span>
+            <textarea
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            />
           </div>
           <div className="info-field answer-text">
-            <span class="span-about">What languages do you speak? (Separate the languages you are fluent in with commas)</span>
-            <input type="text" value={languages} onChange={(e) => setLanguages(e.target.value)}/>
+            <span class="span-about">
+              What languages do you speak? (Separate the languages you are
+              fluent in with commas)
+            </span>
+            <input
+              type="text"
+              value={languages}
+              onChange={(e) => setLanguages(e.target.value)}
+            />
           </div>
         </div>
 
@@ -239,60 +295,84 @@ const Profile = () => {
             <span class="span-about">When?</span>
             <div className="availability-buttons">
               <button
-                className={selectedButtons.includes("Weekdays: Daytimes Monday-Friday") ? "clicked-button" : ""}
-                onClick={() => handleButtonClick("Weekdays: Daytimes Monday-Friday")}>
+                className={
+                  selectedButtons.includes('Weekdays: Daytimes Monday-Friday')
+                    ? 'clicked-button'
+                    : ''
+                }
+                onClick={() =>
+                  handleButtonClick('Weekdays: Daytimes Monday-Friday')
+                }
+              >
                 Weekdays: Daytimes Monday-Friday
               </button>
               <button
-                className={selectedButtons.includes("Weeknights: Evenings Monday-Friday") ? "clicked-button" : ""}
-                onClick={() => handleButtonClick("Weeknights: Evenings Monday-Friday")}>
+                className={
+                  selectedButtons.includes('Weeknights: Evenings Monday-Friday')
+                    ? 'clicked-button'
+                    : ''
+                }
+                onClick={() =>
+                  handleButtonClick('Weeknights: Evenings Monday-Friday')
+                }
+              >
                 Weeknights: Evenings Monday-Friday
               </button>
               <button
-                className={selectedButtons.includes("Weekends: Anytime Saturday-Sunday") ? "clicked-button" : ""}
-                onClick={() => handleButtonClick("Weekends: Anytime Saturday-Sunday")}>
+                className={
+                  selectedButtons.includes('Weekends: Anytime Saturday-Sunday')
+                    ? 'clicked-button'
+                    : ''
+                }
+                onClick={() =>
+                  handleButtonClick('Weekends: Anytime Saturday-Sunday')
+                }
+              >
                 Weekends: Anytime Saturday-Sunday
               </button>
             </div>
           </div>
           <div className="availability-field answer-text">
-            <span class="span-availability">Where? (Separate your desired locations with commas) </span>
-            <input type="text" value={locations} onChange={(e) => setLocations(e.target.value)}/>
+            <span class="span-availability">
+              Where? (Separate your desired locations with commas){' '}
+            </span>
+            <input
+              type="text"
+              value={locations}
+              onChange={(e) => setLocations(e.target.value)}
+            />
           </div>
         </div>
 
         <div className="last-box interests-content">
           <h3 class="title-h3">Interests</h3>
-            <div className="checkLists">
+          <div className="checkLists">
             {checkLists.map((checklist, index) => (
-            <div className="checkList" key={index}>
+              <div className="checkList" key={index}>
                 <div className="title">{checklist.title}</div>
                 <div className="list-container">
-                    {checklist.items.map((item, itemIndex) => (
-                        <div key={itemIndex}>
-                            <input
-                                value={item}
-                                type="checkbox"
-                                onChange={(event) => handleCheck(event, index)}
-                                checked={checkedLists[index].includes(item)}
-                            />
-                            <span className={isChecked(item)}>{item}</span>
-                          </div>
-                      ))}
-                  </div>
+                  {checklist.items.map((item, itemIndex) => (
+                    <div key={itemIndex}>
+                      <input
+                        value={item}
+                        type="checkbox"
+                        onChange={(event) => handleCheck(event, index)}
+                        checked={checkedLists[index].includes(item)}
+                      />
+                      <span className={isChecked(item)}>{item}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-          ))}
-
-        </div>
+            ))}
+          </div>
         </div>
         <button className="save-button" onClick={handleSaveProfile}>
-        Save
+          Save
         </button>
-        </div>
- 
+      </div>
     </div>
   );
 };
-
 
 export default Profile;

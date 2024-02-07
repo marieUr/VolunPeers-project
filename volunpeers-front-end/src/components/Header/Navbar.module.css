@@ -34,9 +34,10 @@ header button {
   transition: 0.4s;
 }
 
-header button:hover {
+header button :hover {
   color: var(--ButtonColour);
   cursor: pointer;
+  background-color: transparent;
 }
 
 .profileLinkContainer {
@@ -108,6 +109,7 @@ a:hover {
   justify-content: space-between;
   gap: 40px;
   min-height: 70px;
+  transition: 0.3s;
 }
 
 .navbar p {
@@ -117,17 +119,11 @@ a:hover {
 /* Profile in the Menu when user is logged in */
 .navbar .profilePhoto {
   display: flex;
-  justify-content: space-between;
-}
-
-.navLink {
-  display: flex;
   align-items: center;
 }
 
 .navbar .profileText {
-  display: flex;
-  align-items: center;
+  display: none !important;
 }
 
 .userIcon {
@@ -144,11 +140,6 @@ a:hover {
 .navbar .profileText:hover {
   color: var(--ButtonColour);
   cursor: pointer;
-}
-
-.userIcon:hover {
-  border-color: var(--mainColor);
-  background-color: #28615e;
 }
 
 /* ul  */
@@ -190,11 +181,24 @@ ul li a.active {
   .hamburger {
     display: block;
     cursor: pointer;
+    font-size: calc(13px + 1vmin);
   }
 
   header .navbar .profileText {
     display: inline;
-    font-size: calc(13px + 1vmin);
+  }
+
+  .navbar .profileText {
+    display: inline !important;
+  }
+
+  /* Hide Profilename of the Person and the Icon */
+  .username {
+    display: none;
+  }
+
+  .userIcon {
+    display: none;
   }
 
   .bar {

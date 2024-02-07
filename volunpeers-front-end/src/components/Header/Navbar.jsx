@@ -72,7 +72,7 @@ export function Navbar() {
                       size="1x"
                     />
                     <span className={`${styles.username}`}>
-                      {user && user.name}
+                      {user && user.name.split(' ')[0]}
                     </span>
                     <span className={`${styles.profileText}`}>Profile</span>
                   </Link>
@@ -93,7 +93,7 @@ export function Navbar() {
             ) : (
               <li className={`${styles.profilePhoto}`} onClick={removeActive}>
                 <Link to="/Login" className={`${styles.navLink}`}>
-                  <button className={`${styles.profileText}`}>
+                  <button className={`${styles.profilePhoto}`}>
                     <p>
                       <FontAwesomeIcon icon={faLock} size="1x" />
                     </p>

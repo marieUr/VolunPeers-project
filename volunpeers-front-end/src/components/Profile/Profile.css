@@ -1,5 +1,5 @@
 .blue-box {
-  background-color:  rgba(86, 142, 159, 0.916);
+  background-color: rgba(86, 142, 159, 0.916);
   font-family: 'Roboto', Helvetica;
   padding: 20px;
   padding: 20px;
@@ -8,19 +8,18 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column; /* Stack items vertically */
-  align-items: center; 
+  align-items: center;
   min-height: 100vh;
 }
 
-
-.title-h3{
+.title-h3 {
   font-family: 'Roboto', Helvetica;
   font-size: 21px;
   color: var(--TextColor);
   text-align: left;
 }
 
-.white-box{
+.white-box {
   font-family: 'Roboto', Helvetica;
   background-color: var(--TextColorSecondary);
   padding: 20px;
@@ -28,11 +27,10 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   width: 100%;
-  max-width: 800px; 
-  flex: 1; 
+  max-width: 800px;
+  flex: 1;
   display: flex;
 }
-
 
 /* Personal info */
 
@@ -44,7 +42,7 @@
 
 .personal-info-content {
   flex: 1; /* Take up 50% of the space */
-  text-align: center; 
+  text-align: center;
   border: 3px solid var(--highlightColor);
   border-radius: 15px 0px;
   padding: 20px;
@@ -55,32 +53,30 @@
   justify-content: end;
   text-align: left;
   font-family: 'Roboto', Helvetica;
-
 }
 
- .info-field .span-info {
+.info-field .span-info {
   margin-right: 10px;
   display: flex;
   justify-content: start;
 }
 
 .white-box .title-h3 {
-  margin-bottom: 15px; 
-  font-size: 21px; 
+  margin-bottom: 15px;
+  font-size: 21px;
 }
-
 
 /* Profile photo icon */
 
 .profile-photo {
   flex: 1; /* Take up 50% of the space */
-  margin-right: 20px; 
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.profile-icon{
+.profile-icon {
   padding: 20px 0px 20px 0px;
   color: grey;
   background-color: rgb(237, 235, 235);
@@ -89,19 +85,19 @@
   height: 150px;
   border: 4px solid rgba(34, 32, 32, 0.686);
   border-radius: 80%;
-  }
+}
 
-.profile-icon:hover{
+.profile-icon:hover {
   border: 4px solid var(--mainColor);
   color: #515151bd;
   background-color: var(--mainColorLight);
   cursor: pointer;
 }
 
-
 /* About you */
 
-.about-you-content, .answer-text{
+.about-you-content,
+.answer-text {
   text-align: left;
   align-items: center;
   display: block;
@@ -109,10 +105,10 @@
 
 .answer-text textarea,
 .answer-text input {
-  width: 100%; 
+  width: 100%;
   box-sizing: border-box; /* Include padding and border in the width */
   margin-top: 5px;
-  padding: 10px; 
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-family: 'Roboto', Helvetica;
@@ -138,17 +134,17 @@
 }
 
 .availability-buttons button {
-    background-color: var(--highlightColor);
-    color: white;
-    margin-right: 5px;
-    border: none;
-    border-radius: 10px;
-    padding: 20px 32px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-    font-family: 'Roboto', Helvetica;
-    font-size: 16px;
-    font-weight: 500;
+  background-color: var(--highlightColor);
+  color: white;
+  margin-right: 5px;
+  border: none;
+  border-radius: 10px;
+  padding: 20px 32px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-family: 'Roboto', Helvetica;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .availability-buttons button:hover {
@@ -163,10 +159,9 @@
   border: thin solid var(--TextColor);
 }
 
-
 /* Interests */
 
-.last-box{
+.last-box {
   font-family: 'Roboto', Helvetica;
   background-color: var(--TextColorSecondary);
   padding: 20px;
@@ -174,21 +169,18 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   width: 100%;
-  max-width: 800px;  
+  max-width: 800px;
 }
-
 
 .interests-content {
   text-align: left;
   align-items: center;
-
 }
 
-.checkLists{
+.checkLists {
   align-items: center;
   display: flex;
   flex-direction: column;
-
 }
 
 .checkList {
@@ -197,7 +189,7 @@
   border-radius: 15px 0px;
   padding: 30px;
   min-width: 350px;
-  max-width: 500px; 
+  max-width: 500px;
 }
 
 .title {
