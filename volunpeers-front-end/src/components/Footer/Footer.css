@@ -28,7 +28,7 @@
   margin-bottom: 2rem;
 }
 .sb__footer-links_div {
-  width: 205px;
+  width: 215px;
   margin: 0.8rem;
   display: flex;
   justify-content: flex-start;
@@ -74,6 +74,7 @@
   margin-right: 2rem;
   display: flex;
   justify-content: space-between;
+  gap: 10px;
 }
 
 .sb__footer-links_div h4 {

@@ -1,100 +1,101 @@
 .signupContainer {
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    margin-top: 20px;
-    margin-bottom: 70px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 70px;
 }
 
 .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
 }
 
 .header p {
-    color: #78BA3B;
-    font-size: 25px;
-    font-weight: 600;
+  color: #78ba3b;
+  font-size: 25px;
+  font-weight: 600;
 }
 
 .inputs {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 10px;
 }
 
 .input {
-    display: flex;
-    align-items: center;
-    margin: auto;
-    width: 380px;
-    height: 60px;
-    background-color:#336699 ;
-    border: 1px solid;
-    border-radius: 20px;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  width: 380px;
+  height: 60px;
+  background-color: #336699;
+  border: 1px solid;
+  border-radius: 20px;
 }
 
-
 .input input {
-    height: 45px;
-    width: 300px;
-    background: transparent;
-    border: none;
-    outline: none;
-    font-size: 20px;
-    color: white;
+  height: 45px;
+  width: 300px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  color: white;
 }
 
 .input input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 30px #336699 inset !important;
-    -webkit-text-fill-color: white !important;
-  }
-
-.button button {
-    height: 40px;
-    width: 400px;
-    border-radius: 15px;
-    background-color:#E0EFD2;
-    border: 0.5px solid #78BA3B;
-    cursor: pointer;
+  -webkit-box-shadow: 0 0 0 30px #336699 inset !important;
+  -webkit-text-fill-color: white !important;
 }
 
-.button button span {
-    font-size: 15px;
+.button button {
+  height: 40px;
+  width: 300px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 15px;
+  background-color: #e0efd2;
+  border: 0.5px solid #78ba3b;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button button:hover {
+  background-color: var(--highlightColor);
+  font-size: 16px;
+  z-index: 1;
 }
 
 .box {
-    border: 2px solid #78BA3B;
-    border-radius: 20px 45px 45px 45px;
-    padding: 20px;
+  border: 2px solid #78ba3b;
+  border-radius: 20px 45px 45px 45px;
+  padding: 20px;
 }
-
 
 .iconWhite {
-    color: white;
-    margin-left: 25px;
-    font-size: 25px;
-  }
-
-  .companyField p {
-    color: black;
-    font-size: 15px;
-    margin-top: 25px;
-  }
-
-  .additionalFields {
-    margin-top: 25px;
-  }
-
-  
-.companyContainer {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 5px;
+  color: white;
+  margin-left: 25px;
+  font-size: 25px;
 }
 
+.companyField p {
+  color: black;
+  font-size: 15px;
+  margin-top: 25px;
+}
+
+.additionalFields {
+  margin-top: 25px;
+}
+
+.companyContainer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 5px;
+}

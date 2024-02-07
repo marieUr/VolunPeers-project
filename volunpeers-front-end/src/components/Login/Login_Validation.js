@@ -1,6 +1,5 @@
 // AuthContext.js
-import React, { useEffect } from 'react';
-import { createContext, useContext, useState } from 'react';
+import React, { useEffect, createContext, useContext, useState } from 'react';
 
 const AuthContext = createContext();
 
@@ -11,43 +10,45 @@ export const AuthProvider = ({ children }) => {
   const handleLogin = (token) => {
     localStorage.setItem('accessToken', token);
     setIsLoggedIn(true);
-  }
+  };
 
   useEffect(() => {
     // fetch userdata when token gets accessed
-    const fetchUserData = async() => {
-      const token = localStorage.getItem('accessToken')
+    const fetchUserData = async () => {
+      const token = localStorage.getItem('accessToken');
+      console.log('Access Token:', token);
       if (token) {
         try {
-          const response = await fetch('/api/usercreds', 
-          {
+          const response = await fetch('/api/usercreds', {
             method: 'GET',
             headers: {
               authorization: `Bearer ${token}`,
-            }
+            },
+          });
+          console.log('User Data API response:', response);
+          console.log('User state through Header:', user);
+          if (response.ok) {
+            const userData = await response.json();
+            setLoggedUser(userData);
+          } else {
+            // Handle error
+            console.error('Failed to fetch user data:', response.statusText);
           }
-        )
-        if (response.ok) {
-          const userData = await response.json();
-          setLoggedUser(userData);
-        } else {
-          // Handle error
-          console.error('Failed to fetch user data:', response.statusText);
+        } catch (err) {
+          // handle fetch error
+          console.error(`Error fetching user data: `, err);
         }
-        } catch(err) {
-        // handle fetch error
-        console.error(`Error fetching user data: ${err}`)
-        }
-      } 
-    }
+      }
+    };
+
     fetchUserData();
-}, [isLoggedIn]);
+  }, [isLoggedIn]);
 
   const handleLogout = () => {
+    console.log('Logging out...');
     localStorage.removeItem('accessToken');
     setLoggedUser(null);
     setIsLoggedIn(false);
-
   };
 
   return (

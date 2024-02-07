@@ -25,8 +25,9 @@ export function Navbar() {
   const getAccessToken = () => {
     return localStorage.getItem('accessToken');
   };
-  console.log('Access Token:', getAccessToken());
-  console.log('User:', user);
+  console.log('Access Token through Header:', getAccessToken());
+  console.log('User state through Header:', user);
+
   return (
     <div className="App">
       <header className="App-header">

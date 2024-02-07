@@ -26,12 +26,6 @@ body {
   background: var(--cream);
 }
 
-App {
-  display: flex;
-  flex-direction: column;
-  font-family: 'Roboto';
-}
-
 html {
   background: #f9f8f8;
   scrollbar-width: thin;
@@ -41,21 +35,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-/*@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}*/
-
-/*@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}*/
 
 :root {
   --mainColor: #78ba3b;

@@ -1,0 +1,170 @@
+/* Description Styling*/
+
+.DescriptionSection h1 {
+  font-size: 2.8em;
+}
+.DescriptionSection h2 {
+  font-size: 2.4em;
+}
+.DescriptionSection h3 {
+  padding: 15px;
+  margin: auto;
+  font-size: 28px;
+}
+.DescriptionSection h4 {
+  font-size: 24px;
+  padding: 10px;
+  padding-right: 5px;
+}
+
+.DescriptionSection span {
+  font-weight: 500;
+  font-size: 22px;
+  font-family: 'Roboto';
+}
+.Description-Text {
+  width: 50%;
+  padding: 5px;
+  margin: 0;
+  text-align: left;
+  font-size: 18px;
+  font-family: 'Roboto';
+  line-height: 1.52;
+}
+
+.Description-Text p {
+  padding: 15px;
+  display: block;
+}
+
+.DescriptionSection {
+  margin: auto;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  color: white;
+  max-width: 158.8rem;
+}
+
+.Description-Rectangle {
+  width: 80%;
+  height: 600px;
+  background-color: var(--secondaryColor);
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  border-color: var(--secondaryColor);
+  border: 2px solid;
+}
+
+.Description-Rectangle ul,
+.Description-Rectangle li {
+  display: block;
+  padding: 5px;
+}
+
+.Description-Rectangle img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0 15px 0 0;
+}
+
+.Image-Box {
+  max-width: 60%;
+  height: auto;
+  border-radius: 0 15px 15px 0;
+  overflow: hidden;
+}
+.donate-button {
+  border: none;
+  cursor: pointer;
+  width: 240px;
+  border-radius: 10px;
+  padding: 12px;
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: 0.8px;
+  background: linear-gradient(
+    180deg,
+    var(--ButtonColour) 80%,
+    rgb(86.33, 141.84, 159.38) 130%
+  );
+  color: white;
+  margin: 15px;
+  box-shadow: 0 0 0 100vmax inset rgb(0 0 0 / var(--o, 0%));
+  transition: 0.4s;
+}
+
+.donate-button :hover {
+  --o: 10%;
+  font-family: 'Roboto-Bold';
+}
+
+/* Adjusting sizing based on screensizes*/
+@media screen and (max-width: 1912px) {
+  .Description-Rectangle {
+    width: 90%;
+    margin: 5px;
+    justify-content: flex-start;
+    overflow: hidden;
+    height: auto;
+  }
+
+  .Image-Box img {
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    border-radius: 0;
+    float: right;
+  }
+
+  .Image-Box {
+    border-radius: 0;
+    transition: 0.3s;
+  }
+
+  .Description-Text {
+    padding: 5px;
+    width: 100%;
+    white-space: normal;
+  }
+}
+
+@media screen and (max-width: 1630px) {
+  .Description-Rectangle {
+    width: 90%;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+
+  .Description-Text {
+    max-width: 100%;
+  }
+
+  .Image-Box img {
+    float: right;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Description-Rectangle {
+    width: 100%;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+
+  .DescriptionSection {
+    max-width: 100%;
+    order: 1;
+  }
+
+  .Description-Rectangle img {
+    order: 2;
+  }
+  .Image-Box {
+    max-width: 100%;
+  }
+}

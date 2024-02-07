@@ -1,103 +1,99 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    margin-top: 60px;
-    margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  min-height: 58vh;
 }
 
 .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  flex: 1;
 }
 
 .header p {
-    color: #78BA3B ;
-    font-size: 25px;
-    font-weight: 600;
-
+  color: #78ba3b;
+  font-size: 25px;
+  font-weight: 600;
 }
 
 .inputs {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 10px;
 }
 
 .input {
-    display: flex;
-    align-items: center;
-    margin: auto;
-    width: 400px;
-    height: 60px;
-    background-color: #336699;
-    border: 1px solid;
-    border-radius: 20px;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  width: 400px;
+  height: 60px;
+  background-color: #336699;
+  border: 1px solid;
+  border-radius: 20px;
 }
 
 .input input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 30px #336699 inset !important; 
-    -webkit-text-fill-color: white !important;
-  }
+  -webkit-box-shadow: 0 0 0 30px #336699 inset !important;
+  -webkit-text-fill-color: white !important;
+}
 
 .input input {
-    height: 50px;
-    width: 300px;
-    background: transparent;
-    border: none;
-    outline: none;
-    font-size: 18px;
-    color: white;
-    margin-left: 20px;
+  height: 50px;
+  width: 300px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  color: white;
+  margin-left: 20px;
 }
 
 .input input::placeholder {
-    color: white; }
+  color: white;
+}
 
 .button {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
+/* Sign Up CSS Class is overwriting this part of the button code */
 .button button {
-    height: 40px;
-    width: 300px;
-    border-radius: 15px;
-    background-color: #E0EFD2;
-    outline: none;
-    border: 0.5px solid #78BA3B;
-    cursor: pointer;
-}
-
-.button button span {
-    font-size: 15px;
+  height: 40px;
+  border-radius: 15px;
+  background-color: #e0efd2;
+  outline: none;
+  border: 0.5px solid #78ba3b;
+  cursor: pointer;
 }
 
 .passwortVergessen {
-    font-size: 12px;
-    margin-top: 3px;
+  font-size: 12px;
+  margin-top: 3px;
+  padding: 15px;
 }
 
 .passwortVergessen span {
-    color: #78BA3B;
-    cursor: pointer;
-} 
-
-
-.box {
-    border: 2px solid #78BA3B;
-    border-radius: 20px 45px 45px 45px;
-    padding: 20px;
+  color: #78ba3b;
+  cursor: pointer;
 }
 
-
+.box {
+  border: 2px solid #78ba3b;
+  border-radius: 20px 45px 45px 45px;
+  padding: 20px;
+  margin: auto;
+}
 
 .iconWhite {
-    color: white;
-    margin-left: 25px;
-    font-size: 25px;
-  }
-  
+  color: white;
+  margin-left: 25px;
+  font-size: 25px;
+}

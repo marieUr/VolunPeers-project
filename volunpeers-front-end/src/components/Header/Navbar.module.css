@@ -36,7 +36,6 @@ header button {
 
 header button :hover {
   color: var(--ButtonColour);
-  cursor: pointer;
   background-color: transparent;
 }
 
@@ -55,6 +54,14 @@ ul {
 li {
   display: inline-block;
   position: relative;
+}
+.profilePhoto p,
+.profilePhoto span {
+  transition: 0.3s;
+}
+.profilePhoto:hover p,
+.profilePhoto:hover span {
+  color: var(--ButtonColour);
 }
 
 li.profilePhoto ::before {
@@ -85,7 +92,6 @@ a {
   font-weight: 600;
   padding: 8px;
   transition: 0.4s;
-  cursor: pointer;
 }
 
 a:hover {
@@ -95,7 +101,7 @@ a:hover {
 /* logo  */
 .logo {
   text-decoration: none;
-  font-size: 28px;
+  font-size: 30px;
   color: var(--mainColor) !important;
   margin-right: 15px;
 }
@@ -139,7 +145,6 @@ a:hover {
 
 .navbar .profileText:hover {
   color: var(--ButtonColour);
-  cursor: pointer;
 }
 
 /* ul  */

@@ -5,11 +5,8 @@ import '../../App.css'; // Import the main styling, shared CSS file
 import '../Login/Login.css'; // Import the user profile styling
 // import email_icon from '../Assets/email.png';
 // import password_icon from '../Assets/password.png';
-import { MdEmail } from "react-icons/md";
-import { RiLockPasswordFill } from "react-icons/ri";
-
-
-
+import { MdEmail } from 'react-icons/md';
+import { RiLockPasswordFill } from 'react-icons/ri';
 
 export const Login = () => {
   const [values, setValues] = useState({
@@ -52,8 +49,9 @@ export const Login = () => {
       });
     }
   };
-
-  const handleLoginClick = async () => {
+  const handleLoginClick = async (event) => {
+    event.preventDefault();
+    console.log('Attempting login...');
     try {
       // The post request for the endpoint
       const response = await fetch('/api/login', {
@@ -86,54 +84,54 @@ export const Login = () => {
     }
 
     if (values.email === '' || values.password === '') {
-      alert('Bitte fülle alle Felder aus.');
+      alert('Please fill in all fields');
       console.log(`${values.email && values.name}`);
     } else {
-      console.log('Anmeldeversuch mit folgenden Daten:', values);
+      console.log('Log in attempt with the following input:', values);
     }
   };
 
   return (
     <div className="container">
       <div className="header">
-        <div className="box">
-          <div className="inputs">
-            <div className="input">
-            <MdEmail className="iconWhite" />
-              <input
-                type="text"
-                placeholder="Email"
-                name="email"
-                value={values.email}
-                onChange={handleChange}
-              />
+        <form onSubmit={handleLoginClick}>
+          <div className="box">
+            <div className="inputs">
+              <div className="input">
+                <MdEmail className="iconWhite" />
+                <input
+                  type="text"
+                  placeholder="Email"
+                  name="email"
+                  value={values.email}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="error-message">{errors.email}</div>
+              <div className="input">
+                <RiLockPasswordFill className="iconWhite" />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                  minLength={7}
+                  required
+                  value={values.password}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="error-message">{errors.password}</div>
             </div>
-            <div className="error-message">{errors.email}</div>
-            <div className="input">
-            <RiLockPasswordFill className="iconWhite" />
-              <input
-                type="password"
-                placeholder="Password" 
-                name="password"
-                minLength={8}
-                required
-                value={values.password}
-                onChange={handleChange}
-              />
+            <div className="LoginContainer">
+              <div className="button">
+                <button type="submit">Login</button>
+              </div>
+              <div className="passwortVergessen">
+                Forgot Password? <span>Click here to reset!</span>
+              </div>
             </div>
-            <div className="error-message">{errors.password}</div>
           </div>
-          <div className="LoginContainer">
-            <div className="button">
-              <button onClick={handleLoginClick}>
-                <span>Login</span>
-              </button>
-            </div>
-            <div className="passwortVergessen">
-              Forgot Password? <span>Click here to reset!</span>
-            </div>
-          </div>
-        </div>
+        </form>
       </div>
     </div>
   );

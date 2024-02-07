@@ -5,6 +5,7 @@ import SubPagePlaceholder from '../../components/Test/SubPagePlaceholder.jsx';
 import Opportunities from '../../components/Opportunities/Opportunities.jsx';
 import Description from '../../components/Description/Description.jsx';
 import CompanySection from '../../components/Companies/CompanySection.jsx';
+import Donation from '../../components/Donation/Donation.jsx';
 
 export const Body = () => {
   return (
@@ -29,6 +30,7 @@ export const Body = () => {
         <Opportunities />
         <Description />
         <CompanySection />
+        <Donation />
       </div>
     </>
   );
