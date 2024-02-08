@@ -8,8 +8,11 @@ import { faUser } from '@fortawesome/free-regular-svg-icons';
 library.add(faUser);
 
 const Profile = () => {
-  const [selectedButtons, setSelectedButtons] = useState([]); // Store selected Interests
-  const [checkedLists, setCheckedLists] = useState([[], [], []]); // Store selected Availability
+  const [selectedButtons, setSelectedButtons] = useState([]); // Store selected Availability
+  console.log("before checklists");
+  const [selectedInterests, setSelectedInterests] = useState([]); // Store selected Interests
+  const [checkedInterests, setCheckedInterests] = useState([]);
+  console.log("after checklists");
   const [totalSelected, setTotalSelected] = useState(0);
   const [firstname, setFirstName] = useState('');
   const [lastname, setLastName] = useState('');
@@ -18,20 +21,21 @@ const Profile = () => {
   const [postalCode, setPostalCode] = useState('');
   const [email, setEmail] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
-  const [linkedIn, setLinkedIn] = useState('');
+  const [LinkedIn, setLinkedIn] = useState('');
   const [description, setDescription] = useState('');
   const [languages, setLanguages] = useState('');
   const [locations, setLocations] = useState('');
 
   const [userId, setUserId] = useState('');
 
-  //const userId = '65ba70e4db270847a09b70a6'; // testing
-
   const [selectedPhoto, setSelectedPhoto] = useState(null); // Store selected photo for the user profile. 
-  //Functionality to be added: new picture is saved in db.
+
+  //const userId = '65ba70e4db270847a09b70a6'; // testing
+  
 
   // Define checkLists array and isChecked function
-  const checkLists = [
+  console.log("before check2");
+  const defaultInterests = [
     {
       title: 'Environment & Conservation',
       items: [
@@ -61,26 +65,30 @@ const Profile = () => {
     },
   ];
 
+  console.log("after check2");
+
   useEffect(() => {
     // Fetch user information from an API endpoint
     fetchUserInfo();
+    console.log("Execute useEffect");
   }, []); // Empty dependency array to run the effect only once when the component mounts
 
   const fetchUserInfo = async () => {
-    try {
-      // Fetch userId from localStorage or wherever you store it
-      const storedUserId = localStorage.getItem('userId');
-      if (!storedUserId) {
-        console.error('User ID not found');
-        return;
-      }
-      setUserId(storedUserId);
-
+      const token = localStorage.getItem("accessToken")
+      if (token) {
+      try {
       // Fetch user information based on userId
-      const response = await fetch(`/api/profile/${storedUserId}`);
+      const response = await fetch('/api/usercreds', {
+        method: 'GET',
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
+      })
+      
       if (response.ok) {
         const data = await response.json();
         // Update state variables with fetched data
+        setUserId(token);
         setFirstName(data.firstname);
         setLastName(data.lastname);
         setCity(data.city);
@@ -88,22 +96,26 @@ const Profile = () => {
         setPostalCode(data.postalCode);
         setEmail(data.email);
         setPhoneNumber(data.phoneNumber);
-        setLinkedIn(data.linkedIn);
+        setLinkedIn(data.LinkedIn);
         setDescription(data.description);
         setLanguages(data.languages);
         setSelectedButtons(data.selectedButtons);
         setLocations(data.locations);
-        setCheckedLists(data.checkLists);
+        console.log("before check3");
+        setCheckedInterests(Array.from({ length: defaultInterests.length }, () => []));
+        console.log("after check3");
       } else {
         console.error('Failed to fetch user information');
       }
     } catch (error) {
       console.error('Error fetching user information:', error);
     }
-  };
+  }
+};
 
   const handleSaveProfile = async () => {
     try {
+      console.log(selectedInterests);
       const token = localStorage.getItem('token');
       const response = await fetch(`/api/profile/${userId}`, {
         method: 'PATCH',
@@ -119,12 +131,12 @@ const Profile = () => {
           postalCode,
           email,
           phoneNumber,
-          linkedIn,
+          LinkedIn,
           description,
           languages,
           locations,
           selectedButtons,
-          checkLists,
+          selectedInterests
         }),
       });
       if (response.ok) {
@@ -139,6 +151,8 @@ const Profile = () => {
     }
   };
 
+  console.log(firstname, lastname+ "sdufhjkfbdjkf");
+
   const handleButtonClick = (buttonText) => {
     if (selectedButtons.includes(buttonText)) {
       // Deselect the button
@@ -150,50 +164,41 @@ const Profile = () => {
     }
   };
 
-  const isChecked = (item) => {
-    for (let i = 0; i < checkedLists.length; i++) {
-      const checkedList = checkedLists[i];
-      if (checkedList.includes(item)) {
-        return 'checked-item';
-      }
-    }
-    return 'not-checked-item';
+  const isChecked = (interestIndex, itemIndex) => {
+    return checkedInterests[interestIndex].includes(itemIndex);
   };
 
-  const handleCheck = (event, checklistIndex) => {
-    if (totalSelected >= 5 && !event.target.checked) {
-      // If the user is unchecking an item and has already selected 5, do nothing
+  const handleCheck = (event, interestIndex) => {
+    const item = event.target.value;
+    const isChecked = event.target.checked;
+    const newTotal = isChecked ? totalSelected + 1 : totalSelected - 1;
+
+    console.log("isChecked:", isChecked);
+    console.log("totalSelected before update:", totalSelected);
+    console.log(selectedInterests);
+  
+    if (newTotal > 5) {
+      event.preventDefault();
+      alert('You can select up to 5 interests.');
       return;
     }
-
-    const updatedLists = [...checkedLists];
-    const checklist = updatedLists[checklistIndex];
-
-    if (event.target.checked) {
-      if (totalSelected < 5) {
-        // Allow selection only if totalSelected is less than 3
-        checklist.push(event.target.value);
-        setTotalSelected(totalSelected + 1);
+  
+    setTotalSelected(newTotal);
+  
+    setSelectedInterests(prevState => {
+      if (isChecked) {
+        return [...prevState, item];
       } else {
-        // Display message if user attempts to select more than 5 items
-        alert('You can select up to 5!');
+        return prevState.filter(val => val !== item);
       }
-    } else {
-      const index = checklist.indexOf(event.target.value);
-      checklist.splice(index, 1);
-      setTotalSelected(totalSelected - 1);
-    }
-
-    updatedLists[checklistIndex] = checklist;
-    setCheckedLists(updatedLists);
-    console.log(checkedLists);
+    });
   };
 
 
   const handlePhotoChange = (event) => {
     // Get the selected file
     const file = event.target.files[0];
-    // Do something with the selected file, like uploading it to the server or displaying it preview
+    // Future task: uploading new picture to the server
     setSelectedPhoto(file);
   };
 
@@ -274,7 +279,7 @@ const Profile = () => {
               <span class="span-info">LinkedIn profile:</span>
               <input
                 type="url"
-                value={linkedIn}
+                value={LinkedIn}
                 onChange={(e) => setLinkedIn(e.target.value)}
               />
             </div>
@@ -363,25 +368,24 @@ const Profile = () => {
         <div className="last-box interests-content">
           <h3 class="title-h3">Interests</h3>
           <div className="checkLists">
-            {checkLists.map((checklist, index) => (
+          {defaultInterests.map((interest, index) => (
               <div className="checkList" key={index}>
-                <div className="title">{checklist.title}</div>
+                <div className="title">{interest.title}</div>
                 <div className="list-container">
-                  {checklist.items.map((item, itemIndex) => (
+                  {interest.items.map((item, itemIndex) => (
                     <div key={itemIndex}>
                       <input
                         value={item}
                         type="checkbox"
                         onChange={(event) => handleCheck(event, index)}
-                        checked={checkedLists[index].includes(item)}
+                        checked={selectedInterests.includes(item)}
                       />
-                      <span className={isChecked(item)}>{item}</span>
+                      <span className={selectedInterests.includes(item) ? 'checked-item' : 'not-checked-item'}>{item}</span>
                     </div>
                   ))}
                 </div>
               </div>
-          ))}
-
+            ))}
         </div>
         </div>
         <button className="save-button" onClick={handleSaveProfile}>
@@ -392,5 +396,4 @@ const Profile = () => {
     </div>
   );
 };
-
 export default Profile;
