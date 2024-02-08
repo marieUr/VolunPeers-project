@@ -179,7 +179,7 @@ const Profile = () => {
     console.log("totalSelected before update:", totalSelected);
     console.log(selectedInterests);
   
-    if (newTotal > 5) {
+    if (newTotal > 8 - selectedInterests.length) {
       event.preventDefault();
       alert('You can select up to 5 interests.');
       return;
