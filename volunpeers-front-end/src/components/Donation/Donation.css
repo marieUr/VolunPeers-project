@@ -1,43 +1,29 @@
-/* Description Styling*/
+/* Donation Styling*/
 
-.DescriptionSection h1 {
+.DonationSection h1 {
   font-size: 2.8em;
 }
-.DescriptionSection h2 {
+.DonationSection h2 {
   font-size: 2.4em;
 }
-.DescriptionSection h3 {
+.DonationSection h3 {
   padding: 15px;
   margin: auto;
   font-size: 28px;
 }
-.DescriptionSection h4 {
+.DonationSection h4 {
   font-size: 24px;
   padding: 10px;
   padding-right: 5px;
 }
 
-.DescriptionSection span {
+.DonationSection span {
   font-weight: 500;
   font-size: 22px;
   font-family: 'Roboto';
 }
-.Description-Text {
-  width: 50%;
-  padding: 5px;
-  margin: 0;
-  text-align: left;
-  font-size: 18px;
-  font-family: 'Roboto';
-  line-height: 1.52;
-}
 
-.Description-Text p {
-  padding: 15px;
-  display: block;
-}
-
-.DescriptionSection {
+.DonationSection {
   margin: auto;
   padding: 15px;
   display: flex;
@@ -46,10 +32,10 @@
   max-width: 158.8rem;
 }
 
-.Description-Rectangle {
+.Donation-Rectangle {
   width: 80%;
-  height: 600px;
-  background-color: var(--secondaryColor);
+  height: 650px;
+  background-color: var(--SecondaryColorAlt);
   border-radius: 15px;
   display: flex;
   justify-content: space-between;
@@ -57,27 +43,43 @@
   border: 2px solid;
 }
 
-.Description-Rectangle ul,
-.Description-Rectangle li {
+.Donation-Rectangle ul,
+.Donation-Rectangle li {
   display: block;
   padding: 5px;
 }
 
-.Description-Rectangle img {
+.Donation-Rectangle img {
   max-width: 100%;
   height: auto;
   border-radius: 0 15px 0 0;
 }
 
 .Image-Box {
-  max-width: 60%;
+  max-width: 50%;
   height: auto;
-  border-radius: 0 15px 15px 0;
+  border-radius: 15px 0 0 15px;
   overflow: hidden;
 }
+.Donation-Text {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  padding: 5px;
+  margin: 0;
+  text-align: left;
+  font-size: 18px;
+  font-family: 'Roboto';
+  line-height: 1.52;
+}
+
+.Donation-Text p {
+  padding: 15px;
+  display: block;
+}
+
 .donate-button {
   border: none;
-  cursor: pointer;
   width: 240px;
   border-radius: 10px;
   padding: 12px;
@@ -91,19 +93,21 @@
     rgb(86.33, 141.84, 159.38) 130%
   );
   color: white;
-  margin: 15px;
+  margin: 10px 15px;
+  margin-left: auto;
   box-shadow: 0 0 0 100vmax inset rgb(0 0 0 / var(--o, 0%));
   transition: 0.4s;
 }
 
-.donate-button :hover {
+.donate-button:hover {
   --o: 10%;
   font-family: 'Roboto-Bold';
+  z-index: 1;
 }
 
 /* Adjusting sizing based on screensizes*/
 @media screen and (max-width: 1912px) {
-  .Description-Rectangle {
+  .Donation-Rectangle {
     width: 90%;
     margin: 5px;
     justify-content: flex-start;
@@ -124,7 +128,7 @@
     transition: 0.3s;
   }
 
-  .Description-Text {
+  .Donation-Text {
     padding: 5px;
     width: 100%;
     white-space: normal;
@@ -132,13 +136,13 @@
 }
 
 @media screen and (max-width: 1630px) {
-  .Description-Rectangle {
+  .Donation-Rectangle {
     width: 90%;
     justify-content: space-around;
     flex-direction: row;
   }
 
-  .Description-Text {
+  .Donation-Text {
     max-width: 100%;
   }
 
@@ -150,18 +154,18 @@
 }
 
 @media screen and (max-width: 600px) {
-  .Description-Rectangle {
+  .Donation-Rectangle {
     width: 100%;
     justify-content: flex-start;
     flex-direction: column;
   }
 
-  .DescriptionSection {
+  .DonationSection {
     max-width: 100%;
     order: 1;
   }
 
-  .Description-Rectangle img {
+  .Donation-Rectangle img {
     order: 2;
   }
   .Image-Box {

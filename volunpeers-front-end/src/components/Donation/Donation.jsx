@@ -4,9 +4,12 @@ import RiverImage from '../../Images/pexels-iwaria-RiversCity.webp';
 
 function Description() {
   return (
-    <div className="DescriptionSection">
-      <div className="Description-Rectangle">
-        <div className="Description-Text">
+    <div className="DonationSection">
+      <div className="Donation-Rectangle">
+        <div className="Image-Box">
+          <img src={RiverImage} alt=""></img>
+        </div>
+        <div className="Donation-Text">
           <h3>Support VolunPeers</h3>
           <p>
             Join us in preserving our planet! Your support can make a difference
@@ -46,10 +49,9 @@ function Description() {
             Take action today. Together, we can create a world where people and
             planet thrive harmoniously.
           </p>
-          <button className="donate-button">Donate Now</button>
-        </div>
-        <div className="Image-Box">
-          <img src={RiverImage} alt=""></img>
+          <button className="donate-button" aria-label="Donate to VolunPeers">
+            Donate Now
+          </button>
         </div>
       </div>
     </div>
