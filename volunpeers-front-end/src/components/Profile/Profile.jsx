@@ -88,7 +88,7 @@ const Profile = () => {
       if (response.ok) {
         const data = await response.json();
         // Update state variables with fetched data
-        setUserId(token);
+        setUserId(data._id);
         setFirstName(data.firstname);
         setLastName(data.lastname);
         setCity(data.city);
@@ -102,7 +102,7 @@ const Profile = () => {
         setSelectedButtons(data.selectedButtons);
         setLocations(data.locations);
         console.log("before check3");
-        setCheckedInterests(Array.from({ length: defaultInterests.length }, () => []));
+        setSelectedInterests(data.selectedInterests);
         console.log("after check3");
       } else {
         console.error('Failed to fetch user information');
@@ -139,6 +139,8 @@ const Profile = () => {
           selectedInterests
         }),
       });
+      console.log(response.body);
+      console.log(userId);
       if (response.ok) {
         alert('Profile updated successfully');
       } else {
