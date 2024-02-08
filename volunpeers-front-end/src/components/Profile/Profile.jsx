@@ -26,10 +26,11 @@ const Profile = () => {
   const [languages, setLanguages] = useState('');
   const [locations, setLocations] = useState('');
 
+  const [count, setCount] = useState(0); // Store the count of selected checkboxes
+
   const [userId, setUserId] = useState('');
 
   const [selectedPhoto, setSelectedPhoto] = useState(null); // Store selected photo for the user profile. 
-
   //const userId = '65ba70e4db270847a09b70a6'; // testing
   
 
@@ -104,6 +105,7 @@ const Profile = () => {
         console.log("before check3");
         setSelectedInterests(data.selectedInterests);
         console.log("after check3");
+        setCount(data.selectedInterests.length);
       } else {
         console.error('Failed to fetch user information');
       }
@@ -139,6 +141,7 @@ const Profile = () => {
           selectedInterests
         }),
       });
+      // Store the count of selected checkboxes before saving
       console.log(response.body);
       console.log(userId);
       if (response.ok) {
@@ -178,8 +181,8 @@ const Profile = () => {
     console.log("isChecked:", isChecked);
     console.log("totalSelected before update:", totalSelected);
     console.log(selectedInterests);
-  
-    if (newTotal > 8 - selectedInterests.length) {
+    console.log(count);
+    if (newTotal > 5 - count) {
       event.preventDefault();
       alert('You can select up to 5 interests.');
       return;
