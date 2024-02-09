@@ -28,10 +28,9 @@ const port = process.env.port || 3001;
 
 exApp.use(express.json());
 exApp.use(bodyParser.json());
-
-// database connection
 exApp.use(cors());
-
+exApp.use(express.json())
+// database connection
 let db;
 connectToDB((err) => {
   if (!err) {
@@ -44,6 +43,7 @@ connectToDB((err) => {
 
 // routes
 
+// Login function that creates a JWT token.
 exApp.post('/api/login', async (req, res) => {
   // form or post fields
   const { email, password } = req.body;
@@ -99,6 +99,7 @@ exApp.post('/api/login', async (req, res) => {
   }
 });
 
+// User creation call to the back-end
 exApp.post('/api/signup', async (req, res) => {
   // form or post fields
   const { email, password } = req.body;
@@ -123,60 +124,7 @@ exApp.post('/api/signup', async (req, res) => {
   }
 });
 
-exApp.get('/api/profile/:userId', async (req, res) => {
-  // access the token
-  const decodedToken = req.decoded;
-
-  // get the user id from the decoded token
-  const userId = decodedToken.userId;
-
-  try {
-    // convert userid to object id for mongodb
-    console.log(`fetching user profile for userid: ${userId}`);
-    const objectId = new ObjectId(userId);
-
-    // query the database
-    const user = await db.collection('users').findOne({ _id: objectId });
-
-    if (!user) {
-      console.log(`User not found for userId ${userId}`);
-      return res.status(404).json({ message: 'user not found' });
-    }
-
-    // if user is found return the user profile data
-    console.log(`User profile found for userId: ${userId}`);
-    return res.status(200).json({ decodedToken, user });
-  } catch (error) {
-    console.error(`Error fetching user profile: ${userId}`);
-    res.status(500).json({ error: 'internal server error' });
-  }
-});
-
-exApp.patch('/api/profile/:id', async (req, res) => {
-  const userId = req.params.id;
-  const updatedProfile = req.body;
-  try {
-    const objectId = new ObjectId(userId);
-
-    // Update the user profile in the MongoDB database
-    const result = await db
-      .collection('users')
-      .updateOne({ _id: objectId }, { $set: updatedProfile });
-
-    // Check if the profile was successfully updated
-    if (result.modifiedCount === 1) {
-      // Profile updated successfully
-      res.status(200).json({ message: 'Profile updated successfully' });
-    } else {
-      // Profile not found or not updated
-      res.status(404).json({ message: 'Profile not found or not updated' });
-    }
-  } catch (error) {
-    console.error('Error updating user profile:', error);
-    res.status(500).json({ error: 'Internal server error' });
-  }
-});
-
+// function for verifying the token to fetch data from the back-end.
 exApp.get('/api/usercreds', verifyToken, async (req, res) => {
   try {
     const { userId } = req.decoded;
@@ -187,7 +135,7 @@ exApp.get('/api/usercreds', verifyToken, async (req, res) => {
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
     }
-
+    console.log(userId)
     // return user data in response
     res.status(200).json(user);
   } catch (error) {
@@ -195,3 +143,23 @@ exApp.get('/api/usercreds', verifyToken, async (req, res) => {
     res.status(500).json({ error: 'Internal server error ' });
   }
 });
+
+exApp.patch('/api/usercreds', verifyToken, async (req, res) => {
+    try {
+      const { userId } = req.decoded;
+      const objectId = new ObjectId(userId);
+      const updatedField = req.body
+      const updatedUser = await db.collection('users').updateOne({ _id: objectId }, {$set: updatedField });
+  
+      console.log(userId);
+      if (!updatedField) {
+        return res.status(404).json({ message: 'User not found' });
+      }
+  
+      // return user data in response
+      res.status(200).json(updatedField);
+    } catch (error) {
+      console.error(`Error fetching user data: ${error}`);
+      res.status(500).json({ error: 'Internal server error ' });
+    }
+  });
