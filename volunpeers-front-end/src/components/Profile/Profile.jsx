@@ -83,6 +83,7 @@ const Profile = () => {
         method: 'GET',
         headers: {
           authorization: `Bearer ${token}`,
+          'content': 'application/json',
         },
       })
       
@@ -118,8 +119,8 @@ const Profile = () => {
   const handleSaveProfile = async () => {
     try {
       console.log(selectedInterests);
-      const token = localStorage.getItem('token');
-      const response = await fetch(`/api/profile/${userId}`, {
+      const token = localStorage.getItem('accessToken');
+      const response = await fetch(`/api/usercreds`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -156,7 +157,7 @@ const Profile = () => {
     }
   };
 
-  console.log(firstname, lastname+ "sdufhjkfbdjkf");
+  console.log(firstname, lastname+ "");
 
   const handleButtonClick = (buttonText) => {
     if (selectedButtons.includes(buttonText)) {
