@@ -5,6 +5,7 @@ import Navbar from './components/Header/Navbar.jsx';
 import Profile from './components/Profile/Profile.jsx';
 import Login from './components/Login/Login.jsx';
 import Signup from './components/Signup/Signup.jsx';
+import Opportunity from './Pages/Opportunity/OpportunityDetail.js';
 import { Body } from './Pages/Landingpage/body.js';
 import { Footer } from './components/Footer/Footer.jsx';
 import { NotFound } from './Pages/NotFound.js';
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Body />}></Route>
         <Route path="/profile" element={<Profile />} />
+        <Route path="/opportunity" element={<Opportunity />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="*" element={<NotFound />} />

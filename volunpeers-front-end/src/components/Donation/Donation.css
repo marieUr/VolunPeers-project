@@ -1,5 +1,7 @@
 /* Donation Styling*/
-
+p {
+  line-height: 36px;
+}
 .DonationSection h1 {
   font-size: 2.8em;
 }
@@ -25,6 +27,7 @@
 
 .DonationSection {
   margin: auto;
+  margin-bottom: 35px;
   padding: 15px;
   display: flex;
   justify-content: center;
@@ -52,20 +55,21 @@
 .Donation-Rectangle img {
   max-width: 100%;
   height: auto;
-  border-radius: 0 15px 0 0;
-}
-
-.Image-Box {
-  max-width: 50%;
-  height: auto;
-  border-radius: 15px 0 0 15px;
   overflow: hidden;
 }
+
+.Image-BoxD {
+  max-width: 50%;
+  height: auto;
+  overflow: hidden;
+  border-radius: 15px 0 0 15px;
+}
+
 .Donation-Text {
   display: flex;
   flex-direction: column;
   width: 60%;
-  padding: 5px;
+  padding: 15px;
   margin: 0;
   text-align: left;
   font-size: 18px;
@@ -75,7 +79,7 @@
 
 .Donation-Text p {
   padding: 15px;
-  display: block;
+  flex: 1;
 }
 
 .donate-button {
@@ -103,6 +107,7 @@
   --o: 10%;
   font-family: 'Roboto-Bold';
   z-index: 1;
+  cursor: pointer;
 }
 
 /* Adjusting sizing based on screensizes*/

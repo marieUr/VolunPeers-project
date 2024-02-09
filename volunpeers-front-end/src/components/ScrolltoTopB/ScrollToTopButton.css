@@ -1,0 +1,69 @@
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--highlightColor);
+  background: var(--highlightColor, 0.6);
+  width: 45px;
+  height: 45px;
+  display: none;
+  text-decoration: none;
+  border-radius: 35px;
+  display: flex;
+  opacity: 0;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-to-top.show {
+  display: block;
+  opacity: 1;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.scroll-to-top.hide {
+  display: none;
+}
+
+.scroll-to-top button {
+  border: none;
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scroll-to-top button:focus {
+  outline: none;
+}
+
+.scroll-to-top button:focus-visible {
+  outline: none;
+}
+
+.scroll-to-top button:hover {
+  background: rgba(23, 85, 56, 0.9);
+  border-radius: 35px;
+}
+
+.scroll-to-top button:focus-visible svg {
+  color: #fff;
+  top: 5px;
+}
+
+.scroll-to-top button svg {
+  color: #fff;
+  margin: 0;
+  position: relative;
+  font-size: 19px;
+  transition: all 0.3s ease;
+}

@@ -1,0 +1,194 @@
+.container-opportunity {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2rem;
+  margin: auto;
+  min-height: 60vh;
+  align-items: center;
+  font-family: 'Roboto';
+  background-color: rgba(248, 248, 248, 1);
+  background-color: white;
+}
+
+.container-opportunity h1 {
+  font-size: 2.7em;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(5, 29, 49, 0.2);
+}
+
+.container-opportunity h2 {
+  font-size: 2.3em;
+  padding-bottom: 5px;
+  color: var(--textColor);
+}
+
+.container-opportunity h3 {
+  font-size: 28px;
+}
+.container-opportunity h4 {
+  font-size: 24px;
+}
+
+.container-opportunity p {
+  padding: 5px;
+}
+.companyContainerOpp h1 {
+  position: absolute;
+  z-index: 1;
+  padding: 2rem 3rem;
+}
+
+.companyContainerOpp {
+  width: 100%;
+  max-height: 120px;
+  margin: 0;
+  overflow: hidden;
+  background-color: var(--secondaryColor);
+}
+
+.containerImg {
+  width: 100%;
+  margin: 0;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  justify-content: center; /* Center horizontally */
+  align-items: center;
+}
+
+.containerImg img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 2rem 2rem;
+  width: 100%; /* Ensures the overlay covers the entire image */
+  height: 100%;
+  background-color: rgba(217, 255, 181, 0.9); /* Semi-transparent black color */
+  opacity: 0.7; /* Adjust opacity as needed */
+}
+
+.container-opportunity h2,
+.container-opportunity h3,
+.container-opportunity h4 {
+  padding: 5px;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 80%;
+  padding: 10px;
+  background-color: var(--cream);
+  min-height: 55vh;
+  gap: 40px;
+  /* Add box shadow to the left side */
+  box-shadow: -10px 0 25px -15px rgba(0, 0, 0, 0.5);
+}
+
+.overviewContainer {
+  flex: 1;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 15px;
+  min-width: 400px;
+}
+.overviewContainer h2 {
+  align-self: center;
+  padding-left: 25px;
+}
+
+.overviewContainer h2,
+.overviewContainer p {
+  text-align: left;
+}
+
+.informationRight {
+  flex: 0 0 auto;
+  padding: 15px;
+  margin-top: 37px;
+  min-width: 400px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 35px;
+}
+
+.overviewContainer span,
+.informationRight span {
+  font-weight: 600;
+}
+
+.overviewCompanyLogo {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 7px;
+}
+
+.informationRight h2,
+.informationRight p {
+  text-align: left;
+}
+
+.containerContact {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  padding: 10px;
+  margin: 10px 20px;
+  background-color: var(--);
+}
+
+.leftContact {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  min-width: 390px;
+  flex: 1;
+}
+
+.leftContact h3,
+.leftContact h4,
+.leftContact p {
+  text-align: left;
+}
+
+.envelopeIcon {
+  margin-right: 2px;
+  padding-left: 10px;
+}
+
+.mailContact {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.mailContact p {
+  padding-top: 3px;
+}
+
+.rightContact {
+  padding: 15px;
+  box-shadow: -10px 0 20px -20px rgba(0, 0, 0, 0.5);
+}
+
+.reviewContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: -10px 0 25px -15px rgba(0, 0, 0, 0.5);
+}
+
+.reviewContainer h3 {
+  text-align: left;
+  padding-left: 25px;
+}

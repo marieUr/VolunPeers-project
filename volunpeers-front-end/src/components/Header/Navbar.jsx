@@ -43,20 +43,17 @@ export function Navbar() {
               </NavLink>
             </li>
             <li onClick={removeActive}>
-              <NavLink to="/about" className={`${styles.navLink}`}>
-                About us
-              </NavLink>
+              <a href="#section1" className={`${styles.navLink}`}>
+                About
+              </a>
             </li>
             <li onClick={removeActive}>
-              <NavLink to="/donations" className={`${styles.navLink}`}>
+              <a href="#section2" className={`${styles.navLink}`}>
                 Donations
-              </NavLink>
+              </a>
             </li>
             <li onClick={removeActive}>
-              <NavLink
-                to="/volunteering-projects"
-                className={`${styles.navLink}`}
-              >
+              <NavLink to="/opportunity" className={`${styles.navLink}`}>
                 Volunteering Projects
               </NavLink>
             </li>

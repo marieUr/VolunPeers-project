@@ -27,8 +27,19 @@ body {
 }
 
 html {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%; /* 2 */
+  -moz-tab-size: 4; /* 3 */
+  -o-tab-size: 4;
+  tab-size: 4; /* 3 */
   background: #f9f8f8;
   scrollbar-width: thin;
+  scroll-behavior: smooth;
+}
+
+b,
+strong {
+  font-weight: bolder;
 }
 
 code {

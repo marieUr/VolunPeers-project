@@ -66,14 +66,13 @@
 .Description-Rectangle img {
   max-width: 100%;
   height: auto;
-  border-radius: 0 15px 0 0;
 }
 
 .Image-Box {
   max-width: 60%;
   height: auto;
-  border-radius: 0 15px 15px 0;
   overflow: hidden;
+  border-radius: 0 15px 15px 0;
 }
 
 /* Adjusting sizing based on screensizes*/

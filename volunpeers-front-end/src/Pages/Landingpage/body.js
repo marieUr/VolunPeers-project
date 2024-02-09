@@ -1,11 +1,11 @@
 import React from 'react';
 import './body.css'; // Import the main styling, shared CSS file
 import HeroSection from '../../components/HeroSection/HeroSection.jsx';
-import SubPagePlaceholder from '../../components/Test/SubPagePlaceholder.jsx';
 import Opportunities from '../../components/Opportunities/Opportunities.jsx';
 import Description from '../../components/Description/Description.jsx';
 import CompanySection from '../../components/Companies/CompanySection.jsx';
 import Donation from '../../components/Donation/Donation.jsx';
+import ScrollToTopButton from '../../components/ScrolltoTopB/ScrollToTopButton.jsx';
 
 export const Body = () => {
   return (
@@ -14,7 +14,7 @@ export const Body = () => {
         <HeroSection />
         <div class="cover-container">
           <main role="main" class="inner-cover">
-            <h1 class="cover-heading">
+            <h1 id="section1" class="cover-heading">
               Join VolunPeers: Unite for a Better World!
             </h1>
             <p class="lead">
@@ -31,6 +31,7 @@ export const Body = () => {
         <Description />
         <CompanySection />
         <Donation />
+        <ScrollToTopButton />
       </div>
     </>
   );

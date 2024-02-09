@@ -4,9 +4,9 @@ import RiverImage from '../../Images/pexels-iwaria-RiversCity.webp';
 
 function Description() {
   return (
-    <div className="DonationSection">
+    <div id="section2" className="DonationSection">
       <div className="Donation-Rectangle">
-        <div className="Image-Box">
+        <div className="Image-BoxD">
           <img src={RiverImage} alt=""></img>
         </div>
         <div className="Donation-Text">
