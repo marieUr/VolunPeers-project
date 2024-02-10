@@ -70,7 +70,7 @@ export function Navbar() {
                       size="1x"
                     />
                     <span className={`${styles.username}`}>
-                      {user && user.name.split(' ')[0]}
+                      {user && user.firstname.split(' ')[0]}
                     </span>
                     <span className={`${styles.profileText}`}>Profile</span>
                   </Link>
