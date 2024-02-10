@@ -1,8 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './OpportunityStyling.css';
 import CityImage from '../../Images/citywithpark.webp';
+import { useParams } from 'react-router-dom'; // Assuming you're using React Router
 
-function OpportunityBox() {
+const OpportunityBox = () => {
+  const { companyId } = useParams(); // Assuming you have a route parameter named companyId
+  const [companyData, setCompanyData] = useState(null);
+
+  useEffect(() => {
+    // Fetch company data based on companyId
+    const fetchCompanyData = async () => {
+      try {
+        const response = await fetch(`/api/companies/${companyId}`);
+        if (response.ok) {
+          const data = await response.json();
+          setCompanyData(data);
+        } else {
+          console.error('Failed to fetch company data');
+        }
+      } catch (error) {
+        console.error('Error fetching company data:', error);
+      }
+    };
+    fetchCompanyData();
+  }, [companyId]);
+
   return (
     <div className="Opportunities">
       <div className="volunteeringOpportunity">
@@ -32,6 +54,6 @@ function OpportunityBox() {
       </button>
     </div>
   );
-}
+};
 
 export default OpportunityBox;

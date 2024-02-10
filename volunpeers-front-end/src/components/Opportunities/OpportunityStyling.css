@@ -239,3 +239,33 @@
   flex-direction: row;
   justify-content: left;
 }
+
+@media screen and (max-width: 1112px) {
+  .dividerOpp {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .cover-container h1 {
+    font-size: 2rem;
+  }
+
+  .Opportunities {
+    width: 400px;
+  }
+
+  .mainSectionOpportunities .Location {
+    padding-top: 25px;
+  }
+
+  .Theme {
+    margin-right: 70%;
+  }
+
+  .mainSectionOpportunities {
+    padding: 0;
+    margin-left: 5%;
+    margin-right: 1%;
+  }
+}

@@ -29,7 +29,7 @@ const port = process.env.port || 3001;
 exApp.use(express.json());
 exApp.use(bodyParser.json());
 exApp.use(cors());
-exApp.use(express.json())
+exApp.use(express.json());
 // database connection
 let db;
 connectToDB((err) => {
@@ -135,7 +135,7 @@ exApp.get('/api/usercreds', verifyToken, async (req, res) => {
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
     }
-    console.log(userId)
+    console.log(userId);
     // return user data in response
     res.status(200).json(user);
   } catch (error) {
@@ -145,57 +145,56 @@ exApp.get('/api/usercreds', verifyToken, async (req, res) => {
 });
 
 exApp.patch('/api/usercreds', verifyToken, async (req, res) => {
-    try {
-      const { userId } = req.decoded;
-      const objectId = new ObjectId(userId);
-      const updatedField = req.body
-      const updatedUser = await db.collection('users').updateOne({ _id: objectId }, {$set: updatedField });
-  
-      console.log(userId);
-      if (!updatedField) {
-        return res.status(404).json({ message: 'User not found' });
-      }
-  
-      // return user data in response
-      res.status(200).json(updatedField);
-    } catch (error) {
-      console.error(`Error fetching user data: ${error}`);
-      res.status(500).json({ error: 'Internal server error ' });
+  try {
+    const { userId } = req.decoded;
+    const objectId = new ObjectId(userId);
+    const updatedField = req.body;
+    const updatedUser = await db
+      .collection('users')
+      .updateOne({ _id: objectId }, { $set: updatedField });
+
+    console.log(userId);
+    if (!updatedField) {
+      return res.status(404).json({ message: 'User not found' });
     }
-  });
 
-  exApp.get("/api/companies/:id", async (req, res) => {
+    // return user data in response
+    res.status(200).json(updatedField);
+  } catch (error) {
+    console.error(`Error fetching user data: ${error}`);
+    res.status(500).json({ error: 'Internal server error ' });
+  }
+});
 
-    try {
+exApp.get('/api/companies/:id', async (req, res) => {
+  try {
     const companyid = req.params.id;
     const objectId = new ObjectId(companyid);
 
-    const company = await db.collection('companies').findOne({_id: objectId})
+    const company = await db.collection('companies').findOne({ _id: objectId });
 
-        if(!company && !companies) {
-            res.status(404).json({ message: "Company not found"})
-        }
-    res.status(200).json(company)
-    }catch (error) {
-        console.error(`Error fetching companies: ${error}`)
-        res.status(500).json({ error: 'Internal server error' })
+    if (!company && !companies) {
+      res.status(404).json({ message: 'Company not found' });
     }
-  })
+    res.status(200).json(company);
+  } catch (error) {
+    console.error(`Error fetching companies: ${error}`);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
 
-  exApp.get("/api/companies/", async (req, res) => {
-
-    try {
-
+exApp.get('/api/companies/', async (req, res) => {
+  try {
     const companies = await db.collection('companies').find({}).toArray();
 
-        if(!companies) {
-            res.status(404).json({ message: "Companies not found"})
-        }
-    
-    res.status(200).json(companies)
-    console.log(companies)
-    }catch (error) {
-        console.error(`Error fetching companies: ${error}`)
-        res.status(500).json({ error: 'Internal server error' })
+    if (!companies) {
+      res.status(404).json({ message: 'Companies not found' });
     }
-  })
+
+    res.status(200).json(companies);
+    console.log(companies);
+  } catch (error) {
+    console.error(`Error fetching companies: ${error}`);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
