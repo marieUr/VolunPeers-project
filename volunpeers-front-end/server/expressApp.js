@@ -191,7 +191,9 @@ exApp.patch('/api/usercreds', verifyToken, async (req, res) => {
         if(!companies) {
             res.status(404).json({ message: "Companies not found"})
         }
+    
     res.status(200).json(companies)
+    console.log(companies)
     }catch (error) {
         console.error(`Error fetching companies: ${error}`)
         res.status(500).json({ error: 'Internal server error' })
