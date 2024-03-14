@@ -6,6 +6,7 @@ import Profile from './components/Profile/Profile.jsx';
 import Login from './components/Login/Login.jsx';
 import Signup from './components/Signup/Signup.jsx';
 import Opportunity from './Pages/Opportunity/OpportunityDetail.js';
+import OpportunityBox from './components/Opportunities/OpportunityBox.jsx';
 import { Body } from './Pages/Landingpage/body.js';
 import { Footer } from './components/Footer/Footer.jsx';
 import { NotFound } from './Pages/NotFound.js';

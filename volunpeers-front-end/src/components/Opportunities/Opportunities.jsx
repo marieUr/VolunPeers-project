@@ -15,8 +15,6 @@ function Opportunities() {
         </div>
         <div className="dividerOpp">
           <OpportunityBox />
-          <OpportunityBox />
-          <OpportunityBox />
         </div>
       </div>
       <hr></hr>
